@@ -6,4 +6,4 @@ Its designed to be run from the command line with three arguments: The country, 
 For example:
 `python barcode_gen.py Rwanda 55 FFS`
 
-This will create a PDF in your directory with all of the barcodes, designed for use in the field.
+This will create a PDF in your directory with barcodes ready to be printed.
