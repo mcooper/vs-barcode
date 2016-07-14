@@ -8,7 +8,7 @@ Created on Fri May 13 13:25:24 2016
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.units import inch
 from reportlab.pdfgen import canvas
-from reportlab.lib.colors import white, black
+from reportlab.lib.colors import white, black, gray
 import string
 import os
 import random
@@ -23,10 +23,11 @@ import time
 #maybe add a light color background to draw rect, to keep individual barcodes separate
 
 def generateBarcodes(country, number, protocol, dryrun=False):
+    os.mkdir('TEMP')
+    
     ctry = country[0].upper() 
     
     if not dryrun:
-        os.mkdir('TEMP')
         usedcodes = [line.rstrip() for line in open('used_codes.txt')]
     
     combos = []
@@ -61,21 +62,21 @@ def generateBarcodes(country, number, protocol, dryrun=False):
             f.write(i + '\n')
         f.close()
         
-        for b in barcodes:
-            code128.image(b).save('TEMP/' + b + '.png')
+    for b in barcodes:
+        code128.image(b).save('TEMP/' + b + '.png')
         
     return barcodes
 
-coords = [[[8.5, 0.5], [8.5, 2.0], [9.5, 0.5], [9.5, 2.0]],
-[[8.5, 3.5], [8.5, 5.0], [9.5, 3.5], [9.5, 5.0]],
-[[6.5, 0.5], [6.5, 2.0], [7.5, 0.5], [7.5, 2.0]],
-[[6.5, 3.5], [6.5, 5.0], [7.5, 3.5], [7.5, 5.0]],
-[[4.5, 0.5], [4.5, 2.0], [5.5, 0.5], [5.5, 2.0]],
-[[4.5, 3.5], [4.5, 5.0], [5.5, 3.5], [5.5, 5.0]],
-[[2.5, 0.5], [2.5, 2.0], [3.5, 0.5], [3.5, 2.0]],
-[[2.5, 3.5], [2.5, 5.0], [3.5, 3.5], [3.5, 5.0]],
-[[0.5, 0.5], [0.5, 2.0], [1.5, 0.5], [1.5, 2.0]],
-[[0.5, 3.5], [0.5, 5.0], [1.5, 3.5], [1.5, 5.0]],
+coords = [[ [9.5, 0.5], [9.5, 2.0], [8.5, 0.5], [8.5, 2.0]],
+[[9.5, 3.5], [9.5, 5.0], [8.5, 3.5], [8.5, 5.0]],
+[[7.5, 0.5], [7.5, 2.0], [6.5, 0.5], [6.5, 2.0]],
+[[7.5, 3.5], [7.5, 5.0], [6.5, 3.5], [6.5, 5.0]],
+[[5.5, 0.5], [5.5, 2.0], [4.5, 0.5], [4.5, 2.0]],
+[[5.5, 3.5], [5.5, 5.0], [4.5, 3.5], [4.5, 5.0]],
+[[3.5, 0.5], [3.5, 2.0], [2.5, 0.5], [2.5, 2.0]],
+[[3.5, 3.5], [3.5, 5.0], [2.5, 3.5], [2.5, 5.0]],
+[[1.5, 0.5], [1.5, 2.0], [0.5, 0.5], [0.5, 2.0]],
+[[1.5, 3.5], [1.5, 5.0], [0.5, 3.5], [0.5, 5.0]],
 [[9.5, 6.5], [8.5, 6.5], [7.5, 6.5], [6.5, 6.5]],
 [[5.5, 6.5], [4.5, 6.5], [3.5, 6.5], [2.5, 6.5]]]
 
@@ -136,6 +137,7 @@ def printCountryBarcodes(country, barcodes):
     for b in barcodes:
         pageindex = barcodes.index(b)%12
         coord = coords[pageindex]
+        i = 0
         for h,w in coord:
             c.drawImage('TEMP/' + b + '.png', x=w*inch, y=h*inch, width=1.5*inch, height=1*inch)
             c.setFillColor(white)
@@ -146,6 +148,10 @@ def printCountryBarcodes(country, barcodes):
             label = createLabel(b, country)
             c.drawString(x=(w+.14)*inch, y=(h+.78)*inch, text=label)
             c.drawCentredString(x=(w+.75)*inch, y=(h+.07)*inch, text=b)
+            i += 1
+            c.setFillColor(gray)
+            c.drawString(x=(w+1.325)*inch, y=(h+.78)*inch, text=str(i))            
+            
         if pageindex == 11: 
             drawRects(c, 2)
         if pageindex == 11 and b != barcodes[-1]:
