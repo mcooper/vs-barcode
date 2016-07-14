@@ -22,12 +22,12 @@ import time
 #Error Handling
 #maybe add a light color background to draw rect, to keep individual barcodes separate
 
-def generateBarcodes(country, number, protocol):
-    os.mkdir('TEMP')
-
+def generateBarcodes(country, number, protocol, dryrun=False):
     ctry = country[0].upper() 
     
-    usedcodes = [line.rstrip() for line in open('used_codes.txt')]
+    if not dryrun:
+        os.mkdir('TEMP')
+        usedcodes = [line.rstrip() for line in open('used_codes.txt')]
     
     combos = []
     for a1 in list(string.ascii_lowercase):
@@ -35,7 +35,11 @@ def generateBarcodes(country, number, protocol):
             for a3 in list(string.ascii_lowercase):
                 combos.append(a1+a2+a3)
     
-    cleancombos = [x for x in combos if x not in usedcodes]
+    if not dryrun:    
+        cleancombos = [x for x in combos if x not in usedcodes]
+    else:
+        cleancombos = [x for x in combos]
+        
     selectcombos = random.sample(cleancombos, int(number))
                 
     barcodes = []
@@ -51,13 +55,14 @@ def generateBarcodes(country, number, protocol):
             barcode = ctry + '-' + i
             barcodes.append(barcode)
     
-    f = open('used_codes.txt', 'a')
-    for i in selectcombos:
-        f.write(i + '\n')
-    f.close()
-    
-    for b in barcodes:
-        code128.image(b).save('TEMP/' + b + '.png')
+    if not dryrun:
+        f = open('used_codes.txt', 'a')
+        for i in selectcombos:
+            f.write(i + '\n')
+        f.close()
+        
+        for b in barcodes:
+            code128.image(b).save('TEMP/' + b + '.png')
         
     return barcodes
 
