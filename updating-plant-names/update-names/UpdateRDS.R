@@ -1,3 +1,5 @@
+library(plyr)
+library(DBI)
 library(dplyr)
 
 setwd('D:/Documents and Settings/mcooper/Documents/GitHub Repos/vs-data-tools/updating-plant-names/update-names')
@@ -23,11 +25,11 @@ eplot3 <- read.csv('eplot3_plants.csv', stringsAsFactors=F, strip.white = T)
 eplot3$tab <- 'eplot_subplot_vegetation'
 eplot3$field <- 'rank3_tax'
 
-names(trees) <- c('tax', 'uuid', 'genus', 'species', 'common', 'subspecies', 'code', 'tab', 'field')
-names(eplot1) <- c('tax', 'uuid', 'genus', 'species', 'subspecies', 'common', 'tab', 'field')
-names(eplot2) <- c('tax', 'uuid', 'genus', 'species', 'subspecies', 'common', 'tab', 'field')
-names(eplot3) <- c('tax', 'uuid', 'genus', 'species', 'subspecies', 'common', 'tab', 'field')
-
+names(trees) <- gsub('subplot_tree_', '', names(trees))
+names(eplot1) <- gsub('subplot_rank1_', '', names(eplot1))
+names(eplot2) <- gsub('subplot_rank2_', '', names(eplot2))
+names(eplot3) <- gsub('subplot_rank3_', '', names(eplot3))
+  
 clean <- rbind.fill(rra, trees, eplot1, eplot2, eplot3)
 clean$subspecies[is.na(clean$subspecies)|clean$subspecies=='NULL'] <- '-'
 

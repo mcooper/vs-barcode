@@ -21,8 +21,8 @@ findOriginal <- function(forms, table, section, prefix){
 badplants <- read.csv('Bad_Plant_Names.csv')
 ids <- paste0(badplants$id, collapse = ', ')
 
-source('staging_connection.R')
-con <- src_postgres(dbname = staging_dbname, host = staging_host, port = staging_port, user = staging_user, password = staging_password)
+source('production_connection.R')
+con <- src_postgres(dbname = production_dbname, host = production_host, port = production_port, user = production_user, password = production_password)
 forms <- tbl(con, sql("SELECT body, survey_uuid from users_schema.form_log")) %>% data.frame
 
 rradb <- tbl(con, sql(paste0('SELECT
@@ -78,8 +78,8 @@ treedb <- tbl(con, sql(paste0('SELECT
 
 tree <- findOriginal(forms, treedb, 'subplot_group/subplot_holder/tree', 'subplot_tree_')
 
-write.csv(rra, 'rra_plants2.csv', row.names=F, na='NULL')
-write.csv(eplot1, 'eplot1_plants2.csv', row.names=F, na='NULL')
-write.csv(eplot2, 'eplot2_plants2.csv', row.names=F, na='NULL')
-write.csv(eplot3, 'eplot3_plants2.csv', row.names=F, na='NULL')
-write.csv(tree, 'trees_plants2.csv', row.names=F, na='NULL')
+write.csv(rra, 'rra_plants.csv', row.names=F, na='NULL')
+write.csv(eplot1, 'eplot1_plants.csv', row.names=F, na='NULL')
+write.csv(eplot2, 'eplot2_plants.csv', row.names=F, na='NULL')
+write.csv(eplot3, 'eplot3_plants.csv', row.names=F, na='NULL')
+write.csv(tree, 'trees_plants.csv', row.names=F, na='NULL')

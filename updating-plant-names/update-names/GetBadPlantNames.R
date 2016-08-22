@@ -2,8 +2,8 @@ library(dplyr)
 
 setwd('D:/Documents and Settings/mcooper/Documents/GitHub Repos/vs-data-tools/updating-plant-names/update-names')
 
-source('staging_connection.R')
-con <- src_postgres(dbname = staging_dbname, host = staging_host, port = staging_port, user = staging_user, password = staging_password)
+source('production_connection.R')
+con <- src_postgres(dbname = production_dbname, host = production_host, port = production_port, user = production_user, password = production_password)
 
 badplants <- tbl(con, sql("SELECT
                            *
