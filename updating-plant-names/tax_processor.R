@@ -20,7 +20,7 @@ Preprocessing <- function(df){
 }
 
 TNRSQuery <- function(df, N_Plants=10){
-  Plant_Names <- unique(df[,c('genus', 'species')])
+  Plant_Names <- unique(df[,c('id', 'genus', 'species')])
 
   a <- seq(1,nrow(Plant_Names)-1,N_Plants)
   z <- seq(N_Plants,nrow(Plant_Names),N_Plants)
@@ -29,7 +29,7 @@ TNRSQuery <- function(df, N_Plants=10){
     z <- c(z, nrow(Plant_Names))
   }
 
-  Plant_Names <- Preprocessing(Plant_Names)
+  Plant_Names[ , c('genus', 'species')] <- Preprocessing(Plant_Names[ , c('genus', 'species')])
 
   all_results <- data.frame()
   failed <- data.frame()
@@ -39,37 +39,26 @@ TNRSQuery <- function(df, N_Plants=10){
            paste(paste(sel$genus, sel$species, sep="%20"),collapse=','))
     tryCatch({out <- fromJSON(getURL(URL))$items
                 out$original <- paste(sel$genus, sel$species, sep=' ')
+                out$id <- sel$id
                 out$distance <- 1-stringdist(out$original, out$nameScientific, method='jw')
                 all_results <- rbind.fill(all_results, out)},
               error=function(e){
-                failed <- rbind.fill(failed, data.frame(list(error=e, genus=sel$genus, species=sel$species)))}
+                failed <- rbind.fill(failed, data.frame(list(error=e, id=sel$id, genus=sel$genus, species=sel$species)))}
                 )
-    out$original <- paste(sel$genus, sel$species, sep=' ')
-    out$distance <- 1-stringdist(out$original, out$nameScientific, method='jw')
-    all_results <- rbind.fill(all_results, out)
-    cat(z[i]/max(z)*100, ' percent done')
+    cat('\n', z[i]/max(z)*100, ' percent done')
   }
   
   all_results$distance <- 1-stringdist(all_results$nameSubmitted, all_results$nameScientific, method='jw')
   
-  return all_results
+  return(list(all_results, failed))
 }
 
-Plant_Names <- read.csv('plant_species.csv')
+plant_names <- read.csv('plant_species.csv')
 
-all_results <- TNRSquery(Plant_Names)
+results <- TNRSQuery(plant_names)
 
-source('../Synonym_scraper.R')
-
-clean <- unique(all_results[,'nameScientific', drop=FALSE])
-
-index <- grepl(' ', clean$nameScientific)
-
-clean$Synless[index] <- sapply(clean$nameScientific[index], FUN=getsyns)
-
-all_results <- merge(all_results, clean, all.x=T, by='nameScientific')
-
-write.csv(clean[!is.na(clean$Synless),], 'ApprovedNames.csv', row.names=T)
+all_results <- results[[1]]
+failed <- results[[2]]
 
 write.csv(all_results, 'ProcessedNames.csv', row.names=F)
 
