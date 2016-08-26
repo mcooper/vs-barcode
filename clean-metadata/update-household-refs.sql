@@ -76,19 +76,61 @@ WHERE f.country=r.country AND
 			f.eplot_no=r.eplot_no AND
 			f.hh_no=r.hh_no;
 
+--household
 UPDATE household_member_ref f
 SET hh_refno=r.hh_refno
 FROM household r
-WHERE f.id=r.hh_head_refno AND
-      f.indid=r.hh_first_name;
+WHERE f.id=r.hh_head_refno;
 
+--household_secB
 UPDATE household_member_ref f
 SET hh_refno=r.hh_refno
 FROM
-(SELECT a.hh_refno, b.ind, b.indid FROM household a
+(SELECT a.hh_refno, 
+		b.ind, 
+		b.indid FROM household a
 JOIN "household_secB" b ON (a.uuid=b.parent_uuid)) r
-WHERE f.id=r.ind AND
-      f.indid=r.indid;
+WHERE f.id=r.ind;
+
+--agric
+UPDATE household_member_ref f
+SET hh_refno=r.hh_refno
+FROM agric r
+WHERE f.id=r.hh_head_refno;
+
+--agric_roster
+UPDATE household_member_ref f
+SET hh_refno=r.hh_refno
+FROM 
+(SELECT a.hh_refno, 
+		b.hh_indid_name,
+		b.ind
+	FROM agric a
+JOIN agric_roster b ON (a.uuid=b.parent_uuid)) r
+WHERE f.id=r.ind;
+	  
+--agric_field_details_labor
+UPDATE household_member_ref f
+SET hh_refno=r.hh_refno
+FROM 
+(SELECT a.hh_refno, 
+		b.hh_indid_name,
+		b.ind
+	FROM agric a
+JOIN agric_field_details c ON (a.uuid=c.parent_uuid)
+JOIN agric_field_details_labor b ON (c.uuid=b.parent_uuid)) r
+WHERE f.id=r.ind;
+	  
+--farmfieldsoils_yields_maize
+UPDATE household_member_ref f
+SET hh_refno=r.hh_refno
+FROM farmfieldsoils_yields_maize r
+WHERE f.id=r.farmers_ref;
+
+DELETE FROM household_member_ref
+WHERE hh_refno in
+(SELECT id FROM household_ref
+WHERE length(hh_no)>2);
 
 DELETE FROM household_ref
-WHERE length(hh_no) > 2
+WHERE length(hh_no) > 2;
