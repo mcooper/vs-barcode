@@ -8,7 +8,7 @@ Created on Fri Apr  8 10:18:55 2016
 import os
 import pandas as ps
 
-os.chdir('D:\Documents and Settings\mcooper\Documents\Staging Form and DD Updates\XLS forms')
+os.chdir('D:\Documents and Settings\mcooper\Documents\Automate Data Dictionaries\XLS forms Version 0 (Deployed May 2015)')
 
 xls = os.listdir()
 
@@ -24,7 +24,7 @@ def str_index(string, substring, start):
 def getDataFromXLSform(filename):
     raw = ps.read_excel(filename, sheetname=0)
     
-    vartypes = 'start|end$|today|date|text|time|select.one*|select1|string|calculate|decimal|image|integer'
+    vartypes = 'start|end$|today|date|text|time|select.one*|select1|string|calculate|decimal|image|int*'
     
     #Subset data with simple variables
     ind = raw.type.str.contains(vartypes)
