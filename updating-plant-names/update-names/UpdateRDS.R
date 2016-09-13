@@ -1,12 +1,11 @@
-library(plyr)
 library(DBI)
 library(dplyr)
 
-setwd('D:/Documents and Settings/mcooper/Documents/GitHub Repos/vs-data-tools/updating-plant-names/update-names')
+setwd('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/updating-plant-names/update-names')
 
-source('production_connection.R')
+source('staging_connection.R')
 
-con <- src_postgres(dbname = production_dbname, host = production_host, port = production_port, user = production_user, password = production_password)
+con <- src_postgres(dbname = staging_dbname, host = staging_host, port = staging_port, user = staging_user, password = staging_password)
 
 #Manually cleaned up csvs
 rra <- read.csv('rra_plants.csv', stringsAsFactors=F, strip.white = T)
@@ -60,7 +59,7 @@ for (i in 1:nrow(us)){
     #and delete the old record
     try(dbSendQuery(con$con, sql(paste0("DELETE FROM plant_species WHERE id = ", us$tax[i]))))
   }
-  #othersie
+  #otherwise
   else{
     #Create a new recod for the cleaned name
     dbSendQuery(con$con, sql(paste0("Insert Into plant_species (id, genus, species, subspecies, approved)
