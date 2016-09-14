@@ -13,9 +13,6 @@ import os
 
 os.chdir('D:/Documents and Settings/mcooper/Documents/Staging Form and DD Updates/')
 
-f = open("testsql.txt", 'r')
-sql = f.read().replace('\n', '')
-
 defs = pandas.read_table('ViewDefinitions.txt')
 
 def gettables(sql):

@@ -24,9 +24,8 @@ def getGroupIndices(ser):
         if i == 'end group':
             ind = (len(end_indices) - 1) - end_indices[::-1].index(999)
             end_indices[ind] = ct
-    return(zip(begin_indices, end_indices))
-            
-            
+        ct += 1
+    return list(zip(begin_indices, end_indices))
 
 def str_index(string, substring, start):
     #Function to find substring starting from a specified position
@@ -49,10 +48,31 @@ def getDataFromXLSform(filename):
     df = raw[ind]
     
     #get variables with select* types
-    ind2 = raw.type.str.contains('select*')
-    ind2[ind2.isnull()] = False
-    selectvar = raw.type[ind2]
+    ind_sel = raw.type.str.contains('select*')
+    ind_sel[ind_sel.isnull()] = False
+    selectvar = raw.type[ind_sel]
     
+    #get notes
+    ind_note = raw[raw['type']=='note'].index
+    ind_gp = getGroupIndices(raw['type'])
+    ind_note_sel = []
+    notes = []
+    for x,y in ind_gp:
+        for z in ind_note:
+            if x+1==z:
+                group = list(range(z+1,y-1))
+                for i in group:
+                    if i not in ind_note_sel:
+                        notes.append(raw['label'][z])
+                        ind_note_sel.append(i)
+                    else:
+                        ind = (len(ind_note_sel) - 1) - ind_note_sel[::-1].index(i)
+                        notes[ind] = notes[ind] + '; ' + raw['label'][z]
+    
+    #made dataframe of notes and append it to original
+    notedf = ps.DataFrame({'notes': notes}, index=ind_note_sel)   
+    df = df.merge(notedf, how='left', left_index=True, right_index=True)
+
     choices = ps.read_excel(filename, sheetname=1).dropna(subset=['list name'])
 
     selects = ps.DataFrame()
@@ -77,7 +97,7 @@ for x in xls:
     out = getDataFromXLSform(x)
     allxls = allxls.append(out)
 
-allxls.to_excel('../XLS_forms_summary_' + time.strftime("%d-%m-%Y_%I-%M-%S") +'.xlsx', index=False)
+allxls.to_excel('../XLS_forms_summary.xlsx', index=False)
 
 
 
