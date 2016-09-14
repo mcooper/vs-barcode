@@ -7,10 +7,26 @@ Created on Fri Apr  8 10:18:55 2016
 
 import os
 import pandas as ps
+import time
 
 os.chdir('D:\Documents and Settings\mcooper\Documents\Automate Data Dictionaries\Version 2')
 
 xls = os.listdir()
+
+def getGroupIndices(ser):
+    begin_indices = []
+    end_indices = []
+    ct = 0
+    for i in ser:
+        if i == 'begin group':
+            begin_indices.append(ct)
+            end_indices.append(999)
+        if i == 'end group':
+            ind = (len(end_indices) - 1) - end_indices[::-1].index(999)
+            end_indices[ind] = ct
+    return(zip(begin_indices, end_indices))
+            
+            
 
 def str_index(string, substring, start):
     #Function to find substring starting from a specified position
@@ -20,48 +36,36 @@ def str_index(string, substring, start):
         return(ind + start)
     else:
         return(len(string))
-    
+
+##Need to figure out how to incorporate notes!
 def getDataFromXLSform(filename):
     raw = ps.read_excel(filename, sheetname=0)
     
-    vartypes = 'start|end$|today|date|text|time|select.one*|select1|string|calculate|decimal|image|int*|select.multiple*|select all that apply'
+    vartypes = 'date|text|time|select|string|calculate|decimal|image|int'
     
     #Subset data with simple variables
     ind = raw.type.str.contains(vartypes)
     ind[ind.isnull()] = False
     df = raw[ind]
     
-    #Subset data with 'select multiple' variables
+    #get variables with select* types
     ind2 = raw.type.str.contains('select*')
     ind2[ind2.isnull()] = False
-    selectvar = raw.name[ind2]
+    selectvar = raw.type[ind2]
     
-    choices = ps.read_excel(filename, sheetname=1).dropna()  
+    choices = ps.read_excel(filename, sheetname=1).dropna(subset=['list name'])
 
     selects = ps.DataFrame()
     for i in choices['list name'].unique():
         sub = choices[choices['list name']==i]
         d = str(dict(zip(sub.name, sub.label)))
         for j in selectvar:
-            
+            if i in j and i!='y':
+                joinvar = j
+                newdf = ps.DataFrame(data={'joinvar': [joinvar], 'list_name': [i], 'values': [d]})
+                selects = selects.append(newdf)
         
-        
-        newdf = ps.DataFrame(data={'variable': [i], 'values': [d]})
-        selects = selects.append(newdf)
-    
-    choice_list = []
-    for i in selectvar:
-        #Get the list name for the variable
-        multivar = raw['type'][raw['name']==i].to_string(index=False)
-        try:
-            start = multivar.find('multiple |from ') + 9
-        except ValueError:
-            start = multivar.index('select all that apply from ') + 27
-        end = str_index(multivar, ' ', start)
-        choice_list.append(multivar[start:end])
-    
-    df['choices'] = ps.Series(choice_list, index=ind2)
-    
+    df=df.merge(selects.drop_duplicates(), how='outer', left_on=['type'], right_on=['joinvar'], left_index=True)
     
     formname = ps.read_excel(filename, sheetname=2)['form_id'].to_string(index=False)
     df.loc[:,('form_name')] = formname
@@ -73,7 +77,7 @@ for x in xls:
     out = getDataFromXLSform(x)
     allxls = allxls.append(out)
 
-allxls.to_excel('../XLS_forms_summary.xlsx', index=False)
+allxls.to_excel('../XLS_forms_summary_' + time.strftime("%d-%m-%Y_%I-%M-%S") +'.xlsx', index=False)
 
 
 
