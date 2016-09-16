@@ -11,7 +11,7 @@ Created on Thu Apr  7 11:26:08 2016
 import pandas
 import os
 
-os.chdir('D:/Documents and Settings/mcooper/Documents/Staging Form and DD Updates/')
+os.chdir('D:/Documents and Settings/mcooper/Documents/Automate Data Dictionaries/')
 
 defs = pandas.read_table('ViewDefinitions.txt')
 
@@ -38,7 +38,7 @@ def gettables(sql):
     aliased = {}
     for t in tables:
         if ' ' + t + ' ' in sql:
-            aliased[t] = sql.index(' ' + t + ' ')
+            aliased[t] = sql.rindex(' ' + t + ' ')
     alias = {}
     for a in aliased:
         alias[a] = (sql[(sql.rindex(' ',0,aliased[a])):aliased[a]]).strip(' ("')
@@ -69,7 +69,7 @@ def getvariables(sql, tabled):
         if 'AS' in s:
             if s.count('.') == 1:
                 dbtables.append(tabled[(s[s.rfind(' ',0,s.index('.')):s.index('.')]).strip('," ')])
-                dbvars.append((s[(s.index('.')+1):s.index('AS')]).strip('," '))
+                dbvars.append((s[(s.index('.')+1):s.index('AS')]).strip('()," '))
                 viewvars.append((s[(s.index('AS')+2):]).strip('," '))
             if s.count('.') > 1:
                 inds = [i for i in range(len(s)) if s.startswith('.', i)]
@@ -95,14 +95,17 @@ adbtabs = []
 adbvars = []
 avwvars = []
 avwtabs = []
-for i in range(0,70):
+for i in range(0,defs.shape[0]):
     sql = defs['definition'][i]
     tb = gettables(sql)
+    print('\n\n\n\n' + defs['viewname'][i])
+    for t in tb:
+        print(t + '\n' + tb[t] + '\n\n')
     ot = getvariables(sql, tb)
     adbtabs = adbtabs + ot[0]
     adbvars = adbvars + ot[1]
     avwvars = avwvars + ot[2]
-    avwtabs = avwtabs + [defs['name'][i]]*len(ot[1])
+    avwtabs = avwtabs + [defs['viewname'][i]]*len(ot[1])
 
 table = [adbtabs, adbvars, avwvars, avwtabs]
 df = pandas.DataFrame(table)

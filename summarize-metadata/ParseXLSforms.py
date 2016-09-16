@@ -7,7 +7,6 @@ Created on Fri Apr  8 10:18:55 2016
 
 import os
 import pandas as ps
-import time
 
 os.chdir('D:\Documents and Settings\mcooper\Documents\Automate Data Dictionaries\Version 2')
 
@@ -40,7 +39,7 @@ def str_index(string, substring, start):
 def getDataFromXLSform(filename):
     raw = ps.read_excel(filename, sheetname=0)
     
-    vartypes = 'date|text|time|select|string|calculate|decimal|image|int'
+    vartypes = 'date|text|time|select|string|calculate|decimal|image|int|audio|barcode'
     
     #Subset data with simple variables
     ind = raw.type.str.contains(vartypes)
@@ -70,7 +69,7 @@ def getDataFromXLSform(filename):
                         notes[ind] = notes[ind] + '; ' + raw['label'][z]
     
     #made dataframe of notes and append it to original
-    notedf = ps.DataFrame({'notes': notes}, index=ind_note_sel)   
+    notedf = ps.DataFrame({'data_notes': notes}, index=ind_note_sel)   
     df = df.merge(notedf, how='left', left_index=True, right_index=True)
 
     choices = ps.read_excel(filename, sheetname=1).dropna(subset=['list name'])
