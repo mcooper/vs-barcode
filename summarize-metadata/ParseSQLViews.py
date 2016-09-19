@@ -6,7 +6,8 @@ Created on Thu Apr  7 11:26:08 2016
 """
 #Get all user-facing views from db and their definitions using:
 #  SELECT viewname, definition FROM pg_views WHERE viewname LIKE 'curation%'
-#Make that a table and then read it in
+#Make that a table called 'ViewDefinitions.txt'
+
 
 import pandas
 import os
@@ -98,9 +99,6 @@ avwtabs = []
 for i in range(0,defs.shape[0]):
     sql = defs['definition'][i]
     tb = gettables(sql)
-    print('\n\n\n\n' + defs['viewname'][i])
-    for t in tb:
-        print(t + '\n' + tb[t] + '\n\n')
     ot = getvariables(sql, tb)
     adbtabs = adbtabs + ot[0]
     adbvars = adbvars + ot[1]
@@ -112,32 +110,6 @@ df = pandas.DataFrame(table)
 df = df.transpose()
 df.to_csv('DbViewMapping.csv', index=False, header=['DB_Tables', 'DB_Vars', 'User_Vars', 'User_Tables'])
     
-#This is just to make sure all the definitions are formatted the same
-#should not be run
-    
-'''
-for i in range(0,70):
-    sql = defs['definition'][i]
-    sql = sql.replace('\n', '')
-    whilect = sql.count('WITH')
-    whileind = sql.find('WITH')
-    selectct = sql.count('SELECT')
-    selectind = sql.index('SELECT')
-    fromct = sql.count('FROM')
-    fromind = sql.rindex('FROM')
-    print(str(i) + 'WHILE: ' + str(whilect) + ' ' + str(whileind) + '   SELECT: ' + str(selectct) + ' ' + str(selectind) + '   FROM: ' + str(fromct) + ' ' + str(fromind) + defs['name'][i])
-    
-            
-for i in range(0,70):
-    sql = defs['definition'][i]
-    print(str('autoqa_severity' in sql) + '  ' + defs['name'][i])
-            
-'''
-            
-            
-            
-            
-            
             
             
             

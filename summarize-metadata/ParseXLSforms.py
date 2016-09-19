@@ -100,37 +100,6 @@ allxls.to_excel('../XLS_forms_summary.xlsx', index=False)
 
 
 
-#Testing and exploring - do not run:
-'''
-import os
-import pandas as ps
-
-os.chdir('D:\Documents and Settings\mcooper\Documents\Staging Form and DD Updates\XLS forms')
-
-xls = os.listdir()
-
-allxls2 = ps.DataFrame() #Empty accumulator
-
-for x in xls:
-    raw = ps.read_excel(x, sheetname=0)
-
-    formname = ps.read_excel(x, sheetname=2)['form_id'].to_string(index=False)
-    raw.loc[:,('form_name')] = formname
-    
-    allxls2 = allxls2.append(raw)
-    
-    
-excluded = []
-for i in set(allxls2['type']):
-    if i not in set(allxls['type']):
-        excluded.append(i)
-
-'''
-
-
-
-
-
 
 
 
