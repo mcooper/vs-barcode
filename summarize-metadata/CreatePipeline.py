@@ -7,6 +7,7 @@ Created on Wed Sep 14 11:34:36 2016
 
 import os
 import pandas as ps
+import np
 
 os.chdir('D:\Documents and Settings\mcooper\Documents\Automate Data Dictionaries')
 
@@ -24,7 +25,10 @@ def cleanXLSsummary(df):
     df.loc[:,'constraint'] = df.loc[:,'bind:constraint'] + df.loc[:,'constraint']
     df = df.loc[:,('required', 'relevant', 'constraint', 'calculation', 'choice_filter', 'constraint_message', 'form_name', 'hint', 'label', 'name', 'notes', 'values')]
     df.loc[df['required']=='true()', 'required'] = 'yes'
-    df.label
+    
+    #Could use regex to remove question numbers from lable
+    #df.loc[df['label'].str.contains('^(.?)[0-9](.?)') & ~df['label'].isnull(),'label']
+
     return(df)
 
 def cleanDBschema(df):
@@ -94,7 +98,7 @@ views_xls.to_excel(pipeline_writer, 'Metadata Summary', index=False)
 metadata.to_excel(pipeline_writer, 'Column Descriptions', index=False)
 pipeline_writer.save()
 
-include_cols = ['User_Vars', 'User_Tables', 'source', 'name', 'required', 'relevant', 'constraint', 'calculation', 'constraint_message', 'hint', 'label', 'notes', 'values']
+include_cols = ['User_Vars', 'source', 'label', 'notes', 'constraint_message', 'hint', 'values', 'name', 'required', 'relevant', 'constraint', 'calculation']
 
 for i in views_xls['User_Tables'].dropna().unique():
     writer = ps.ExcelWriter('metadata_summaries/' + i + '.xlsx')
