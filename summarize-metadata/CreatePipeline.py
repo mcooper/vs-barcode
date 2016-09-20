@@ -36,9 +36,11 @@ def cleanXLSsummary(df):
     df.loc[~df['label'].isnull(), 'label'] = df['label'].dropna().apply(cleanLabel)
     df.loc[:,'relevant'] = df.loc[:,['bind:relevant', 'relevant']].fillna('').sum(axis=1)   
     df.loc[:,'constraint'] = df.loc[:,['bind:constraint', 'constraint']].fillna('').sum(axis=1)
-    df.loc[:,'label'] = df.loc[:,['data_notes', 'label']].fillna('').sum(axis=1)
+    df['space'] = ' - '
+    df.loc[:,'label'] = df.loc[:,['label', 'space', 'data_notes']].fillna('').sum(axis=1)
     df = df.loc[:,('required', 'relevant', 'constraint', 'calculation', 'choice_filter', 'constraint_message', 'form_name', 'hint', 'label', 'name', 'notes', 'values')]
     df.loc[df['required']=='true()', 'required'] = 'yes'
+    del df['space']
     return(df)
 
 def cleanDBschema(df):
