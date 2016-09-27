@@ -40,13 +40,11 @@ def cleanXLSsummary(df):
     df.loc[:,'label'] = df.loc[:,['label', 'space', 'data_notes']].fillna('').sum(axis=1)
     df = df.loc[:,('required', 'relevant', 'constraint', 'calculation', 'choice_filter', 'constraint_message', 'form_name', 'hint', 'label', 'name', 'notes', 'values')]
     df.loc[df['required']=='true()', 'required'] = 'yes'
-    del df['space']
     return(df)
 
 def cleanDBschema(df):
     df.loc[:,'User_Tables'] = df.User_Tables.str.replace('curation__', '')
     df = df.loc[~df.DB_Vars.str.contains('uuid')]
-    df = df.loc[~df.User_Tables.str.contains('_pii')]
     df = df.loc[~df.DB_Tables.isin(['weatherdata', 'weatherstation', 'eplotsoils_processed', 'farmfieldsoils_processed'])]
     return(df)
     
@@ -68,11 +66,18 @@ def cleanPlantSpecies(df):
     del df['combine_vars']
     return(df)
 
-def replaceName(df):
+def prepForPrint(df):
+    #Replaces a ${odk_var} with a {user_var} in the formulas
     idx = ~(df['name'].isnull() | df['User_Vars'].isnull())
     for i in df.index[idx]:
         df = df.replace({'\{' + df.loc[idx, 'name'][i] : '{' + df.loc[idx, 'User_Vars'][i]}, regex=True)
     df = df.replace({'\$':''}, regex=True)
+    
+    #Remove all *_pii tables
+    idx = df.User_Tables.str.contains('_pii')
+    idx.loc[idx.isnull()] = False
+    df = df.loc[-idx]
+    
     return(df)
 
 xls_summary = cleanXLSsummary(xls_summary)
@@ -82,7 +87,7 @@ views_mapping = db_schema.merge(right=mapping, left_on=['DB_Vars', 'DB_Tables'],
 
 views_xls = views_mapping.merge(right=xls_summary, left_on=['odkvar', 'May 2016'], right_on=['name', 'form_name'], how='outer')
 
-df_plants = cleanPlantSpecies(views_xls)
+final_df = cleanPlantSpecies(views_xls)
 
 metadata_definition = [
     ['User_Vars',           'The name of the variables in the views that users downloadas parsed from the view definition scripts'],
@@ -111,20 +116,22 @@ metadata_definition = [
     
 metadata = ps.DataFrame(metadata_definition, columns=['Column Name', 'Column Description'])
 
+final_df.loc[:, ['User_Vars', 'User_Tables', 'DB_Vars', 'DB_Tables', 'dbvar', 'dbtable', 'odkvar', 'May 2016']].to_excel('Mapping.xls')
+
 pipeline_writer = ps.ExcelWriter('metadata_summaries/_pipeline_summary.xlsx')
-df_plants.to_excel(pipeline_writer, 'Metadata Summary', index=False)
+final_df.to_excel(pipeline_writer, 'Metadata Summary', index=False)
 metadata.to_excel(pipeline_writer, 'Column Descriptions', index=False)
 pipeline_writer.save()
 
-include_cols = ['User_Vars', 'label', 'required', 'relevant', 'constraint']
+include_cols = ['User_Vars', 'label', 'required', 'relevant', 'constraint', 'choice_filter']
 
-finaldf = replaceName(df_plants)
+userdf = prepForPrint(final_df)
 
 #To Do Map table names to names in the download tool
 #Figure out why C_name isn't replacing
 
-for i in finaldf['User_Tables'].dropna().unique():
+for i in userdf['User_Tables'].dropna().unique():
     writer = ps.ExcelWriter('metadata_summaries/' + i + '.xlsx')
-    finaldf.loc[finaldf['User_Tables']==i,include_cols].drop_duplicates().to_excel(writer, i[:31], index=False)
+    userdf.loc[userdf['User_Tables']==i,include_cols].drop_duplicates().to_excel(writer, i[:31], index=False)
     metadata.loc[metadata['Column Name'].isin(include_cols),:].to_excel(writer, 'Column Descriptions', index=False)
     writer.save()

@@ -23,7 +23,21 @@ vs_db <- src_postgres(dbname=staging_dbname, host=staging_host,
 
 dbSendQuery(vs_db$con, sql('DROP TABLE "household_secV" CASCADE;'))
 dbSendQuery(vs_db$con, sql('DROP SCHEMA audit CASCADE;'))
-dbSendQuery(vs_db$con, sql('DROP SCHEMA users_schema CASCADE;'))
+
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.data_product;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.deleted_record;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.download;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.download_cart;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.form_log;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.monitoring_alert;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.oauth_access_grants;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.oauth_access_tokens;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.oauth_applications;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.setting;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.user;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.weatherstation_contactlist;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.weatherstation_maintenance;'))
+
 dbSendQuery(vs_db$con, sql('DROP TRIGGER farmfieldsoils_yields_paddy_maize_hh_ref ON farmfieldsoils_yields_paddy_maize;'))
 dbSendQuery(vs_db$con, sql('DROP TRIGGER farmfieldsoils_yields_maize_hh_ref ON farmfieldsoils_yields_maize;'))
 dbSendQuery(vs_db$con, sql('DROP TRIGGER farmfieldsoils_yields_weight_hh_ref ON farmfieldsoils_yields_weight;'))
@@ -56,8 +70,11 @@ for (i in 1:nrow(pii)){
         dbSendQuery(vs_db$con, sql(paste0('UPDATE "', pii$table[i], '" SET eplot_no = \'', eplots$new[k],
                                           "' WHERE country = '", cty_lscp$country[j], "' AND landscape_no = '",
                                           cty_lscp$landscape_no[j], "' AND eplot_no = '", eplots$eplot_no[k], "';")))
+        print(paste0('k:', k))
       }
+      print(paste0('j:', j))
     }
   }
+  print(paste0('i:', i))
 }
 
