@@ -1,19 +1,22 @@
 disp <- function(table, 
                  var, 
-                 type = c(''), 
+                 type, 
                  country = c('GHA', 'TZA', 'RWA', 'UGA', 'ALL'), 
                  choice_filter=NA)
   {
   #A function to take in a Vital Signs variable and display it.
   
+  localenv <- environment()
+  
   #################
   ##Infer Parameter Vars
   ################
   if (country %in% c('GHA', 'TZA', 'RWA', 'UGA')){
-    gp_var = landscape_no
+    gp_var <- 'Landscape..'
+    data <- filter(data, Country==country)
   }
   else if (country == 'ALL'){
-    gp_var = country    
+    gp_var <- 'Country'    
   }
   else{
     cat('Unrecognized argument for country')
@@ -25,53 +28,56 @@ disp <- function(table,
   }
   
   ##Type: text, string
-  if (grepl('text|string', type)){
+  else if (grepl('text|string', type)){
     
   }
   
   ##Type: time
-  if (grepl('time', type)){
+  else if (grepl('time', type)){
     
   }
   
   ##Type: select
-  if (grepl('select', type)){
+  else if (grepl('select', type)){
     
   }
   
   ##Type: calculate
-  if (grepl('calculate', type)){
+  else if (grepl('calculate', type)){
     
   }
   
   ##Type: decimal
-  if (grepl('deciaml', type)){
-    
+  else if (grepl('decimal', type)){
+    print(ggplot(data, aes_string(x=var, fill=gp_var), environment = localenv) +
+      geom_bar())
   }
   
   ##Type: int
-  if (grepl('int', type)){
+  else if (grepl('int', type)){
     
   }
   
   ##Type: audio
-  if (grepl('audio', type)){
+  else if (grepl('audio', type)){
     
   }
   
   ##Type: barcode
-  if (grepl('barcode', type)){
+  else if (grepl('barcode', type)){
     
   }
   
   ##string:
-  if (grepl('string', type)){
+  else if (grepl('string', type)){
     
   }
   
   else{
     cat('This is not a recognized variable type')
   }
+  
+}
   
 #Other functions
 count_nulls <- function(table, var){
