@@ -88,24 +88,22 @@ count_nulls <- function(data, var, gp_var){
   
   tab <- group_by_(data, gp_var) %>% 
     summarize(Total = n(),
-              Percent.Filled = mean(!nas) %>% pretty_percent(),
-              Percent.Empty = mean(nas) %>% pretty_percent()) %>% 
+              Filled = mean(!nas),
+              Empty = mean(nas)) %>% 
     data.frame
   
   all <- data.frame(groupvar = 'Total', 
                     Total = length(data$nas),
-                    Percent.Filled = mean(!data$nas) %>% pretty_percent(),
-                    Percent.Empty = mean(data$nas) %>% pretty_percent()) %>% 
+                    Filled = mean(!data$nas),
+                    Empty = mean(data$nas)) %>% 
     data.frame
   
   names(tab)[1] <- 'groupvar'
   out <- bind_rows(tab, all)
   names(out)[1] <- gp_var
   
-  out$Filled <- paste(pretty_percent(out$Percent.Filled), out$Total.Filled, sep = ' - ')
-  out$Empty <- paste(pretty_percent(out$Percent.Empty), out$Total.Empty, sep = ' - ')
-
-  out <- out[ , c(gp_var, 'Total', 'Filled', 'Empty')]
+  out$Filled <- pretty_percent(out$Filled)
+  out$Empty <- pretty_percent(out$Empty)
   
   list(data=out, colnames=gsub('.', ' ', names(out), fixed = T))
 }
@@ -118,23 +116,28 @@ count_outliers <- function(data, var, gp_var){
   
   tab <- group_by_(data, gp_var) %>% 
     summarize(Total = n(),
-              Outside.Two.Standard.Deviations = mean(med + 2*std < var | med - 2*std > var) %>% pretty_percent(),
-              Outside.Three.Standard.Deviations = mean(med + 3*std < var | med - 3*std > var) %>% pretty_percent(),
-              Outside.Four.Standard.Deviations = mean(med + 4*std < var | med - 4*std > var) %>% pretty_percent(),
-              Outside.Five.Standard.Deviations = mean(med + 5*std < var | med - 5*std > var) %>% pretty_percent()) %>%
+              Outside.Two.Standard.Deviations = mean(med + 2*std < var | med - 2*std > var),
+              Outside.Three.Standard.Deviations = mean(med + 3*std < var | med - 3*std > var),
+              Outside.Four.Standard.Deviations = mean(med + 4*std < var | med - 4*std > var),
+              Outside.Five.Standard.Deviations = mean(med + 5*std < var | med - 5*std > var)) %>%
     data.frame
   
   all <- data.frame(groupvar = 'Total',
                     Total = length(data[ , var]),
-                    Outside.Two.Standard.Deviations = mean(med + 2*std < data[ ,var] | med - 2*std > data[ ,var]) %>% pretty_percent(),
-                    Outside.Three.Standard.Deviations = mean(med + 3*std < data[ ,var] | med - 3*std > data[ ,var]) %>% pretty_percent(),
-                    Outside.Four.Standard.Deviations = mean(med + 4*std < data[ ,var] | med - 4*std > data[ ,var]) %>% pretty_percent(),
-                    Outside.Five.Standard.Deviations = mean(med + 5*std < data[ ,var] | med - 5*std > data[ ,var]) %>% pretty_percent())
+                    Outside.Two.Standard.Deviations = mean(med + 2*std < data[ ,var] | med - 2*std > data[ ,var]),
+                    Outside.Three.Standard.Deviations = mean(med + 3*std < data[ ,var] | med - 3*std > data[ ,var]),
+                    Outside.Four.Standard.Deviations = mean(med + 4*std < data[ ,var] | med - 4*std > data[ ,var]),
+                    Outside.Five.Standard.Deviations = mean(med + 5*std < data[ ,var] | med - 5*std > data[ ,var]))
 
   names(tab)[1] <- 'groupvar'
   out <- bind_rows(tab, all)
   names(out)[1] <- gp_var
-  
+
+  out$Outside.Two.Standard.Deviations <- pretty_percent(out$Outside.Two.Standard.Deviations)
+  out$Outside.Three.Standard.Deviations <- pretty_percent(out$Outside.Three.Standard.Deviations)
+  out$Outside.Four.Standard.Deviations <- pretty_percent(out$Outside.Four.Standard.Deviations)
+  out$Outside.Five.Standard.Deviations <- pretty_percent(out$Outside.Five.Standard.Deviations)
+    
   list(data=out, colnames=gsub('.', ' ', names(out), fixed = T))
 }
 
