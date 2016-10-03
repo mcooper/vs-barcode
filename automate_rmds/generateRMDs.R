@@ -82,7 +82,7 @@ getBody <- function(sel){
 }
 
 getFoot <- function(c, t, sel){
-  dispnames <- c('Country', 'Landscape..', 'Eplot..', 'Household.ID', sel$User_Vars)
+  dispnames <- c('Country', 'Landscape..', 'Eplot..', 'Household.ID', make.names(sel$User_Vars))
   foot <- paste0('
 #Raw Data
 ```{r, echo=FALSE, warning=FALSE}
@@ -104,7 +104,6 @@ tables <- unique(meta$User_Tables)
 
 for (c in c("GHA", "TZA", "RWA", "UGA", "ALL")){
   for(t in tables){
-    cat(c, ' ', t, '\n')
     sel <- meta[meta$User_Tables==t & gsub('_pii', '', meta$User_Tables)==substr(meta$DB_Tables,1,53) & (meta$source=='ODK Forms' | meta$source==''), ]
     
     head <- getHead(c, t)

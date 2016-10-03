@@ -21,37 +21,39 @@ disp <- function(var, type, choice_filter=NA){
   
   ##Type: date
   if (grepl('date', type)){
-    return('gotta do date still')
+    return('"gotta do date still"')
   }
   
   ##Type: text, string
   else if (grepl('text|string', type)){
-    return('gotta do string still')  
+    return('"gotta do string still"')  
   }
   
   ##Type: time
   else if (grepl('time', type)){
-    return('gotta do time still')
+    return('"gotta do time still"')
   }
   
   ##Type: select
   else if (grepl('select', type)){
-    return('gotta do select still')
+    return('"gotta do select still"')
   }
   
   ##Type: calculate
   else if (grepl('calculate', type)){
-    return('gotta do calculate still')
+    return('"gotta do calculate still"')
   }
   
   ##Type: decimal
   else if (grepl('decimal', type)){
-    out <- paste0(
-    'ggplot(data, aes(x=', var, ', fill=gp_var)) +
-      geom_histogram(binwidth=floor(max(data[ ,', var, '])/50))
+    #Outsd calculates sd based on global rates, so landsacpe level values can be off.
     
-    nullsd <- count_nulls(data, ', var, ', gp_var)
-    outsd <- count_outliers(data, ', var, ', gp_var)
+    out <- paste0(
+    'ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
+      geom_histogram(binwidth=signif(max(data[ , "', var, '"], na.rm=T)/50, 2))
+    
+    nullsd <- count_nulls(data, "', var, '", gp_var)
+    outsd <- count_outliers(data, "', var, '", gp_var)
     
     kable(nullsd[[1]], col.names=nullsd[[2]])
     kable(outsd[[1]], col.names=outsd[[2]])')
@@ -60,27 +62,27 @@ disp <- function(var, type, choice_filter=NA){
   
   ##Type: int
   else if (grepl('int', type)){
-    return('gotta do int still')
+    return('"gotta do int still"')
   }
   
   ##Type: audio
   else if (grepl('audio', type)){
-    return('gotta do audio still')
+    return('"gotta do audio still"')
   }
   
   ##Type: barcode
   else if (grepl('barcode', type)){
-    return('gotta do barcode still')
+    return('"gotta do barcode still"')
   }
   
   ##string:
   else if (grepl('string', type)){
-    return('gotta do string still')
+    return('"gotta do string still"')
   }
   
   ##image:
   else if (grepl('image', type)){
-    return('gotta do image still')
+    return('"gotta do image still"')
   }
   
   else{
@@ -117,9 +119,9 @@ count_nulls <- function(data, var, gp_var){
 
 #Number >2,3,4 stdev
 count_outliers <- function(data, var, gp_var){
+  data <- data[!is.na(data[, var]), ]
   std <- sd(data[ , var], na.rm=T)
   med <- median(data[ , var], na.rm=T)
-  data$var <- data[!is.na(data[ ,var]) , var]
   
   tab <- group_by_(data, gp_var) %>% 
     summarize(Total = n(),
