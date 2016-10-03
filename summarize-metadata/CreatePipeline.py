@@ -36,16 +36,18 @@ def cleanXLSsummary(df):
     df.loc[~df['label'].isnull(), 'label'] = df['label'].dropna().apply(cleanLabel)
     df.loc[:,'relevant'] = df.loc[:,['bind:relevant', 'relevant']].fillna('').sum(axis=1)   
     df.loc[:,'constraint'] = df.loc[:,['bind:constraint', 'constraint']].fillna('').sum(axis=1)
-    df['space'] = ' - '
+    
+    #This should only happen where    
+    df.loc[~(df.label.isnull() | df.data_notes.isnull()), 'space'] = ' - '
     df.loc[:,'label'] = df.loc[:,['label', 'space', 'data_notes']].fillna('').sum(axis=1)
-    df = df.loc[:,('required', 'relevant', 'constraint', 'calculation', 'choice_filter', 'constraint_message', 'form_name', 'hint', 'label', 'name', 'notes', 'values')]
+    df = df.loc[:,('required', 'relevant', 'constraint', 'calculation', 'choice_filter', 'constraint_message', 'form_name', 'hint', 'label', 'name', 'notes', 'values', 'type')]
     df.loc[df['required']=='true()', 'required'] = 'yes'
     return(df)
 
 def cleanDBschema(df):
     df.loc[:,'User_Tables'] = df.User_Tables.str.replace('curation__', '')
     df = df.loc[~df.DB_Vars.str.contains('uuid')]
-    df = df.loc[~df.DB_Tables.isin(['weatherdata', 'weatherstation', 'eplotsoils_processed', 'farmfieldsoils_processed'])]
+    #df = df.loc[~df.DB_Tables.isin(['weatherdata', 'weatherstation', 'eplotsoils_processed', 'farmfieldsoils_processed'])]
     return(df)
     
 def cleanPlantSpecies(df):
@@ -60,19 +62,23 @@ def cleanPlantSpecies(df):
               'subplot_rank1_subspecies+Subspecies Ranked 1', 'subplot_rank2_subspecies+Subspecies Ranked 2', 'subplot_rank3_subspecies+Subspecies Ranked 3',
               'subplot_tree_common+Common Name', 'subplot_tree_genus+Genus', 'subplot_tree_species_select+Genus', 'subplot_tree_species_select+Species',
               'subplot_tree_species+Species', 'subplot_tree_subspecies+Subspecies'] 
+    #df = df.loc[df[]]
     df = df.loc[~(df['dbtable'].isin(['plant_species'])) | df['combine_tables'].isin(tablemap),:]
-    df = df.loc[~(df['User_Tables'].isin(['eplot_subplot_vegetation', 'eplot_woody_plant'])) | df.combine_vars.isin(varmap),:]
+    df = df.loc[~(df['dbtable'].isin(['plant_species']) & df['User_Tables'].isin(['eplot_subplot_vegetation', 'eplot_woody_plant'])) | df.combine_vars.isin(varmap),:]
     del df['combine_tables']
     del df['combine_vars']
     return(df)
 
-def prepForPrint(df):
+def replaceVars(df):
     #Replaces a ${odk_var} with a {user_var} in the formulas
     idx = ~(df['name'].isnull() | df['User_Vars'].isnull())
     for i in df.index[idx]:
         df = df.replace({'\{' + df.loc[idx, 'name'][i] : '{' + df.loc[idx, 'User_Vars'][i]}, regex=True)
     df = df.replace({'\$':''}, regex=True)
     
+    return(df)
+
+def removePii(df):
     #Remove all *_pii tables
     idx = df.User_Tables.str.contains('_pii')
     idx.loc[idx.isnull()] = False
@@ -102,6 +108,7 @@ metadata_definition = [
     ['September 2015',      'The name of the form that the variable came from in the September 2015 versions of the forms'],
     ['May 2016',            'The name of the form that the variable came from in the May 2016 versions of the forms'],
     ['name',                'From ODK: The name of the variable in the ODK form that the teams used to collect the data. This is the name of the variable in the "required", "relevant", "constrant", "calculation" and "choice_filter" calculations'],
+    ['type',                'From ODK: The variables type from ODK'],    
     ['required',            'From ODK: If the variable was required to be answered, can be "yes" or a conditional statement describing when the variable is required'],
     ['relevant',            'From ODK: Describes whether the variable should be asked'], 
     ['constraint',          'From ODK: Describes the constraints on the variable being entered'],
@@ -116,16 +123,23 @@ metadata_definition = [
     
 metadata = ps.DataFrame(metadata_definition, columns=['Column Name', 'Column Description'])
 
-final_df.loc[:, ['User_Vars', 'User_Tables', 'DB_Vars', 'DB_Tables', 'dbvar', 'dbtable', 'odkvar', 'May 2016']].to_excel('Mapping.xls')
+#Write mapping results
+final_df.loc[:, ['User_Vars', 'User_Tables', 'DB_Vars', 'DB_Tables', 'dbvar', 'dbtable', 'odkvar', 'May 2016']].to_excel('Mapping.xls', index=False)
 
+#save entire pipeline
 pipeline_writer = ps.ExcelWriter('metadata_summaries/_pipeline_summary.xlsx')
 final_df.to_excel(pipeline_writer, 'Metadata Summary', index=False)
 metadata.to_excel(pipeline_writer, 'Column Descriptions', index=False)
 pipeline_writer.save()
 
+
 include_cols = ['User_Vars', 'label', 'required', 'relevant', 'constraint', 'choice_filter']
 
-userdf = prepForPrint(final_df)
+#final_df = replaceVars(final_df)
+userdf = removePii(final_df)
+
+#Write results for automated metadata
+final_df.loc[~final_df.User_Tables.isnull(), ['source', 'User_Vars', 'User_Tables', 'DB_Tables', 'label', 'type', 'values']].to_csv('Metadata_tool.csv', index=False)
 
 #To Do Map table names to names in the download tool
 #Figure out why C_name isn't replacing

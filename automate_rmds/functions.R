@@ -1,7 +1,3 @@
-library(dplyr)
-library(knitr)
-library(ggplot2)
-
 get_gp_var <- function(country){
   if (country %in% c('GHA', 'TZA', 'RWA', 'UGA')){
     gp_var <- 'Landscape..'
@@ -20,64 +16,75 @@ pretty_percent <- function(vec, rnd=1){
   paste0(round(vec*100,rnd), '%')
 }
 
-disp <- function(table, var, type, gp_var, choice_filter=NA){
+disp <- function(var, type, choice_filter=NA){
   #A function to take in a Vital Signs variable and display it.
-  
-  localenv <- environment()
   
   ##Type: date
   if (grepl('date', type)){
-
+    return('gotta do date still')
   }
   
   ##Type: text, string
   else if (grepl('text|string', type)){
-    
+    return('gotta do string still')  
   }
   
   ##Type: time
   else if (grepl('time', type)){
-    
+    return('gotta do time still')
   }
   
   ##Type: select
   else if (grepl('select', type)){
-    
+    return('gotta do select still')
   }
   
   ##Type: calculate
   else if (grepl('calculate', type)){
-    
+    return('gotta do calculate still')
   }
   
   ##Type: decimal
   else if (grepl('decimal', type)){
-    print(ggplot(data, aes_string(x=var, fill=gp_var), environment = localenv) +
-      geom_histogram(binwidth=floor(max(data[ ,var])/50)))
+    out <- paste0(
+    'ggplot(data, aes(x=', var, ', fill=gp_var)) +
+      geom_histogram(binwidth=floor(max(data[ ,', var, '])/50))
+    
+    nullsd <- count_nulls(data, ', var, ', gp_var)
+    outsd <- count_outliers(data, ', var, ', gp_var)
+    
+    kable(nullsd[[1]], col.names=nullsd[[2]])
+    kable(outsd[[1]], col.names=outsd[[2]])')
+    return(out)
   }
   
   ##Type: int
   else if (grepl('int', type)){
-    
+    return('gotta do int still')
   }
   
   ##Type: audio
   else if (grepl('audio', type)){
-    
+    return('gotta do audio still')
   }
   
   ##Type: barcode
   else if (grepl('barcode', type)){
-    
+    return('gotta do barcode still')
   }
   
   ##string:
   else if (grepl('string', type)){
-    
+    return('gotta do string still')
+  }
+  
+  ##image:
+  else if (grepl('image', type)){
+    return('gotta do image still')
   }
   
   else{
-    cat('This is not a recognized variable type')
+    cat('Variable:', var, 'Type:', type, ' is not a recognized variable type\n')
   }
   
 }

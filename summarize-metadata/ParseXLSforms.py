@@ -35,7 +35,6 @@ def str_index(string, substring, start):
     else:
         return(len(string))
 
-##Need to figure out how to incorporate notes!
 def getDataFromXLSform(filename):
     raw = ps.read_excel(filename, sheetname=0)
     
