@@ -5,7 +5,6 @@
 ##Need to deal with fields that have multiple entry types
     #Make a list
 
-##Figure out the null types in the non-ODK tables (will probably have to be ad-hoc)
 
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/functions.R')
 
