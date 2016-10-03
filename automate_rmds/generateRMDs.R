@@ -72,6 +72,7 @@ getBody <- function(sel){
 
 ##', sel$User_Vars[j],'
 ', sel$label[j], '
+
 ```{r, echo=FALSE, warning=FALSE, messages=FALSE}
 ', disp(make.names(sel$User_Vars[j]), type = sel$type[j]), '
 
@@ -104,7 +105,7 @@ tables <- unique(meta$User_Tables)
 
 for (c in c("GHA", "TZA", "RWA", "UGA", "ALL")){
   for(t in tables){
-    sel <- meta[meta$User_Tables==t & gsub('_pii', '', meta$User_Tables)==substr(meta$DB_Tables,1,53) & (meta$source=='ODK Forms' | meta$source==''), ]
+    sel <- meta[meta$User_Tables==t & meta$User_Tables==substr(meta$DB_Tables,1,53) & (grepl('ODK Forms', meta$source) | meta$source==''), ]
     
     head <- getHead(c, t)
     body <- getBody(sel)

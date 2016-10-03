@@ -80,9 +80,7 @@ def replaceVars(df):
 
 def removePii(df):
     #Remove all *_pii tables
-    idx = df.User_Tables.str.contains('_pii')
-    idx.loc[idx.isnull()] = False
-    df = df.loc[-idx]
+    df = df.loc[~df.User_Tables.str.contains('_pii', na=False)]
     
     return(df)
 
@@ -139,7 +137,7 @@ include_cols = ['User_Vars', 'label', 'required', 'relevant', 'constraint', 'cho
 userdf = removePii(final_df)
 
 #Write results for automated metadata
-final_df.loc[~final_df.User_Tables.isnull(), ['source', 'User_Vars', 'User_Tables', 'DB_Tables', 'label', 'type', 'values']].to_csv('Metadata_tool.csv', index=False)
+userdf.loc[~userdf.User_Tables.isnull(), ['source', 'User_Vars', 'User_Tables', 'DB_Tables', 'label', 'type', 'values']].drop_duplicates().to_csv('Metadata_tool.csv', index=False)
 
 #To Do Map table names to names in the download tool
 #Figure out why C_name isn't replacing

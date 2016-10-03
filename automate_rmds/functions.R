@@ -62,7 +62,16 @@ disp <- function(var, type, choice_filter=NA){
   
   ##Type: int
   else if (grepl('int', type)){
-    return('"gotta do int still"')
+    out <- paste0(
+    'ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
+      geom_histogram(binwidth=1)
+    
+    nullsd <- count_nulls(data, "', var, '", gp_var)
+    outsd <- count_outliers(data, "', var, '", gp_var)
+    
+    kable(nullsd[[1]], col.names=nullsd[[2]])
+    kable(outsd[[1]], col.names=outsd[[2]])')
+    return(out)
   }
   
   ##Type: audio
