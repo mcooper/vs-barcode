@@ -51,7 +51,7 @@ port=pg_conf$port)
 country <- "', c, '"
 
 data <- tbl(vs_db, \'curation__', t, '\') %>% 
-data.frame
+data.frame(stringsAsFactors=F)
 
 if (country != \'ALL\'){
 data <- filter(data, Country==country)

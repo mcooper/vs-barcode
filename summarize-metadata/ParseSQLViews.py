@@ -89,23 +89,23 @@ def getvariables(sql, tabled):
             if s.count('.') == 1:
                 dbtables.append(tabled[(s[s.rfind(' ',0,s.index('.')):s.index('.')]).strip('," ')])
                 dbvars.append((s[(s.index('.')+1):s.index('AS')]).strip('()," '))
-                viewvars.append((s[(s.index('AS')+2):]).strip('," '))
+                viewvars.append((s[(s.index('AS')+2):]).strip(',"'))
             elif s.count('.') > 1:
                 inds = [i for i in range(len(s)) if s.startswith('.', i)]
                 for i in range(0,len(inds)):
                     if i == 0:
                         dbtables.append(tabled[(s[s.rfind('(',0,inds[i]):inds[i]]).strip(',() |.')])
-                        dbvars.append((s[inds[i]:s.find(')',inds[i])]).strip(',() |.'))
-                        viewvars.append((s[(s.index('AS')+2):]).strip('," .'))
+                        dbvars.append((s[inds[i]:s.find(')',inds[i])]).strip(',()|. '))
+                        viewvars.append((s[(s.index('AS')+2):]).strip(',".'))
                     else:
                         dbtables.append(tabled[(s[s.rfind('|',0,inds[i]):inds[i]]).strip(',() |.')])
-                        dbvars.append((s[inds[i]:s.find(')',inds[i])]).strip(',() |.'))
-                        viewvars.append((s[(s.index('AS')+2):]).strip('," .'))                      
+                        dbvars.append((s[inds[i]:s.find(')',inds[i])]).strip(',()|. '))
+                        viewvars.append((s[(s.index('AS')+2):]).strip(',".'))                      
         else:
             if s.count('.') == 1:
                 dbtables.append(tabled[(s[:s.index('.')]).strip('," ')])
                 dbvars.append((s[(s.index('.')+1):s.index(',')]).strip('," '))
-                viewvars.append((s[(s.index('.')+1):s.index(',')]).strip('," '))        
+                viewvars.append((s[(s.index('.')+1):s.index(',')]).strip(',"'))
             if s.count('.') > 1:
                 #this is the worst error message I've ever seen
                 print('I\'m pretty sure this isn\'t possible')
@@ -127,6 +127,15 @@ for i in range(0,defs.shape[0]):
         avwtabs = avwtabs + [defs['viewname'][i]]*len(ot[1])
     except:
         print(defs.loc[i, ])
+        
+#Remove whitespace from certain variables, but not those in *processed tables, that need whitespace      
+for i in range(0, len(avwtabs)):
+    if 'processed' not in avwtabs[i]:
+        avwvars[i] = avwvars[i].strip(' ')
+    else:
+        avwvars[i] = avwvars[i].lstrip(' ')
+    avwvars[i] = avwvars[i].strip('"')
+
 
 table = [adbtabs, adbvars, avwvars, avwtabs]
 df = pandas.DataFrame(table)

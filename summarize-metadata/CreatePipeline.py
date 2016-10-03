@@ -136,11 +136,25 @@ include_cols = ['User_Vars', 'label', 'required', 'relevant', 'constraint', 'cho
 #final_df = replaceVars(final_df)
 userdf = removePii(final_df)
 
-#Write results for automated metadata
-userdf.loc[~userdf.User_Tables.isnull(), ['source', 'User_Vars', 'User_Tables', 'DB_Tables', 'label', 'type', 'values']].drop_duplicates().to_csv('Metadata_tool.csv', index=False)
+
+#################################################
+## Write results for automated metadata
+##############################################
+
+metatooldf = userdf
+NonODK = ps.read_csv('Non-ODK_Var_Types.csv')
+
+for index, row in metatooldf.iterrows():
+    if ((NonODK['User_Vars'] == row['User_Vars']) & (NonODK['User_Tables']==row['User_Tables'])).any():
+        metatooldf.loc[index,['type', 'values']] = NonODK.loc[(NonODK['User_Vars']==metatooldf.loc[index,'User_Vars']) & (NonODK['User_Tables']==metatooldf.loc[index,'User_Tables']),['type', 'values']].values[0]
+
+metatooldf.loc[~metatooldf.User_Tables.isnull(), ['source', 'User_Vars', 'User_Tables', 'DB_Tables', 'label', 'type', 'values']].drop_duplicates().to_csv('Metadata_tool.csv', index=False)
+
+#################################################
+## Write Metadata Documentation for data users
+#################################################
 
 #To Do Map table names to names in the download tool
-#Figure out why C_name isn't replacing
 
 for i in userdf['User_Tables'].dropna().unique():
     writer = ps.ExcelWriter('metadata_summaries/' + i + '.xlsx')

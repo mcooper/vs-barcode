@@ -50,7 +50,7 @@ disp <- function(var, type, choice_filter=NA){
     
     out <- paste0(
     'ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
-      geom_histogram(binwidth=signif(max(data[ , "', var, '"], na.rm=T)/50, 2))
+      geom_histogram(binwidth=signif((max(data[ , "', var, '"], na.rm=T)-min(data[ , "', var, '"], na.rm=T))/50, 2))
     
     nullsd <- count_nulls(data, "', var, '", gp_var)
     outsd <- count_outliers(data, "', var, '", gp_var)
@@ -63,7 +63,10 @@ disp <- function(var, type, choice_filter=NA){
   ##Type: int
   else if (grepl('int', type)){
     out <- paste0(
-    'ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
+    '
+    data[ , "', var, '"] <- as.numeric(data[ , "', var, '"])
+
+    ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
       geom_histogram(binwidth=1)
     
     nullsd <- count_nulls(data, "', var, '", gp_var)
