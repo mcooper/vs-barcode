@@ -1,9 +1,14 @@
 
 
 ##Need to come up with a Plant Species display
+    #Change the type based on the dbtable, then make a new if in disp()
 
 ##Need to deal with fields that have multiple entry types
     #Make a list
+
+##There is something wrong with a lot of the duplicates, look more into Metadata_tools.csv
+
+##Figure out the select_many vars
 
 
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/functions.R')
@@ -11,6 +16,8 @@ source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/fun
 setwd('D:/Documents and Settings/mcooper/Documents/Automate Data Dictionaries/RMD_Outputs')
 
 meta <- read.csv('../Metadata_tool.csv', stringsAsFactors=F)
+
+meta <- handleDuplicates(meta)
 
 getOtherTables <- function(x){
   tabs <- unique(meta$User_Tables)

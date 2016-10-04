@@ -1,3 +1,50 @@
+handleDuplicates <- function(df){
+  #create columns indexing all duplicate groups
+  df$id <- seq(1,nrow(df))
+  
+  df$u <- paste0(df$User_Vars, df$User_Tables)
+  tab <- table(df$u)
+  tab <- tab[tab > 1]
+  newdf <- data.frame(u=names(tab), group=seq(1,length(tab)))
+  df <- merge(df, newdf, all.x=T)
+  df$u <- NULL
+  df$group[is.na(df$group)] <- 0
+  
+  for (g in unique(df$group[df$group > 0])){
+    sel <- df[which(df$group==g), ]
+    
+    #lat longs should not be selects and should be type 'decimal'
+    if ((sum(grepl('latitude', sel$User_Vars))>0 | sum(grepl('longitude', sel$User_Vars))>0) & (sum(grepl('select', sel$type))>0 & sum(!grepl('select', sel$type))>0)){
+      df <- df[!(grepl('select', df$type) & df$group==g), ]
+    }
+    #give priority to ones where label is not blank
+    else if (sum(sel$label=='')>0 & sum(sel$label!='')>0){
+      df <- df[!(df$label=='' & df$group==g), ]
+    }
+    #give priority to select data types
+    else if (sum(grepl('select', sel$type))>0 & sum(!grepl('select', sel$type))>0){
+      df <- df[!(df$group==g & !grepl('select', df$type)), ]
+    }
+    #Then prioritize those that are NOT calculate types
+    else if (sum(grepl('calculate', sel$type))>0 & sum(!grepl('calculate', sel$type))>0){
+      df <- df[!(df$group==g & grepl('calculate', df$type)), ]
+    }
+    #Then give priority to barcode types
+    else if (sum(grepl('barcode', sel$type))>0 & sum(!grepl('barcode', sel$type))>0){
+      df <- df[!(df$group==g & !grepl('barcode', df$type)), ]
+    }
+  }
+  
+  #For remaining duplicates, just take the first row
+  df <- df[!duplicated(df[ , c('User_Tables', 'User_Vars')]), ]
+  
+  df <- df[order(df$id), ]
+  df$id <- NULL
+  
+  df
+}
+
+
 get_gp_var <- function(country){
   if (country %in% c('GHA', 'TZA', 'RWA', 'UGA')){
     gp_var <- 'Landscape..'
