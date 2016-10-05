@@ -62,93 +62,6 @@ get_gp_var <- function(country){
 pretty_percent <- function(vec, rnd=1){
   paste0(round(vec*100,rnd), '%')
 }
-
-disp <- function(var, type, choice_filter=NA){
-  #A function to take in a Vital Signs variable and display it.
-  
-  ##Type: date
-  if (grepl('date', type)){
-    return('"gotta do date still"')
-  }
-  
-  ##Type: text, string
-  else if (grepl('text|string', type)){
-    return('"gotta do string still"')  
-  }
-  
-  ##Type: time
-  else if (grepl('time', type)){
-    return('"gotta do time still"')
-  }
-  
-  ##Type: select
-  else if (grepl('select', type)){
-    return('"gotta do select still"')
-  }
-  
-  ##Type: calculate
-  else if (grepl('calculate', type)){
-    return('"gotta do calculate still"')
-  }
-  
-  ##Type: decimal
-  else if (grepl('decimal', type)){
-    #Outsd calculates sd based on global rates, so landsacpe level values can be off.
-    
-    out <- paste0(
-    'ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
-      geom_histogram(binwidth=signif((max(data[ , "', var, '"], na.rm=T)-min(data[ , "', var, '"], na.rm=T))/50, 2))
-    
-    nullsd <- count_nulls(data, "', var, '", gp_var)
-    outsd <- count_outliers(data, "', var, '", gp_var)
-    
-    kable(nullsd[[1]], col.names=nullsd[[2]])
-    kable(outsd[[1]], col.names=outsd[[2]])')
-    return(out)
-  }
-  
-  ##Type: int
-  else if (grepl('int', type)){
-    out <- paste0(
-    '
-    data[ , "', var, '"] <- as.numeric(data[ , "', var, '"])
-
-    ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
-      geom_histogram(binwidth=1)
-    
-    nullsd <- count_nulls(data, "', var, '", gp_var)
-    outsd <- count_outliers(data, "', var, '", gp_var)
-    
-    kable(nullsd[[1]], col.names=nullsd[[2]])
-    kable(outsd[[1]], col.names=outsd[[2]])')
-    return(out)
-  }
-  
-  ##Type: audio
-  else if (grepl('audio', type)){
-    return('"gotta do audio still"')
-  }
-  
-  ##Type: barcode
-  else if (grepl('barcode', type)){
-    return('"gotta do barcode still"')
-  }
-  
-  ##string:
-  else if (grepl('string', type)){
-    return('"gotta do string still"')
-  }
-  
-  ##image:
-  else if (grepl('image', type)){
-    return('"gotta do image still"')
-  }
-  
-  else{
-    cat('Variable:', var, 'Type:', type, ' is not a recognized variable type\n')
-  }
-  
-}
   
 #Other functions
 count_nulls <- function(data, var, gp_var){
@@ -179,23 +92,21 @@ count_nulls <- function(data, var, gp_var){
 #Number >2,3,4 stdev
 count_outliers <- function(data, var, gp_var){
   data <- data[!is.na(data[, var]), ]
-  std <- sd(data[ , var], na.rm=T)
-  med <- median(data[ , var], na.rm=T)
   
   tab <- group_by_(data, gp_var) %>% 
     summarize(Total = n(),
-              Outside.Two.Standard.Deviations = mean(med + 2*std < var | med - 2*std > var),
-              Outside.Three.Standard.Deviations = mean(med + 3*std < var | med - 3*std > var),
-              Outside.Four.Standard.Deviations = mean(med + 4*std < var | med - 4*std > var),
-              Outside.Five.Standard.Deviations = mean(med + 5*std < var | med - 5*std > var)) %>%
+              Outside.Two.Standard.Deviations = mean(median(var) + 2*sd(var) < var | median(var) - 2*sd(var) > var),
+              Outside.Three.Standard.Deviations = mean(median(var) + 3*sd(var) < var | median(var) - 3*sd(var) > var),
+              Outside.Four.Standard.Deviations = mean(median(var) + 4*sd(var) < var | median(var) - 4*sd(var) > var),
+              Outside.Five.Standard.Deviations = mean(median(var) + 5*sd(var) < var | median(var) - 5*sd(var) > var)) %>%
     data.frame
   
   all <- data.frame(groupvar = 'Total',
                     Total = length(data[ , var]),
-                    Outside.Two.Standard.Deviations = mean(med + 2*std < data[ ,var] | med - 2*std > data[ ,var]),
-                    Outside.Three.Standard.Deviations = mean(med + 3*std < data[ ,var] | med - 3*std > data[ ,var]),
-                    Outside.Four.Standard.Deviations = mean(med + 4*std < data[ ,var] | med - 4*std > data[ ,var]),
-                    Outside.Five.Standard.Deviations = mean(med + 5*std < data[ ,var] | med - 5*std > data[ ,var]))
+                    Outside.Two.Standard.Deviations = mean(median(data[ , var]) + 2*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 2*sd(data[ , var]) > data[ ,var]),
+                    Outside.Three.Standard.Deviations = mean(median(data[ , var]) + 3*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 3*sd(data[ , var]) > data[ ,var]),
+                    Outside.Four.Standard.Deviations = mean(median(data[ , var]) + 4*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 4*sd(data[ , var]) > data[ ,var]),
+                    Outside.Five.Standard.Deviations = mean(median(data[ , var]) + 5*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 5*sd(data[ , var]) > data[ ,var]))
 
   names(tab)[1] <- 'groupvar'
   out <- bind_rows(tab, all)

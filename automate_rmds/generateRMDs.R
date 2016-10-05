@@ -12,6 +12,7 @@
 
 
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/functions.R')
+source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/disp.R')
 
 setwd('D:/Documents and Settings/mcooper/Documents/Automate Data Dictionaries/RMD_Outputs')
 
