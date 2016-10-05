@@ -10,6 +10,7 @@
 
 ##Figure out the select_many vars
 
+##Need to handle 'other' data types
 
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/functions.R')
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/disp.R')
@@ -81,7 +82,7 @@ getBody <- function(sel){
 ', sel$label[j], '
 
 ```{r, echo=FALSE, warning=FALSE, messages=FALSE}
-', disp(make.names(sel$User_Vars[j]), type = sel$type[j]), '
+', disp(make.names(sel$User_Vars[j]), type = sel$type[j], values=sel$values[j]), '
 
 ```
 ')

@@ -1,3 +1,26 @@
+recodeString <- function(choice_filter){
+  t <- gsub(': ', '=', choice_filter)
+  t <- gsub('\\{|\\}', '', t)
+  
+  #Add ticks to numbers
+  nums <- '1|2|3|4|5|6|7|8|9|0'
+  if (grepl(nums, substr(t,1,1))){
+    t <- paste0('`', t)
+  }
+  for (i in rev(gregexpr('=', t)[[1]])){
+    if (!grepl('\'|"|`', substr(t, i-1, i-1))){
+      t <- paste0(substr(t,1,i-1), '`', substr(t,i,nchar(t)))
+    }
+  }
+  for (i in rev(gregexpr(', ', t)[[1]])){
+    if (!(grepl('\'|"|`', substr(t, i+2, i+2)))){
+      t <- paste0(substr(t,1,i+1), '`', substr(t,i+2,nchar(t)))
+    }
+  }
+  t
+}
+
+
 handleDuplicates <- function(df){
   #create columns indexing all duplicate groups
   df$id <- seq(1,nrow(df))
@@ -89,24 +112,29 @@ count_nulls <- function(data, var, gp_var){
   list(data=out, colnames=gsub('.', ' ', names(out), fixed = T))
 }
 
+getSdCount <- function(var, sds){
+  mean(((median(var) + sds*sd(var)) < var) | ((median(var) - sds*sd(var)) > var))
+}
+
 #Number >2,3,4 stdev
 count_outliers <- function(data, var, gp_var){
   data <- data[!is.na(data[, var]), ]
+  data$target <- data[, var]
   
   tab <- group_by_(data, gp_var) %>% 
     summarize(Total = n(),
-              Outside.Two.Standard.Deviations = mean(median(var) + 2*sd(var) < var | median(var) - 2*sd(var) > var),
-              Outside.Three.Standard.Deviations = mean(median(var) + 3*sd(var) < var | median(var) - 3*sd(var) > var),
-              Outside.Four.Standard.Deviations = mean(median(var) + 4*sd(var) < var | median(var) - 4*sd(var) > var),
-              Outside.Five.Standard.Deviations = mean(median(var) + 5*sd(var) < var | median(var) - 5*sd(var) > var)) %>%
+              Outside.Two.Standard.Deviations = getSdCount(target, 2),
+              Outside.Three.Standard.Deviations = getSdCount(target, 3),
+              Outside.Four.Standard.Deviations = getSdCount(target, 4),
+              Outside.Five.Standard.Deviations = getSdCount(target, 5)) %>%
     data.frame
   
   all <- data.frame(groupvar = 'Total',
-                    Total = length(data[ , var]),
-                    Outside.Two.Standard.Deviations = mean(median(data[ , var]) + 2*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 2*sd(data[ , var]) > data[ ,var]),
-                    Outside.Three.Standard.Deviations = mean(median(data[ , var]) + 3*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 3*sd(data[ , var]) > data[ ,var]),
-                    Outside.Four.Standard.Deviations = mean(median(data[ , var]) + 4*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 4*sd(data[ , var]) > data[ ,var]),
-                    Outside.Five.Standard.Deviations = mean(median(data[ , var]) + 5*sd(data[ , var]) < data[ ,var] | median(data[ , var]) - 5*sd(data[ , var]) > data[ ,var]))
+                    Total = length(data$target),
+                    Outside.Two.Standard.Deviations = getSdCount(data$target, 2),
+                    Outside.Three.Standard.Deviations = getSdCount(data$target, 3),
+                    Outside.Four.Standard.Deviations = getSdCount(data$target, 4),
+                    Outside.Five.Standard.Deviations = getSdCount(data$target, 5))
 
   names(tab)[1] <- 'groupvar'
   out <- bind_rows(tab, all)
