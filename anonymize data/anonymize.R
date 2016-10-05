@@ -24,7 +24,7 @@ vs_db <- src_postgres(dbname=staging_dbname, host=staging_host,
 dbSendQuery(vs_db$con, sql('DROP TABLE "household_secV" CASCADE;'))
 dbSendQuery(vs_db$con, sql('DROP SCHEMA audit CASCADE;'))
 
-dbSendQuery(vs_eb$con, sql('DROP TBALE users_schema.audit;'))
+dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.audit;'))
 dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.data_product;'))
 dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.deleted_record;'))
 dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.download;'))
