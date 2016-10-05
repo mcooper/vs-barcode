@@ -1,16 +1,11 @@
-
-
 ##Need to come up with a Plant Species display
     #Change the type based on the dbtable, then make a new if in disp()
-
-##Need to deal with fields that have multiple entry types
-    #Make a list
 
 ##There is something wrong with a lot of the duplicates, look more into Metadata_tools.csv
 
 ##Figure out the select_many vars
 
-##Need to handle 'other' data types
+##Summarize Table vars - how many rows are all records blank for?, etc
 
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/functions.R')
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/disp.R')
@@ -19,7 +14,10 @@ setwd('D:/Documents and Settings/mcooper/Documents/Automate Data Dictionaries/RM
 
 meta <- read.csv('../Metadata_tool.csv', stringsAsFactors=F)
 
+#Prep metadata vars
 meta <- handleDuplicates(meta)
+meta <- meta[meta$type != 'calculate', ]
+meta$type[grepl('_other', meta$User_Vars)] <- 'text'
 
 getOtherTables <- function(x){
   tabs <- unique(meta$User_Tables)
@@ -79,12 +77,18 @@ getBody <- function(sel){
     body <- paste0(body, '
 
 ##', sel$User_Vars[j],'
-', sel$label[j], '
+**', sel$label[j], '**
+*Variable Type: ', sel$type[j], '*
 
-```{r, echo=FALSE, warning=FALSE, messages=FALSE}
+```{r, echo=FALSE, warning=FALSE, messages=FALSE, fig.align="center"}
 ', disp(make.names(sel$User_Vars[j]), type = sel$type[j], values=sel$values[j]), '
 
 ```
+
+
+***
+***
+
 ')
   }
   body
@@ -99,11 +103,24 @@ DT::datatable(data[ ,(names(data) %in% c("', paste(dispnames, collapse='", "'), 
 ```
 
 
-#See Also')
+#See Also
+####Same Country, Similar Tables
+')
   for (i in getOtherTables(t)){
     link <- paste(c, i, sep='-')
     foot <- paste0(foot, '
 [', link, '](../', link, '.html)
+')
+  }
+  foot <- paste0(foot, '
+####Same Table, Other Countries
+')
+  allc <- c('ALL', 'GHA', 'TZA', 'UGA', 'RWA')
+  otherc <- allc[allc != c]
+  for (i in otherc){
+    link <- paste(i, t, sep='-')
+    foot <- paste0(foot, '
+[', link, '](../../', i, '/', link, '.html)
 ')
   }
   foot
