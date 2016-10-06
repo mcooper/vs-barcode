@@ -78,6 +78,7 @@ getBody <- function(sel){
 
 ##', sel$User_Vars[j],'
 **', sel$label[j], '**
+
 *Variable Type: ', sel$type[j], '*
 
 ```{r, echo=FALSE, warning=FALSE, messages=FALSE, fig.align="center"}

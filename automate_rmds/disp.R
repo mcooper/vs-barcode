@@ -8,8 +8,61 @@ disp <- function(var, type, values=NA){
       if (sum(is.na(data[, "', var, '"])) == length(data[, "', var, '"])){
         kable("**This variable is entirely NULL**")
       }else{
+        data$date <- ymd(data[ ,"', var, '"])
+        
+        if (sum(is.na(data$date)) == length(data$date)){
+          kable("**This variable was not in a recognizeable date format**")
+        } else{
 
+            data$Year.Month <- floor_date(data$date, "month")
+                  
+            freq <- data %>% 
+            group_by_("Year.Month", gp_var) %>%
+            summarize(Records=n())
+            
+            freqj <- data.frame(Year.Month=seq(min(freq$Year.Month, na.rm=T), max(freq$Year.Month, na.rm=T), by="month"))
+            
+            freq <- merge(freq, freqj, all.y=T)
+            freq$Records[is.na(freq$Records)] <- 0
+            
+            print(
+              ggplot(freq) + geom_bar(aes_string("Year.Month", "Records", fill=gp_var), stat="identity")+ 
+              xlab("Year and Month") + scale_x_date(expand=c(0,0))
+            )
+
+            nullsd <- count_nulls(data, "', var, '", gp_var)
+            kable(nullsd[[1]], col.names=nullsd[[2]])  
+        }
       }')
+    return(out)
+  }
+  
+  
+  ##Type: time
+  else if (grepl('time', type)){
+    #summary of times
+    out <- paste0('
+                  if (sum(is.na(data[, "', var, '"])) == length(data[, "', var, '"])){
+
+                      kable("**This variable is entirely NULL**")
+
+                  }else{
+
+                      data$Hour <- hms(data[ , "', var, '"]) %>% hour()
+
+                      freq <- data %>% 
+                        group_by_("Hour", gp_var) %>%
+                        summarize(Records=n())
+                      
+                      print(
+                        ggplot(freq) + geom_bar(aes_string("Hour", "Records", fill=gp_var), stat="identity")+ 
+                        xlab("Hour of Day")
+                      ) 
+
+                    nullsd <- count_nulls(data, "', var, '", gp_var)
+                    kable(nullsd[[1]], col.names=nullsd[[2]])  
+                  
+                  }')
     return(out)
   }
   
@@ -22,18 +75,6 @@ disp <- function(var, type, values=NA){
       }else{
         kable(table(data[ , c("', var, '", gp_var)]))
       }')
-    return(out)
-  }
-  
-  ##Type: time
-  else if (grepl('time', type)){
-    #summary of times
-    out <- paste0('
-      if (sum(is.na(data[, "', var, '"])) == length(data[, "', var, '"])){
-                  kable("**This variable is entirely NULL**")
-        }else{
-                      
-        }')
     return(out)
   }
   
