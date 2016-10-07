@@ -71,6 +71,7 @@ def getDataFromXLSform(filename):
     notedf = ps.DataFrame({'data_notes': notes}, index=ind_note_sel)   
     df = df.merge(notedf, how='left', left_index=True, right_index=True)
 
+    #get second page of dropdown options
     choices = ps.read_excel(filename, sheetname=1).dropna(subset=['list name'])
 
     selects = ps.DataFrame()
@@ -78,7 +79,7 @@ def getDataFromXLSform(filename):
         sub = choices[choices['list name']==i]
         d = str(dict(zip(sub.name, sub.label)))
         for j in selectvar:
-            if i in j and i!='y':
+            if (' ' + i) in j and i!='y':
                 joinvar = j
                 newdf = ps.DataFrame(data={'joinvar': [joinvar], 'list_name': [i], 'values': [d]})
                 selects = selects.append(newdf)
