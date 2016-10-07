@@ -191,6 +191,20 @@ disp <- function(var, type, values=NA){
     return(out)
   }
   
+  else if (grepl('plant_species', type)){
+    out <- paste0('
+      if (sum(is.na(data[, "', var, '"])) == length(data[, "', var, '"])){
+                  kable("**This variable is entirely NULL**")
+      }else if (!(grepl("Genus|genus", "', var, '"))){
+                  kable("**This is documented in the genus variable**")
+      }else{
+        DT::datatable(as.data.frame.matrix(table(data[ , c("', var, '", gp_var)])))
+      }
+          
+  ')
+    return(out)
+  }
+  
   else{
     cat('Variable:', var, 'Type:', type, ' is not a recognized variable type\n')
   }

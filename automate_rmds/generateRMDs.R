@@ -19,6 +19,8 @@ meta <- handleDuplicates(meta)
 meta <- meta[meta$type != 'calculate', ]
 meta$type[grepl('_other', meta$User_Vars)] <- 'text'
 
+meta$type[meta$DB_Tables == 'plant_species'] <- 'plant_species'
+
 getOtherTables <- function(x){
   tabs <- unique(meta$User_Tables)
   if(grepl('_', x)){
@@ -45,6 +47,7 @@ library(lubridate)
 library(ggplot2)
 library(dplyr)
 library(knitr)
+library(RPostgreSQL)
 
 source(\'D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/functions.R\')
 
@@ -60,7 +63,7 @@ data <- tbl(vs_db, \'curation__', t, '\') %>%
 data.frame(stringsAsFactors=F)
 
 if (country != \'ALL\'){
-data <- filter(data, Country==country)
+  data <- filter(data, Country==country)
 }
 
 gp_var <- get_gp_var(country)
@@ -101,6 +104,9 @@ getFoot <- function(c, t, sel){
 #Raw Data
 ```{r, echo=FALSE, warning=FALSE}
 DT::datatable(data[ ,(names(data) %in% c("', paste(dispnames, collapse='", "'), '"))])
+
+RPostgreSQL::dbDisconnect(vs_db$con)
+
 ```
 
 
@@ -110,7 +116,7 @@ DT::datatable(data[ ,(names(data) %in% c("', paste(dispnames, collapse='", "'), 
   for (i in getOtherTables(t)){
     link <- paste(c, i, sep='-')
     foot <- paste0(foot, '
-[', link, '](../', link, '.html)
+[', link, '](', link, '.html)
 ')
   }
   foot <- paste0(foot, '
@@ -121,7 +127,7 @@ DT::datatable(data[ ,(names(data) %in% c("', paste(dispnames, collapse='", "'), 
   for (i in otherc){
     link <- paste(i, t, sep='-')
     foot <- paste0(foot, '
-[', link, '](../../', i, '/', link, '.html)
+[', link, '](../', i, '/', link, '.html)
 ')
   }
   foot
@@ -131,7 +137,7 @@ tables <- unique(meta$User_Tables)
 
 for (c in c("GHA", "TZA", "RWA", "UGA", "ALL")){
   for(t in tables){
-    sel <- meta[meta$User_Tables==t & meta$User_Tables==substr(meta$DB_Tables,1,53) & (grepl('ODK Forms', meta$source) | meta$source==''), ]
+    sel <- meta[meta$User_Tables==t & (meta$User_Tables==substr(meta$DB_Tables,1,53) | grepl('Genus|genus', meta$User_Vars)) & (grepl('ODK Forms', meta$source) | meta$source==''), ]
     
     head <- getHead(c, t)
     body <- getBody(sel)
