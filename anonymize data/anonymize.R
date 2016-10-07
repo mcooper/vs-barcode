@@ -21,7 +21,6 @@ vs_db <- src_postgres(dbname=staging_dbname, host=staging_host,
 #First drop audit and users_schema
 #Then drop household_secV
 
-dbSendQuery(vs_db$con, sql('DROP TABLE "household_secV" CASCADE;'))
 dbSendQuery(vs_db$con, sql('DROP SCHEMA audit CASCADE;'))
 
 dbSendQuery(vs_db$con, sql('DROP TABLE users_schema.audit;'))
