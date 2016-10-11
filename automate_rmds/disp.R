@@ -85,6 +85,20 @@ disp <- function(var, type, values=NA){
     out <- paste0('
       if (sum(is.na(data[, "', var, '"])) == length(data[, "', var, '"])){
         kable("**This variable is entirely NULL**")
+      }else if(is.logical(data[ , "', var, '"])){
+      
+      print(
+
+      ggplot(data) +
+          geom_bar(aes_string("', var, '", fill=gp_var), position=\'stack\') +
+                  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5)) + 
+                  xlab("', var, '")
+      )
+
+      nullsd <- count_nulls(data, "', var, '", gp_var)
+
+      kable(nullsd[[1]], col.names=nullsd[[2]])}
+
       }else{
       data$recoded <- recode(data[ , "', var, '"], ', recodeString(values), ')
 
@@ -138,6 +152,23 @@ disp <- function(var, type, values=NA){
         kable("**This variable is entirely NULL**")
       }else{
         data[ , "', var, '"] <- as.numeric(data[ , "', var, '"])
+        
+        if(nrow(data[ , "', var, '"]) > 200){
+        
+        print(
+
+        ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
+        geom_histogram()
+
+        )
+        
+        nullsd <- count_nulls(data, "', var, '", gp_var)
+        outsd <- count_outliers(data, "', var, '", gp_var)
+        
+        kable(nullsd[[1]], col.names=nullsd[[2]])
+        kable(outsd[[1]], col.names=outsd[[2]])
+
+        }else{
         
         print(
 
