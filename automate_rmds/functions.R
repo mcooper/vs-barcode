@@ -1,5 +1,5 @@
-recodeString <- function(choice_filter){
-  t <- gsub(': ', '=', choice_filter)
+recodeString <- function(values){
+  t <- gsub(': ', '=', values)
   t <- gsub('\\{|\\}', '', t)
   
   #Add ticks to numbers

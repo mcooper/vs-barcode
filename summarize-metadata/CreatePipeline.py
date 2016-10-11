@@ -130,10 +130,7 @@ final_df.to_excel(pipeline_writer, 'Metadata Summary', index=False)
 metadata.to_excel(pipeline_writer, 'Column Descriptions', index=False)
 pipeline_writer.save()
 
-
-include_cols = ['User_Vars', 'label', 'required', 'relevant', 'constraint', 'choice_filter']
-
-#final_df = replaceVars(final_df)
+final_df = replaceVars(final_df)
 userdf = removePii(final_df)
 
 
@@ -153,6 +150,8 @@ metatooldf.loc[~metatooldf.User_Tables.isnull(), ['source', 'User_Vars', 'User_T
 #################################################
 ## Write Metadata Documentation for data users
 #################################################
+
+include_cols = ['User_Vars', 'label', 'required', 'relevant', 'constraint', 'constraint_message', 'values']
 
 #To Do Map table names to names in the download tool
 

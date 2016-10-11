@@ -72,8 +72,10 @@ disp <- function(var, type, values=NA){
     out <- paste0('
       if (sum(is.na(data[, "', var, '"])) == length(data[, "', var, '"])){
                   kable("**This variable is entirely NULL**")
-      }else{
+      }else if(nrow(data[ , c("', var, '", gp_var)]) < 15){
         kable(table(data[ , c("', var, '", gp_var)]))
+      }else{
+        DT::datatable(as.data.frame.matrix(table(data[ , c("', var, '", gp_var)])))       
       }')
     return(out)
   }

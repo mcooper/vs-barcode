@@ -104,7 +104,9 @@ getFoot <- function(c, t, sel){
 #Raw Data
 ```{r, echo=FALSE, warning=FALSE}
 DT::datatable(data[ ,(names(data) %in% c("', paste(dispnames, collapse='", "'), '"))])
+```
 
+```{r, include=FALSE}
 RPostgreSQL::dbDisconnect(vs_db$con)
 
 ```

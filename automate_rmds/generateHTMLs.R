@@ -3,45 +3,29 @@ library(rmarkdown)
 
 setwd('D:/Documents and Settings/mcooper/Documents/Automate Data Dictionaries/RMD_Outputs/')
 
-ALL <- list.files('ALL', pattern='.Rmd')
-GHA <- list.files('GHA', pattern='.Rmd')
-RWA <- list.files('RWA', pattern='.Rmd')
-TZA <- list.files('TZA', pattern='.Rmd')
-UGA <- list.files('UGA', pattern='.Rmd')
+###################
+#Do for all RMDs
+###################
 
-setwd('D:/Documents and Settings/mcooper/Documents/Automate Data Dictionaries/RMD_Outputs/ALL')
-for (i in ALL){
-  tryCatch({
-    rmarkdown::render(paste0(getwd(),'/',i), output_format='html_document')},
-    error=function(e){print(e)})
-}
+RMDs <- list.files(recursive=TRUE, pattern='Rmd')
 
-setwd('../GHA')
-for (i in GHA){
+for (i in RMDs){
   tryCatch({
     rmarkdown::render(paste0(getwd(),'/',i), output_format='html_document')},
     error=function(e){print(e)})
 }
 
 
-setwd('../RWA')
-for (i in RWA){
-  tryCatch({
-    rmarkdown::render(paste0(getwd(),'/',i), output_format='html_document')},
-  error=function(e){print(e)})
-}
+#######################################
+#Do for RMDs that failed the first time
+#######################################
 
-setwd('../TZA')
-for (i in TZA){
-  tryCatch({
-    rmarkdown::render(paste0(getwd(),'/',i), output_format='html_document')},
-    error=function(e){print(e)})
-}
+HTMLs <- list.files(recursive=TRUE, pattern='html')
 
-setwd('../UGA')
-for (i in UGA){
+RMDsel <- RMDs[!substr(RMDs, 1, nchar(RMDs)-4) %in% substr(HTMLs, 1, nchar(HTMLs) - 5)]
+
+for (i in RMDsel){
   tryCatch({
     rmarkdown::render(paste0(getwd(),'/',i), output_format='html_document')},
     error=function(e){print(e)})
 }
-
