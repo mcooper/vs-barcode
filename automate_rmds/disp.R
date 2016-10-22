@@ -97,7 +97,7 @@ disp <- function(var, type, values=NA){
 
       nullsd <- count_nulls(data, "', var, '", gp_var)
 
-      kable(nullsd[[1]], col.names=nullsd[[2]])}
+      kable(nullsd[[1]], col.names=nullsd[[2]])
 
       }else{
       data$recoded <- recode(data[ , "', var, '"], ', recodeString(values), ')
@@ -182,7 +182,8 @@ disp <- function(var, type, values=NA){
         
         kable(nullsd[[1]], col.names=nullsd[[2]])
         kable(outsd[[1]], col.names=outsd[[2]])
-      }')
+      }
+    }')
     return(out)
   }
   

@@ -79,7 +79,7 @@ def getDataFromXLSform(filename):
         sub = choices[choices['list name']==i]
         d = str(dict(zip(sub.name, sub.label)))
         for j in selectvar:
-            if (i == j[-len(i):] or ' ' + i + ' ' in j) and i!='y':
+            if (' ' + i == j[-(len(i)+1):] or ' ' + i + ' ' in j) and i!='y':
                 joinvar = j
                 newdf = ps.DataFrame(data={'joinvar': [joinvar], 'list_name': [i], 'values': [d]})
                 selects = selects.append(newdf)
