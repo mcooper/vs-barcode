@@ -131,7 +131,7 @@ disp <- function(var, type, values=NA){
       print(
 
       ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
-      geom_histogram(binwidth=signif((max(data[ , "', var, '"], na.rm=T)-min(data[ , "', var, '"], na.rm=T))/50, 2))
+      geom_histogram(binwidth=signif(((max(data[ , "', var, '"], na.rm=T)-min(data[ , "', var, '"], na.rm=T))+1)/50, 2))
 
       )
       
@@ -153,7 +153,7 @@ disp <- function(var, type, values=NA){
       }else{
         data[ , "', var, '"] <- as.numeric(data[ , "', var, '"])
         
-        if(nrow(data[ , "', var, '"]) > 200){
+        if(nrow(data[!is.na(data$', var, '), ]) > 200){
         
         print(
 
