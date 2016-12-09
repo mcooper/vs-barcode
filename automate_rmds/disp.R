@@ -39,7 +39,7 @@ disp <- function(var, type, values=NA){
   
   
   ##Type: time
-  else if (grepl('time', type)){
+  else if (grepl('time', type) & !grepl('select', type)){
     #summary of times
     out <- paste0('
                   if (sum(is.na(data[, "', var, '"])) == length(data[, "', var, '"])){
