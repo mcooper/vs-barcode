@@ -2,7 +2,7 @@ library(plyr)
 library(dplyr)
 library(jsonlite)
 
-setwd('D:/Documents and Settings/mcooper/Documents/GitHub Repos/vs-data-tools/updating-plant-names/update-names')
+setwd('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/updating-plant-names/update-names')
 
 findOriginal <- function(forms, table, section, prefix){
   updates <- data.frame()
