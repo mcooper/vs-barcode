@@ -77,12 +77,3 @@ for (i in 1:nrow(pii)){
   }
   print(paste0('i:', i))
 }
-
-dbSendQuery(vs_db$con, sql('DROP VIEW public.flagging__eplot;'))
-dbSendQuery(vs_db$con, sql('DROP VIEW public.flagging__eplot_subplot_landscapefn;'))
-dbSendQuery(vs_db$con, sql('DROP VIEW public.flagging__eplot_subplot_vegetation;'))
-dbSendQuery(vs_db$con, sql('DROP VIEW public.flagging__eplot_subplot_woody_canopy;'))
-dbSendQuery(vs_db$con, sql('DROP VIEW public.flagging__eplot_woody_plant;'))
-dbSendQuery(vs_db$con, sql('DROP VIEW public.flagging__eplot_woody_plant_stem;'))
-
-

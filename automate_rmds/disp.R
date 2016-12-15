@@ -153,7 +153,7 @@ disp <- function(var, type, values=NA){
       }else{
         data[ , "', var, '"] <- as.numeric(data[ , "', var, '"])
         
-        if(nrow(data[!is.na(data$', var, '), ]) > 200){
+        if(nrow(data[!is.na(data$', var, '), ]) > 100){
         
         print(
 
