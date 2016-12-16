@@ -70,7 +70,7 @@ for (i in views){
   template <- readChar(tempname, file.info(tempname)$size)
   
   query <- paste0('SELECT *,\n', str, ' AS "flag"\n FROM (', template, ') a') 
-  drop <- paste0('DROP view flagging__', i)
+  drop <- paste0('DROP VIEW IF EXISTS flagging__', i)
   create <- paste0('CREATE OR REPLACE view flagging__', i, ' AS ', query)
   
   dbSendQuery(con$con, sql(final))
