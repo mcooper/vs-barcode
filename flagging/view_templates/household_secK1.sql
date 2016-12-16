@@ -1,6 +1,4 @@
-uuid
-        )
- SELECT t.uuid,
+SELECT t.uuid,
     t.parent_uuid,
     t.survey_uuid,
     hh.country AS "Country",

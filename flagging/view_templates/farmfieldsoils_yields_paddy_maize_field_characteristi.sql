@@ -1,7 +1,4 @@
-advisory.resolved = false)) AND (advisory.ignored = false))))
-          GROUP BY farmfieldsoils_yields_paddy_maize_field_characteristic.uuid
-        )
- SELECT t.uuid,
+SELECT t.uuid,
     t.parent_uuid,
     t.survey_uuid,
     mz.country AS "Country",

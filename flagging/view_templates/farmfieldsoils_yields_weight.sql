@@ -1,4 +1,5 @@
-id,
+SELECT t.uuid,
+    t.survey_uuid,
     t.country AS "Country",
     country.partner_institution AS "Partner Organization",
     landscape.centerpoint_longitude AS longitude,

@@ -1,7 +1,4 @@
-ory.resolved = false)) AND (advisory.ignored = false))))
-          GROUP BY farmfieldsoils_yields_weight_crop.uuid
-        )
- SELECT t.uuid,
+SELECT t.uuid,
     t.parent_uuid,
     t.survey_uuid,
     yw.country AS "Country",

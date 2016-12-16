@@ -1,5 +1,4 @@
-      )
- SELECT household.uuid,
+SELECT household.uuid,
     household.survey_uuid,
     household.country AS "Country",
     country.partner_institution AS "Partner Organization",

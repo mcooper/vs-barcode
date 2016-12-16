@@ -1,4 +1,4 @@
-ECT t.uuid,
+SELECT t.uuid,
     t.survey_uuid,
     t.parent_uuid,
     hh.country AS "Country",

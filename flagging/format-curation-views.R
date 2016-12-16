@@ -8,7 +8,7 @@ vd$viewname <- gsub('curation__', replacement = '', vd$viewname)
 #Remove 'WITH ... AS ( .. )' from beginning of view definition
 vd$start <- 1
 vd$start[vd$viewname!='weatherdata'] <- lapply(gregexpr('SELECT', vd$definition[vd$viewname!='weatherdata']), "[[", 2)
-vd$definition <- substr(x = vd$definition, start, nchar(vd$definition))
+vd$definition <- substr(x = vd$definition, vd$start, nchar(vd$definition))
 
 #split definitions by line
 vd$definition <- strsplit(vd$definition, '\n')
@@ -20,9 +20,11 @@ vd$definition <- strsplit(vd$definition, '\n')
 indices <- lapply(vd$definition, FUN = function(x, pattern){!grepl(x, pattern=pattern)}, pattern = '_seve')
 for (i in 1:length(vd$definition)){
   lines <- vd$definition[i][[1]][indices[i][[1]]]
-  lines <- gsub("FROM (", "FROM ", lines, fixed = T)
+  if (vd$viewname[i]!='weatherdata'){
+    lines <- gsub("FROM (", "FROM ", lines, fixed = T)
+  }
   ind <- min(which(grepl("FROM", lines)))
   lines[ind-1] <- substr(lines[ind-1], 1, nchar(lines[ind-1])-1)
   lines <- gsub(';', '', lines)
-  cat(x = paste0(lines, collapse='\n'), file = paste0('view_templates/', vd$viewname[i], '.sql'))
+  cat(x = paste0(paste0(lines, collapse='\n'), '\n'), file = paste0('view_templates/', vd$viewname[i], '.sql'))
 }
