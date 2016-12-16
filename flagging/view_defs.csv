@@ -1,0 +1,2896 @@
+"viewname","definition"
+"curation__eplot"," WITH max_eplot_severity AS (
+         SELECT eplot_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplot eplot_1
+             LEFT JOIN users_schema.advisory ON ((((((eplot_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplot'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplot_1.uuid
+        )
+ SELECT eplot.uuid,
+    eplot.survey_uuid,
+    eplot.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplot.landscape_no AS ""Landscape #"",
+    eplot.eplot_no AS ""Eplot #"",
+    (((((eplot.country)::text || '-'::text) || eplot.landscape_no) || '-'::text) || eplot.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplot.date AS ""Date"",
+    eplot.measurer1_id AS ""Measurer #1"",
+    eplot.measurer1_first_name AS ""Measurer #1 first"",
+    eplot.measurer1_last_name AS ""Measurer #1 last"",
+    eplot.measurer2_id AS ""Measurer #2"",
+    eplot.measurer2_first_name AS ""Measurer #2 first"",
+    eplot.measurer2_last_name AS ""Measurer #2 last"",
+    eplot.scribe_id AS ""Scribe"",
+    eplot.scribe_first_name AS ""Scribe first"",
+    eplot.scribe_last_name AS ""Scribe last"",
+    eplot.manager_id AS ""Manager"",
+    eplot.manager_first_name AS ""Manager first"",
+    eplot.manager_last_name AS ""Manager last"",
+    eplot.radius AS ""Subplot Radius"",
+    eplot.gpsne_accuracy AS ""GPS NE accuracy"",
+    eplot.gpsne_lat AS ""GPS NE latitude"",
+    eplot.gpsne_long AS ""GPS NE longitude"",
+    eplot.gpsnw_accuracy AS ""GPS NW accuracy"",
+    eplot.gpsnw_lat AS ""GPS NW latitude"",
+    eplot.gpsnw_long AS ""GPS NW longitude"",
+    eplot.gpsse_accuracy AS ""GPS SE accuracy"",
+    eplot.gpsse_lat AS ""GPS SE latitude"",
+    eplot.gpsse_long AS ""GPS SE longitude"",
+    eplot.gpssw_accuracy AS ""GPS SW accuracy"",
+    eplot.gpssw_lat AS ""GPS SW latitude"",
+    eplot.gpssw_long AS ""GPS SW longitude"",
+    eplot.gpsse_start AS ""GPS NE start time"",
+    eplot.gpsse_end AS ""GPS NE end time"",
+    eplot.photo_e AS ""Photo E"",
+    eplot.photo_n AS ""Photo N"",
+    eplot.photo_s AS ""Photo S"",
+    eplot.photo_w AS ""Photo W"",
+    eplot.observations AS ""Observations"",
+    max_eplot_severity.autoqa_severity
+   FROM ((eplot
+     JOIN max_eplot_severity ON (((max_eplot_severity.uuid)::text = (eplot.uuid)::text)))
+     JOIN country ON (((country.country)::text = (eplot.country)::text)));"
+"curation__eplot_subplot_woody_canopy"," WITH max_eplot_subplot_woody_canopy_severity AS (
+         SELECT eplot_subplot_woody_canopy.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplot_subplot_woody_canopy
+             LEFT JOIN users_schema.advisory ON ((((((eplot_subplot_woody_canopy.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplot_subplot_woody_canopy'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplot_subplot_woody_canopy.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    country.partner_institution AS ""Partner Organization"",
+    eplot.country AS ""Country"",
+    eplot.landscape_no AS ""Landscape #"",
+    eplot.eplot_no AS ""Eplot #"",
+    (((((eplot.country)::text || '-'::text) || eplot.landscape_no) || '-'::text) || eplot.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplot.date AS ""Date"",
+    t.subplot AS ""Subplot #"",
+    t.densiometer_n AS ""Densiometer N"",
+    t.densiometer_e AS ""Densiometer E"",
+    t.densiometer_s AS ""Densiometer S"",
+    t.densiometer_w AS ""Densiometer W"",
+    max_eplot_subplot_woody_canopy_severity.autoqa_severity
+   FROM (((eplot_subplot_woody_canopy t
+     JOIN eplot ON (((t.parent_uuid)::text = (eplot.uuid)::text)))
+     JOIN max_eplot_subplot_woody_canopy_severity ON (((max_eplot_subplot_woody_canopy_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (eplot.country)::text)));"
+"curation__eplot_subplot_landscapefn"," WITH max_eplot_subplot_landscapefn_severity AS (
+         SELECT eplot_subplot_landscapefn.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplot_subplot_landscapefn
+             LEFT JOIN users_schema.advisory ON ((((((eplot_subplot_landscapefn.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplot_subplot_landscapefn'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplot_subplot_landscapefn.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    eplot.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplot.landscape_no AS ""Landscape #"",
+    eplot.eplot_no AS ""Eplot #"",
+    (((((eplot.country)::text || '-'::text) || eplot.landscape_no) || '-'::text) || eplot.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplot.date AS ""Date"",
+    t.subplot AS ""Subplot #"",
+    t.rooted AS ""Rooted Plants"",
+    t.litter AS ""Litter Cover"",
+    t.downed AS ""Downed Wood"",
+    t.stone AS ""Stone or Gravel"",
+    t.dung AS ""Dung"",
+    t.disturbed AS ""Disturbed Soil"",
+    t.porous AS ""Undisturbed Bare & Porous Soil"",
+    t.sealed AS ""Undisturbed but Sealed Soil"",
+    t.sodic AS ""Sodic Soil"",
+    t.crust AS ""Microfloral Crust"",
+    t.termite AS ""Termite Mound"",
+    t.herbaceous AS ""Herbaceous Crown Cover Score"",
+    t.herbaceous_erosion AS ""Soil Erosion Score"",
+    max_eplot_subplot_landscapefn_severity.autoqa_severity
+   FROM (((eplot_subplot_landscapefn t
+     JOIN eplot ON (((t.parent_uuid)::text = (eplot.uuid)::text)))
+     JOIN max_eplot_subplot_landscapefn_severity ON (((max_eplot_subplot_landscapefn_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (eplot.country)::text)));"
+"curation__eplot_subplot_vegetation"," WITH max_eplot_subplot_vegetation_severity AS (
+         SELECT eplot_subplot_vegetation.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplot_subplot_vegetation
+             LEFT JOIN users_schema.advisory ON ((((((eplot_subplot_vegetation.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplot_subplot_vegetation'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplot_subplot_vegetation.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    eplot.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplot.landscape_no AS ""Landscape #"",
+    eplot.eplot_no AS ""Eplot #"",
+    (((((eplot.country)::text || '-'::text) || eplot.landscape_no) || '-'::text) || eplot.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplot.date AS ""Date"",
+    t.subplot AS ""Subplot #"",
+    t.mass AS ""Herbaceous Mass Score"",
+    t.rank1_tax AS ""Plant Species Ranked 1"",
+    ps1.genus AS ""Genus Ranked 1"",
+    ps1.species AS ""Species Ranked 1"",
+    ps1.subspecies AS ""Subspecies Ranked 1"",
+    ps1.common AS ""Common Name Ranked 1"",
+    t.rank1_tree_photo AS ""Species Ranked 1 - Photo of whole plant"",
+    t.rank1_stembark_photo AS ""Species Ranked 1 - Photo of stem & bark"",
+    t.rank1_branch_photo AS ""Species Ranked 1 - Photo of a branch"",
+    t.rank1_leaf_photo AS ""Species Ranked 1 - Photo of a leaf"",
+    t.rank2_tax AS ""Plant Species Ranked 2"",
+    ps2.genus AS ""Genus Ranked 2"",
+    ps2.species AS ""Species Ranked 2"",
+    ps2.subspecies AS ""Subspecies Ranked 2"",
+    ps2.common AS ""Common Name Ranked 2"",
+    t.rank2_tree_photo AS ""Species Ranked 2 - Photo of whole plant"",
+    t.rank2_stembark_photo AS ""Species Ranked 2 - Photo of stem & bark"",
+    t.rank2_branch_photo AS ""Species Ranked 2 - Photo of a branch"",
+    t.rank2_leaf_photo AS ""Species Ranked 2 - Photo of a leaf"",
+    t.rank3_tax AS ""Plant Species Ranked 3"",
+    ps3.genus AS ""Genus Ranked 3"",
+    ps3.species AS ""Species Ranked 3"",
+    ps3.subspecies AS ""Subspecies Ranked 3"",
+    ps3.common AS ""Common Name Ranked 3"",
+    t.rank3_tree_photo AS ""Species Ranked 3 - Photo of whole plant"",
+    t.rank3_stembark_photo AS ""Species Ranked 3 - Photo of stem & bark"",
+    t.rank3_branch_photo AS ""Species Ranked 3 - Photo of a branch"",
+    t.rank3_leaf_photo AS ""Species Ranked 3 - Photo of a leaf"",
+    max_eplot_subplot_vegetation_severity.autoqa_severity
+   FROM ((((((eplot_subplot_vegetation t
+     JOIN eplot ON (((t.parent_uuid)::text = (eplot.uuid)::text)))
+     JOIN max_eplot_subplot_vegetation_severity ON (((max_eplot_subplot_vegetation_severity.uuid)::text = (t.uuid)::text)))
+     LEFT JOIN plant_species ps1 ON ((ps1.id = t.rank1_tax)))
+     LEFT JOIN plant_species ps2 ON ((ps2.id = t.rank2_tax)))
+     LEFT JOIN plant_species ps3 ON ((ps3.id = t.rank3_tax)))
+     JOIN country ON (((country.country)::text = (eplot.country)::text)));"
+"curation__eplot_woody_plant"," WITH max_eplot_woody_plant_severity AS (
+         SELECT eplot_woody_plant.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplot_woody_plant
+             LEFT JOIN users_schema.advisory ON ((((((eplot_woody_plant.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplot_woody_plant'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplot_woody_plant.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    eplot.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplot.landscape_no AS ""Landscape #"",
+    eplot.eplot_no AS ""Eplot #"",
+    (((((eplot.country)::text || '-'::text) || eplot.landscape_no) || '-'::text) || eplot.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplot.date AS ""Date"",
+    t.subplot AS ""Subplot #"",
+    t.basal_circ_height AS ""Basal circumference measurement height"",
+    t.tree_code,
+    t.tree_tax AS ""Tree species"",
+    ps.genus AS ""Genus"",
+    ps.species AS ""Species"",
+    ps.subspecies AS ""Subspecies"",
+    ps.common AS ""Common Name"",
+    t.tree_stems_class AS ""Tree stems type"",
+    t.tree_multistem_samesize_numstems AS ""Identical stems count"",
+    t.tree_multistem_numstems AS ""Different stems count"",
+    t.tree_singlestem_canopy_width AS ""Single stem canopy width"",
+    t.tree_singlestem_height AS ""Single stem height"",
+    t.tree_singlestem_circumference AS ""Single stem circumference"",
+    t.tree_multistem_samesize_canopy_width AS ""Canopy width of multiple identical stems"",
+    t.tree_multistem_samesize_circumference AS ""Circumference of multiple identical stems"",
+    t.tree_multistem_samesize_height AS ""Height of multiple identical stems"",
+    t.tree_photo AS ""Photo of whole tree"",
+    t.tree_stembark_photo AS ""Photo of stem and bark"",
+    t.tree_branch_photo AS ""Photo of a branch"",
+    t.tree_leaf_photo AS ""Photo of a leaf"",
+    max_eplot_woody_plant_severity.autoqa_severity
+   FROM ((((eplot_woody_plant t
+     JOIN eplot ON (((t.survey_uuid)::text = (eplot.uuid)::text)))
+     JOIN max_eplot_woody_plant_severity ON (((max_eplot_woody_plant_severity.uuid)::text = (t.uuid)::text)))
+     LEFT JOIN plant_species ps ON ((ps.id = t.tree_tax)))
+     JOIN country ON (((country.country)::text = (eplot.country)::text)));"
+"curation__eplot_woody_plant_stem"," WITH max_eplot_woody_plant_stem_severity AS (
+         SELECT eplot_woody_plant_stem.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplot_woody_plant_stem
+             LEFT JOIN users_schema.advisory ON ((((((eplot_woody_plant_stem.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplot_woody_plant_stem'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplot_woody_plant_stem.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    eplot.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplot.landscape_no AS ""Landscape #"",
+    eplot.eplot_no AS ""Eplot #"",
+    (((((eplot.country)::text || '-'::text) || eplot.landscape_no) || '-'::text) || eplot.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplot.date AS ""Date"",
+    woodyplant.subplot AS ""Subplot #"",
+    woodyplant.tree_code,
+    t.tree_multistem_stemid,
+    t.tree_multistem_height AS ""Stem height"",
+    t.tree_multistem_width AS ""Stem width"",
+    t.tree_multistem_circumference AS ""Stem circumference"",
+    max_eplot_woody_plant_stem_severity.autoqa_severity
+   FROM ((((eplot_woody_plant_stem t
+     JOIN max_eplot_woody_plant_stem_severity ON (((max_eplot_woody_plant_stem_severity.uuid)::text = (t.uuid)::text)))
+     JOIN eplot_woody_plant woodyplant ON (((woodyplant.uuid)::text = (t.parent_uuid)::text)))
+     JOIN eplot ON (((eplot.uuid)::text = (woodyplant.parent_uuid)::text)))
+     JOIN country ON (((country.country)::text = (eplot.country)::text)));"
+"curation__eplotsoils_sample"," WITH max_eplotsoils_sample_severity AS (
+         SELECT eplotsoils_sample_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplotsoils_sample eplotsoils_sample_1
+             LEFT JOIN users_schema.advisory ON ((((((eplotsoils_sample_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplotsoils_sample'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplotsoils_sample_1.uuid
+        )
+ SELECT eplotsoils_sample.uuid,
+    eplotsoils_sample.survey_uuid,
+    eplotsoils_sample.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplotsoils_sample.landscape_no AS ""Landscape #"",
+    eplotsoils_sample.eplot_no AS ""Eplot #"",
+    (((((eplotsoils_sample.country)::text || '-'::text) || eplotsoils_sample.landscape_no) || '-'::text) || eplotsoils_sample.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplotsoils_sample.sampler_id AS ""Sampler"",
+    eplotsoils_sample.sampler_first_name,
+    eplotsoils_sample.sampler_last_name,
+    eplotsoils_sample.scribe_id AS ""Scribe"",
+    eplotsoils_sample.scribe_first_name,
+    eplotsoils_sample.scribe_last_name,
+    eplotsoils_sample.sample_date AS ""Sampling date"",
+    eplotsoils_sample.se_top_restriction_depth AS ""Depth to top sampling restriction (SE cm)"",
+    eplotsoils_sample.se_subsoil_restriction_depth AS ""Depth to subsoil sampling restriction (SE cm)"",
+    eplotsoils_sample.se_50_80_restriction_depth AS ""Depth to 50-80 sampling restriction (SE cm)"",
+    eplotsoils_sample.se_80_100_restriction_depth AS ""Depth to 80-100 sampling restriction (SE cm)"",
+    eplotsoils_sample.ne_top_restriction_depth AS ""Depth to top sampling restriction (NE cm)"",
+    eplotsoils_sample.ne_sub_restriction_depth AS ""Depth to subsoil sampling restriction (NE cm)"",
+    eplotsoils_sample.nw_top_restriction_depth AS ""Depth to top sampling restriction (NW cm)"",
+    eplotsoils_sample.nw_sub_restriction_depth AS ""Depth to subsoil sampling restriction (NW cm)"",
+    eplotsoils_sample.sw_top_restriction_depth AS ""Depth to top sampling restriction (SW cm)"",
+    eplotsoils_sample.sw_sub_restriction_depth AS ""Depth to subsoil sampling restriction (SW cm)"",
+    eplotsoils_sample.se_50_80_texture AS ""Hand texture of SE 50-80 sample"",
+    eplotsoils_sample.se_80_100_texture AS ""Hand texture of SE 80-100 sample"",
+    eplotsoils_sample.composite_top_texture AS ""Composite top sample texture"",
+    eplotsoils_sample.composite_subsoil_texture AS ""Composite subsoil sample texture"",
+    eplotsoils_sample.se_top_texture,
+    eplotsoils_sample.se_subsoil_texture,
+    eplotsoils_sample.ne_top_texture,
+    eplotsoils_sample.ne_sub_texture,
+    eplotsoils_sample.nw_top_texture,
+    eplotsoils_sample.nw_sub_texture,
+    eplotsoils_sample.sw_top_texture,
+    eplotsoils_sample.sw_sub_texture,
+    eplotsoils_sample.survey_instrument,
+    eplotsoils_sample.se_top_barcode,
+    eplotsoils_sample.se_subsoil_barcode,
+    eplotsoils_sample.se_50_80_barcode,
+    eplotsoils_sample.se_80_100_barcode,
+    max_eplotsoils_sample_severity.autoqa_severity
+   FROM (((eplotsoils_sample
+     JOIN max_eplotsoils_sample_severity ON (((max_eplotsoils_sample_severity.uuid)::text = (eplotsoils_sample.uuid)::text)))
+     JOIN country ON (((country.country)::text = (eplotsoils_sample.country)::text)))
+     JOIN ( SELECT DISTINCT ON (eplot_1.country, eplot_1.landscape_no, eplot_1.eplot_no) eplot_1.country,
+            eplot_1.landscape_no,
+            eplot_1.eplot_no,
+            eplot_1.gpsse_lat,
+            eplot_1.gpsse_long,
+            eplot_1.gpssw_lat,
+            eplot_1.gpssw_long,
+            eplot_1.gpsne_lat,
+            eplot_1.gpsne_long,
+            eplot_1.gpsnw_lat,
+            eplot_1.gpsnw_long
+           FROM eplot eplot_1) eplot ON (((((eplotsoils_sample.country)::text = (eplot.country)::text) AND (eplotsoils_sample.landscape_no = eplot.landscape_no)) AND (eplotsoils_sample.eplot_no = eplot.eplot_no))));"
+"curation__eplotsoils_weights"," WITH max_eplotsoils_weights_severity AS (
+         SELECT eplotsoils_weights.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplotsoils_weights
+             LEFT JOIN users_schema.advisory ON ((((((eplotsoils_weights.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplotsoils_weights'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplotsoils_weights.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    sample.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    sample.landscape_no AS ""Landscape #"",
+    sample.eplot_no AS ""Eplot #"",
+    (((((sample.country)::text || '-'::text) || sample.landscape_no) || '-'::text) || sample.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    sample.sample_date AS ""Sampling date"",
+    t.soil_depth_class AS ""Sampling depth class"",
+        CASE
+            WHEN (t.soil_depth_class = 'top'::text) THEN 0
+            WHEN (t.soil_depth_class = 'subsoil'::text) THEN 20
+            WHEN (t.soil_depth_class = '50-80'::text) THEN 50
+            WHEN (t.soil_depth_class = '80-100'::text) THEN 80
+            ELSE NULL::integer
+        END AS ""Sample depth top"",
+        CASE
+            WHEN (t.soil_depth_class = 'top'::text) THEN 20
+            WHEN (t.soil_depth_class = 'subsoil'::text) THEN 50
+            WHEN (t.soil_depth_class = '50-80'::text) THEN 80
+            WHEN (t.soil_depth_class = '80-100'::text) THEN 100
+            ELSE NULL::integer
+        END AS ""Sample depth bottom"",
+    t.moisture AS ""Moisture Tin ID#"",
+    t.tin_fresh_weight AS ""Weight of soil moisture tin - fresh soil subsample (g)"",
+    t.tin_weight AS ""Weight of soil moisture tin (g)"",
+    t.weight AS ""Total weight of cumulative mass sample (g)"",
+    max_eplotsoils_weights_severity.autoqa_severity
+   FROM ((((eplotsoils_weights t
+     JOIN eplotsoils_sample sample ON (((t.parent_uuid)::text = (sample.uuid)::text)))
+     JOIN max_eplotsoils_weights_severity ON (((max_eplotsoils_weights_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (sample.country)::text)))
+     JOIN ( SELECT DISTINCT ON (eplot_1.country, eplot_1.landscape_no, eplot_1.eplot_no) eplot_1.country,
+            eplot_1.landscape_no,
+            eplot_1.eplot_no,
+            eplot_1.gpsse_lat,
+            eplot_1.gpsse_long,
+            eplot_1.gpssw_lat,
+            eplot_1.gpssw_long,
+            eplot_1.gpsne_lat,
+            eplot_1.gpsne_long,
+            eplot_1.gpsnw_lat,
+            eplot_1.gpsnw_long
+           FROM eplot eplot_1) eplot ON (((((sample.country)::text = (eplot.country)::text) AND (sample.landscape_no = eplot.landscape_no)) AND (sample.eplot_no = eplot.eplot_no))));"
+"curation__eplotsoils_lab"," WITH max_eplotsoils_lab_severity AS (
+         SELECT eplotsoils_lab_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplotsoils_lab eplotsoils_lab_1
+             LEFT JOIN users_schema.advisory ON ((((((eplotsoils_lab_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplotsoils_lab'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplotsoils_lab_1.uuid
+        )
+ SELECT eplotsoils_lab.uuid,
+    eplotsoils_lab.survey_uuid,
+    eplotsoils_lab.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplotsoils_lab.landscape_no AS ""Landscape #"",
+    eplotsoils_lab.eplot_no AS ""Eplot #"",
+    (((((eplotsoils_lab.country)::text || '-'::text) || eplotsoils_lab.landscape_no) || '-'::text) || eplotsoils_lab.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplotsoils_lab.data_entry_date AS ""Data entry date"",
+    eplotsoils_lab.analyst_id AS ""Analyst"",
+    eplotsoils_lab.analyst_first_name,
+    eplotsoils_lab.analyst_last_name,
+    max_eplotsoils_lab_severity.autoqa_severity
+   FROM (((eplotsoils_lab
+     JOIN max_eplotsoils_lab_severity ON (((max_eplotsoils_lab_severity.uuid)::text = (eplotsoils_lab.uuid)::text)))
+     JOIN country ON (((country.country)::text = (eplotsoils_lab.country)::text)))
+     JOIN ( SELECT DISTINCT ON (eplot_1.country, eplot_1.landscape_no, eplot_1.eplot_no) eplot_1.country,
+            eplot_1.landscape_no,
+            eplot_1.eplot_no,
+            eplot_1.gpsse_lat,
+            eplot_1.gpsse_long,
+            eplot_1.gpssw_lat,
+            eplot_1.gpssw_long,
+            eplot_1.gpsne_lat,
+            eplot_1.gpsne_long,
+            eplot_1.gpsnw_lat,
+            eplot_1.gpsnw_long
+           FROM eplot eplot_1) eplot ON (((((eplotsoils_lab.country)::text = (eplot.country)::text) AND (eplotsoils_lab.landscape_no = eplot.landscape_no)) AND (eplotsoils_lab.eplot_no = eplot.eplot_no))));"
+"curation__eplotsoils_lab_weights"," WITH max_eplotsoils_lab_weights_severity AS (
+         SELECT eplotsoils_lab_weights.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplotsoils_lab_weights
+             LEFT JOIN users_schema.advisory ON ((((((eplotsoils_lab_weights.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplotsoils_lab_weights'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplotsoils_lab_weights.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    lab.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    lab.landscape_no AS ""Landscape #"",
+    lab.eplot_no AS ""Eplot #"",
+    (((((lab.country)::text || '-'::text) || lab.landscape_no) || '-'::text) || lab.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    lab.data_entry_date AS ""Data entry date"",
+    t.soil_depth_class AS ""Sampling depth class"",
+        CASE
+            WHEN (t.soil_depth_class = 'top'::text) THEN 0
+            WHEN (t.soil_depth_class = 'subsoil'::text) THEN 20
+            WHEN (t.soil_depth_class = '50-80'::text) THEN 50
+            WHEN (t.soil_depth_class = '80-100'::text) THEN 80
+            ELSE NULL::integer
+        END AS ""Sample depth top"",
+        CASE
+            WHEN (t.soil_depth_class = 'top'::text) THEN 20
+            WHEN (t.soil_depth_class = 'subsoil'::text) THEN 50
+            WHEN (t.soil_depth_class = '50-80'::text) THEN 80
+            WHEN (t.soil_depth_class = '80-100'::text) THEN 100
+            ELSE NULL::integer
+        END AS ""Sample depth bottom"",
+    t.restriction_depth AS ""Depth restriction (cm)"",
+    t.moisture_tin_id AS ""Moisture tin ID #"",
+    t.tin_dry_weight AS ""Weight of Cumulative Soil Moist Tin + Oven/Air Dried Soil (g)"",
+    t.sample_bag_label AS ""Sample Bag label ID #"",
+    t.total_dry_weight AS ""Total Air Dried Weight of Composite Sample in Bag (g)"",
+    t.fine_dry_weight AS ""Total Weight of Composite Soil Fine Fraction (< 2mm g)"",
+    t.coarse_dry_weight AS ""Total Weight of Composite Sample Coarse Fraction (> 2mm)"",
+    t.barcode_id,
+    max_eplotsoils_lab_weights_severity.autoqa_severity
+   FROM ((((eplotsoils_lab_weights t
+     JOIN eplotsoils_lab lab ON (((t.parent_uuid)::text = (lab.uuid)::text)))
+     JOIN max_eplotsoils_lab_weights_severity ON (((max_eplotsoils_lab_weights_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (lab.country)::text)))
+     JOIN ( SELECT DISTINCT ON (eplot_1.country, eplot_1.landscape_no, eplot_1.eplot_no) eplot_1.country,
+            eplot_1.landscape_no,
+            eplot_1.eplot_no,
+            eplot_1.gpsse_lat,
+            eplot_1.gpsse_long,
+            eplot_1.gpssw_lat,
+            eplot_1.gpssw_long,
+            eplot_1.gpsne_lat,
+            eplot_1.gpsne_long,
+            eplot_1.gpsnw_lat,
+            eplot_1.gpsnw_long
+           FROM eplot eplot_1) eplot ON (((((lab.country)::text = (eplot.country)::text) AND (lab.landscape_no = eplot.landscape_no)) AND (lab.eplot_no = eplot.eplot_no))));"
+"curation__eplotsoils_processed"," WITH max_eplotsoils_processed_severity AS (
+         SELECT eplotsoils_processed_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (eplotsoils_processed eplotsoils_processed_1
+             LEFT JOIN users_schema.advisory ON ((((((eplotsoils_processed_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__eplotsoils_processed'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY eplotsoils_processed_1.uuid
+        )
+ SELECT eplotsoils_processed.uuid,
+    eplotsoils_processed.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    eplotsoils_processed.landscape_no AS ""Landscape #"",
+    eplotsoils_processed.eplot_no AS ""Eplot #"",
+    (((((eplotsoils_processed.country)::text || '-'::text) || eplotsoils_processed.landscape_no) || '-'::text) || eplotsoils_processed.eplot_no) AS ""Eplot Code"",
+    eplot.gpsne_lat AS latitude,
+    eplot.gpsne_long AS longitude,
+    eplotsoils_processed.sample_date AS ""Sampling date"",
+    eplotsoils_processed.soil_depth_class AS ""Sampling depth class"",
+    eplotsoils_processed.sample_depth_top,
+    eplotsoils_processed.sample_depth_bottom,
+    eplotsoils_processed.ssn AS ""SSN"",
+    eplotsoils_processed.barcode_id,
+    eplotsoils_processed.acidified_carbon AS ""Carbon content for acid treated sample to remove carbonates (% "",
+    eplotsoils_processed.acidified_nitrogen AS ""Nitrogen content for acid treated sample to remove carbonates ("",
+    eplotsoils_processed.clay_icraf AS ""Clay content for calgon dispersed particles-recorded after 4 mi"",
+    eplotsoils_processed.sand_icraf AS ""Sand content for calgon dispersed particles-recorded after 4 mi"",
+    eplotsoils_processed.silt_icraf AS ""Silt content for calgon dispersed particles-recorded after 4 mi"",
+    eplotsoils_processed.baseum AS ""Sum of Mehlich-3 bases (Ca Mg K Na) (cmolc kg^-1)"",
+    eplotsoils_processed.exacidity AS ""Exchangeable Acidity (cmolc kg^-1)"",
+    eplotsoils_processed.ec AS ""Soil conductivity/ Salinity (uS/cm)"",
+    eplotsoils_processed.exch_al AS ""Exchangeable Aluminium (meq/100g)"",
+    eplotsoils_processed.ph AS ""Soil pH in water (soil to water ratio of 1 to 2 weight to volum"",
+    eplotsoils_processed.psi AS ""P sorption index (Bache and Williams 1971)"",
+    eplotsoils_processed.clay_cnls AS ""Clay content by hydrometer method (%)"",
+    eplotsoils_processed.sand_cnls AS ""Sand content by hydrometer method (%)"",
+    eplotsoils_processed.silt_cnls AS ""Silt content by hydrometer method (%)"",
+    eplotsoils_processed.total_carbon AS ""Total Carbon content (% by weight)"",
+    eplotsoils_processed.total_nitrogen AS ""Total Nitrogen content (% by weight)"",
+    eplotsoils_processed.m3_al AS ""Exchangeable aluminium concentration by Mehlich 3 extraction (m"",
+    eplotsoils_processed.m3_b AS ""Boron concentration by Mehlich 3 extraction (mg kg^-1)"",
+    eplotsoils_processed.m3_ca AS ""Exchangeable calcium concentration by Mehlich 3 extraction (mg "",
+    eplotsoils_processed.m3_cu AS ""Copper concentration by Mehlich 3 extraction (mg kg^-1)"",
+    eplotsoils_processed.m3_fe AS ""Iron concentration by Mehlich 3 extraction (mg kg^-1)"",
+    eplotsoils_processed.m3_k AS ""Potassium concentration by Mehlich 3 extraction (mg kg^-1)"",
+    eplotsoils_processed.m3_mg AS ""Exchangeable Magnesium by wet method (mg kg^-1)"",
+    eplotsoils_processed.m3_mn AS ""Exchangeable Manganese concentration by Mehlich 3 extraction (m"",
+    eplotsoils_processed.m3_na AS ""Exchangeable Sodium concentration by Mehlich 3 extraction (mg k"",
+    eplotsoils_processed.m3_p AS ""Phosphorus by Mehlich 3 extraction (mg kg^-1)"",
+    eplotsoils_processed.m3_s AS ""Sulphur by Mehlich 3 extraction (mg kg^-1)"",
+    eplotsoils_processed.m3_zn AS ""Zinc by Mehlich 3 extraction (mg kg^-1)"",
+    eplotsoils_processed.al AS ""Aluminium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.bi AS ""Bismuth total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.br AS ""Bromine total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.cl AS ""Chlorine total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.cu AS ""Copper total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.ga AS ""Gallium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.k AS ""Potassium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.la AS ""Lanthanum total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.mg AS ""Magnesium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.na AS ""Sodium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.ni AS ""Nickel total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.p AS ""Phosphorus total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.pb AS ""Lead total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.pr AS ""Praseodymium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.sc AS ""Scandium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.sm AS ""Samarium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.sr AS ""Strontium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.ta AS ""Tantalum total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.th AS ""Thorium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.v AS ""Vanadium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.w AS ""Tungsten total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.y AS ""Yttrium total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.zn AS ""Zinc total element concentration TXRF (mg kg^-1)"",
+    eplotsoils_processed.zr AS ""Zirconium total element concentration TXRF (mg kg^-1)"",
+    max_eplotsoils_processed_severity.autoqa_severity
+   FROM (((eplotsoils_processed
+     JOIN max_eplotsoils_processed_severity ON (((max_eplotsoils_processed_severity.uuid)::text = (eplotsoils_processed.uuid)::text)))
+     JOIN country ON (((country.country)::text = (eplotsoils_processed.country)::text)))
+     JOIN ( SELECT DISTINCT ON (eplot_1.country, eplot_1.landscape_no, eplot_1.eplot_no) eplot_1.country,
+            eplot_1.landscape_no,
+            eplot_1.eplot_no,
+            eplot_1.gpsse_lat,
+            eplot_1.gpsse_long,
+            eplot_1.gpssw_lat,
+            eplot_1.gpssw_long,
+            eplot_1.gpsne_lat,
+            eplot_1.gpsne_long,
+            eplot_1.gpsnw_lat,
+            eplot_1.gpsnw_long
+           FROM eplot eplot_1) eplot ON (((((eplotsoils_processed.country)::text = (eplot.country)::text) AND (eplotsoils_processed.landscape_no = eplot.landscape_no)) AND (eplotsoils_processed.eplot_no = eplot.eplot_no))));"
+"curation__rra"," WITH max_rra_severity AS (
+         SELECT rra_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (rra rra_1
+             LEFT JOIN users_schema.advisory ON ((((((rra_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__rra'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY rra_1.uuid
+        )
+ SELECT rra.uuid,
+    rra.survey_uuid,
+    rra.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    rra.rapid_road_asses_no AS ""Rapid Road Assessment #"",
+    rra.date AS ""Date"",
+    rra.avg_height_upper_canopy AS ""Average height of upper canopy"",
+    rra.canopy1 AS ""Pct contrib of height class to total proj cano cover (<1m)"",
+    rra.canopy2 AS ""Pct contrib of height class to total proj cano cover (1-2m)"",
+    rra.canopy3 AS ""Pct contrib of height class to total proj cano cover (2-5m)"",
+    rra.canopy4 AS ""Pct contrib of height class to total proj cano cover (5-20m)"",
+    rra.canopy5 AS ""Pct contrib of height class to total proj cano cover (>20m)"",
+    rra.observer_id AS ""Observer"",
+    rra.observer_first_name,
+    rra.observer_last_name,
+    rra.gps_start AS ""GPS measurement start time"",
+    rra.gps_end AS ""GPS measurement end time"",
+    rra.gps_lat AS latitude,
+    rra.gps_long AS longitude,
+    rra.gps_accuracy AS ""GPS accuracy"",
+    rra.gps_measurement_counts AS ""GPS Measurement Counts"",
+    rra.mark1 AS ""Distance from marker (km)"",
+    rra.mark2 AS ""Name of marker"",
+    rra.mark3 AS ""Next closest town on route"",
+    rra.pan_or_many AS ""Panorama or four pictures?"",
+    rra.panorama AS ""Panorama photo"",
+    rra.photo_n AS ""Photo facing North"",
+    rra.photo_e AS ""Photo facing East"",
+    rra.photo_s AS ""Photo facing South"",
+    rra.photo_w AS ""Photo facing West"",
+    rra.treeshrub_projected_cover AS ""Tree / shrub total projected canopy cover"",
+    rra.use_protected AS ""Protected use"",
+    rra.use_livestock AS ""Livestock grazing use"",
+    rra.use_wood AS ""Wood harvesting use"",
+    rra.use_short_crop AS ""Short duration cropping use"",
+    rra.use_tree_crops AS ""Tree crops use"",
+    rra.use_hab_biz AS ""Habitation / business use"",
+    rra.survey_instrument AS ""Survey Instrument"",
+    max_rra_severity.autoqa_severity
+   FROM ((rra
+     JOIN max_rra_severity ON (((max_rra_severity.uuid)::text = (rra.uuid)::text)))
+     JOIN country ON (((country.country)::text = (rra.country)::text)));"
+"curation__rra_dominant"," WITH max_rra_dominant_severity AS (
+         SELECT rra_dominant.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (rra_dominant
+             LEFT JOIN users_schema.advisory ON ((((((rra_dominant.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__rra_dominant'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY rra_dominant.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    rra.country AS ""Country"",
+    rra.gps_lat AS latitude,
+    rra.gps_long AS longitude,
+    country.partner_institution AS ""Partner Organization"",
+    rra.rapid_road_asses_no AS ""Rapid Road Assessment #"",
+    t.tax AS ""Plant species"",
+    t.plant_type,
+    t.code,
+    ps.common,
+    ps.genus,
+    ps.species,
+    ps.subspecies,
+    t.unknown_image AS ""Photo of unknown species"",
+    max_rra_dominant_severity.autoqa_severity
+   FROM ((((rra_dominant t
+     JOIN rra ON (((t.parent_uuid)::text = (rra.uuid)::text)))
+     JOIN max_rra_dominant_severity ON (((max_rra_dominant_severity.uuid)::text = (t.uuid)::text)))
+     LEFT JOIN plant_species ps ON ((ps.id = t.tax)))
+     JOIN country ON (((country.country)::text = (rra.country)::text)));"
+"curation__rapid_water"," WITH max_rapid_water_severity AS (
+         SELECT rapid_water_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (rapid_water rapid_water_1
+             LEFT JOIN users_schema.advisory ON ((((((rapid_water_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__rapid_water'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY rapid_water_1.uuid
+        )
+ SELECT rapid_water.uuid,
+    rapid_water.survey_uuid,
+    rapid_water.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    rapid_water.landscape_no AS ""Landscape Number"",
+    rapid_water.vs_code AS ""VS Code"",
+    rapid_water.rapid_water_asses_no AS ""Rapid Water Assessment #"",
+    rapid_water.water_sample_no AS ""Water Sample #"",
+    rapid_water.rapid_water_asses_date AS ""Assessment Date"",
+    rapid_water.observer_id AS ""Observer"",
+    rapid_water.observer_first_name AS ""Observer First Name"",
+    rapid_water.observer_last_name AS ""Observer Last Name"",
+    rapid_water.gpsnw_lat AS latitude,
+    rapid_water.gpsnw_long AS longitude,
+    rapid_water.gpsnw_accuracy AS ""GPS Accuracy"",
+    rapid_water.photo_file_name AS ""Photo File Name"",
+    rapid_water.photo_water AS ""Photo of Marker"",
+    rapid_water.water_depth_marker AS ""Water Depth against Marker"",
+    rapid_water.b_14_1 AS ""Open Water Score (1-10)"",
+    rapid_water.b_14_2 AS ""Algal Score (1-10)"",
+    rapid_water.b_14_3 AS ""Aquatic Plants Score (1-10)"",
+    rapid_water.b_14_4 AS ""Exotic Weeds Score (1-10)"",
+    rapid_water.b_14_5 AS ""Litter Score (1-10)"",
+    rapid_water.b_14_6 AS ""Foam Score (1-10)"",
+    rapid_water.b_14_7 AS ""Oily/Metallic Sheen Score (1-10)"",
+    rapid_water.dp_color_type AS ""Color Type"",
+    rapid_water.dp_color_intensity AS ""Color Intensity"",
+    rapid_water.dp_smell_desc AS ""Smell Description"",
+    rapid_water.dp_smell_intensity AS ""Smell Intensity"",
+    rapid_water.dp_taste AS ""Taste Description"",
+    rapid_water.dp_taste_intensity AS ""Taste Intensity"",
+    rapid_water.dp_obs_use AS ""Observed Uses"",
+    rapid_water.dp_obs_use_drinking AS ""Used for Drinking"",
+    rapid_water.dp_obs_use_bathing AS ""Used for Bathing"",
+    rapid_water.dp_obs_use_livestock AS ""Used for Livestock"",
+    rapid_water.dp_obs_use_washing AS ""Used for Washing"",
+    rapid_water.dp_obs_use_irrigation AS ""Used for Irrigation"",
+    rapid_water.dp_obs_use_mining AS ""Used for Mining"",
+    rapid_water.survey_instrument AS ""Survey Instrument"",
+    max_rapid_water_severity.autoqa_severity
+   FROM ((rapid_water
+     JOIN max_rapid_water_severity ON (((max_rapid_water_severity.uuid)::text = (rapid_water.uuid)::text)))
+     JOIN country ON (((country.country)::text = (rapid_water.country)::text)));"
+"curation__water_quality"," WITH max_water_quality_severity AS (
+         SELECT water_quality_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (water_quality water_quality_1
+             LEFT JOIN users_schema.advisory ON ((((((water_quality_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__water_quality'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY water_quality_1.uuid
+        )
+ SELECT water_quality.uuid,
+    water_quality.survey_uuid,
+    water_quality.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    water_quality.landscape_no AS ""Landscape Number"",
+    water_quality.analyst_id AS ""Analyst"",
+    water_quality.analyst_first_name AS ""Analyst First Name"",
+    water_quality.analyst_last_name AS ""Analyst Last Name"",
+    water_quality.sample_analysis_date AS ""Sample Analysis Date"",
+    water_quality.cl1_1 AS ""EC calibration"",
+    water_quality.cl1_2 AS ""PO4 calibration"",
+    water_quality.cl2_0 AS ""pH 4 calibration"",
+    water_quality.cl2_1 AS ""pH 7 calibration"",
+    water_quality.cl2_no_1 AS ""NO3 High calibration"",
+    water_quality.cl2_no_2 AS ""NO3 Low calibration"",
+    water_quality.sample_notes AS ""Sample Notes"",
+    water_quality.survey_instrument AS ""Survey Instrument"",
+    max_water_quality_severity.autoqa_severity
+   FROM ((water_quality
+     JOIN max_water_quality_severity ON (((max_water_quality_severity.uuid)::text = (water_quality.uuid)::text)))
+     JOIN country ON (((country.country)::text = (water_quality.country)::text)));"
+"curation__water_quality_sample_data"," WITH max_water_quality_sample_data_severity AS (
+         SELECT water_quality_sample_data.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (water_quality_sample_data
+             LEFT JOIN users_schema.advisory ON ((((((water_quality_sample_data.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__water_quality_sample_data'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY water_quality_sample_data.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    wq.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    wq.sample_analysis_date AS ""Sample Analysis Date"",
+    t.water_smp_no AS ""Water Sample #"",
+    t.water_temp AS ""Water Temperature"",
+    t.water_smp_ph AS ""Water Ph"",
+    t.water_smp_cdty AS ""Water Conductivity"",
+    t.water_smp_no3 AS ""Water NO3"",
+    t.water_smp_po4 AS ""Water PO4"",
+    t.ws1_1 AS ""Compartments With Color Changes"",
+    t.ws1_1_10ml AS ""Color change in the 10 mL compartment"",
+    t.ws1_1_30ml AS ""Color change in the 30 mL compartment"",
+    t.ws1_1_50ml AS ""Color change in the 50 mL compartment"",
+    t.ws1_1_3ml AS ""Color change in the 3 mL compartment"",
+    t.ws1_1_1ml AS ""Color change in the 1 mL compartment"",
+    t.ws1_mpn AS ""Most Probable Number of Organisms per 100 mL"",
+    max_water_quality_sample_data_severity.autoqa_severity
+   FROM (((water_quality_sample_data t
+     JOIN max_water_quality_sample_data_severity ON (((max_water_quality_sample_data_severity.uuid)::text = (t.uuid)::text)))
+     JOIN water_quality wq ON (((wq.uuid)::text = (t.parent_uuid)::text)))
+     JOIN country ON (((country.country)::text = (wq.country)::text)));"
+"curation__agric"," WITH max_agric_severity AS (
+         SELECT agric_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric agric_1
+             LEFT JOIN users_schema.advisory ON ((((((agric_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_1.uuid
+        )
+ SELECT agric.uuid,
+    agric.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.region AS ""Region"",
+    agric.district AS ""District"",
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.hh_head_refno AS ""Household head ID"",
+    agric.enumerator_id AS ""Enumerator ID"",
+    agric.time_interview_start AS ""Time interview start"",
+    agric.date_of_interview AS ""Date of interview"",
+    agric.supervisor_id AS ""Supervisor ID"",
+    agric.questionnaire_inspection_date AS ""Questionnaire inspection date"",
+    agric.clerk_id AS ""Clerk ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    agric.fr_01,
+    agric.fr2_10,
+    agric.fr_5,
+    agric.ag12b_vs_09a,
+    agric.ag12a_vs_10,
+    agric.ag12a_vs_10_other,
+    agric.end_time AS ""End Time"",
+    agric.survey_instrument AS ""Survey Instrument"",
+    max_agric_severity.autoqa_severity
+   FROM (((agric
+     JOIN max_agric_severity ON (((max_agric_severity.uuid)::text = (agric.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_roster"," WITH max_agric_roster_severity AS (
+         SELECT agric_roster.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_roster
+             LEFT JOIN users_schema.advisory ON ((((((agric_roster.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_roster'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_roster.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.ind AS ""Individual ID"",
+    t.hh_indid_age,
+    t.hh_indid_gender,
+    t.hh_indid_respondent,
+    max_agric_roster_severity.autoqa_severity
+   FROM ((((agric_roster t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_roster_severity ON (((max_agric_roster_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_field_roster"," WITH max_agric_field_roster_severity AS (
+         SELECT agric_field_roster.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_field_roster
+             LEFT JOIN users_schema.advisory ON ((((((agric_field_roster.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_field_roster'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_field_roster.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    t.field_id AS ""Field ID"",
+    t.field_name AS ""Field name"",
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.ag2a_vs_2b1,
+    t.ag2a_vs_2b1_other,
+    t.ag2a_vs_2b2_1,
+    t.ag2a_vs_2c,
+    t.ag2a_vs_2c_other,
+    t.ag2a_vs_2d1,
+    t.ag2a_04,
+    t.ag2a_07,
+    t.ag2a_08,
+    t.ag2a_08_other,
+    t.gps_coords,
+    t.ag3a_02_1,
+    t.ag3a_02_2,
+    t.ag3a_02_2_1,
+    t.ag2a_09,
+    t.ag2a_vs_08a,
+    t.ag2a_vs_8b,
+    t.ag2a_vs_8c,
+    max_agric_field_roster_severity.autoqa_severity
+   FROM ((((agric_field_roster t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_field_roster_severity ON (((max_agric_field_roster_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_field_details"," WITH max_agric_field_details_severity AS (
+         SELECT agric_field_details.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_field_details
+             LEFT JOIN users_schema.advisory ON ((((((agric_field_details.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_field_details'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_field_details.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    t.field_id AS ""Field ID"",
+    t.season AS ""Season"",
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.ag3a_02_1,
+    t.ag3a_02_2,
+    t.ag3a_02_3,
+    t.ag3a_03,
+    t.ag3a_03_other,
+    t.ag3a_04,
+    t.ag3a_07_1 AS ag3a_05,
+    t.ag3a_10 AS ag3a_06,
+    t.ag3a_14 AS ag3a_07,
+    t.ag3a_15_1 AS ag3a_08_1,
+    t.ag3a_15_2 AS ag3a_08_2,
+    t.ag3a_17 AS ag3a_09,
+    t.ag3a_18 AS ag3a_10,
+    t.ag3a_18_other AS ag3a_10_other,
+    t.ag3a_20 AS ag3a_11,
+    t.ag3a_20_other AS ag3a_11_other,
+    t.ag31_vs_13 AS ag3a_12,
+    t.ag3a_23 AS ag3a_13,
+    t.ag3a_24 AS ag3a_14,
+    t.ag3a_24_other AS ag3a_14_other,
+    t.ag3a_28 AS ag3a_15,
+    t.ag3a_34 AS ag3a_16,
+    t.ag3f_33_17,
+    t.ag3a_39 AS ag3a_18,
+    t.ag3a_vs_18a AS ag3a_18b,
+    t.ag3a_vs_18a_other AS ag3a_18b_other,
+    t.ag3a_vs_18b AS ag3a_18c,
+    t.ag3a_vs_18b_other AS ag3a_18c_other,
+    t.ag3a_40 AS ag3a_19,
+    t.ag3a_41 AS ag3a_20,
+    t.ag3a_42 AS ag3a_21,
+    t.ag3a_43 AS ag3a_22,
+    t.ag3a_45 AS ag3a_23,
+    t.ag3a_46 AS ag3a_24,
+    t.ag3a_46_other AS ag3a_24_other,
+    t.ag3a_47 AS ag3a_25,
+    t.ag3a_48 AS ag3a_26,
+    t.ag3a_49 AS ag3a_27,
+    t.ag3a_52 AS ag3a_28,
+    t.ag3a_53 AS ag3a_29,
+    t.ag3a_53_other AS ag3a_29_other,
+    t.ag3a_54 AS ag3a_30,
+    t.ag3a_55 AS ag3a_31,
+    t.ag3a_56 AS ag3a_32,
+    t.ag3a_58 AS ag3a_33,
+    t.ag3a_59 AS ag3a_34,
+    t.ag3a_59_other AS ag3a_34_other,
+    t.ag3a_60_1 AS ag3a_35_1,
+    t.ag3a_60_2 AS ag3a_35_2,
+    t.ag3a_61,
+    t.ag3a_72_1 AS ag3a_38_1,
+    t.ag3a_72_2 AS ag3a_38_2,
+    t.ag3a_72_21 AS ag3a_38_21,
+    t.ag3a_72_3 AS ag3a_38_3,
+    t.ag3a_72_4 AS ag3a_38_4,
+    t.ag3a_72_5 AS ag3a_38_5,
+    t.ag3a_72_51 AS ag3a_38_51,
+    t.ag3a_72_6 AS ag3a_38_6,
+    t.ag3a_72_62 AS ag3a_38_61,
+    t.ag3a_72_61 AS ag3a_38_62,
+    t.ag3a_72_63 AS ag3a_38_63,
+    t.ag3a_72_64 AS ag3a_38_64,
+    t.ag3a_72_7 AS ag3a_38_7,
+    t.ag3a_72_8 AS ag3a_38_8,
+    t.ag3a_72_81 AS ag3a_38_81,
+    t.ag3a_72_9 AS ag3a_38_9,
+    t.fd33_18a_1,
+    t.fd33_18a_2,
+    t.fd33_18a_3,
+    t.fd33_18a_4,
+    t.fd33_18a_5,
+    t.fd33_18a_6,
+    t.fd33_18a_7,
+    t.fd33_18a_8,
+    t.fd35_24a_dap,
+    t.fd35_24a_urea,
+    t.fd35_24a_tsp,
+    t.fd35_24a_can,
+    t.fd35_24a_sa,
+    t.fd35_24a_npk,
+    t.fd35_24a_mrp,
+    t.fd3b3_18a_1,
+    t.fd3b3_18a_2,
+    t.fd3b3_18a_3,
+    t.fd3b3_18a_4,
+    t.fd3b3_18a_5,
+    t.fd3b3_18a_6,
+    t.fd3b3_18a_7,
+    t.fd3b3_18a_8,
+    t.fd3b5a_24a_dap,
+    t.fd3b5a_24a_urea,
+    t.fd3b5a_24a_tsp,
+    t.fd3b5a_24a_can,
+    t.fd3b5a_24a_sa,
+    t.fd3b5a_24a_npk,
+    t.fd3b5a_24a_mrp,
+    max_agric_field_details_severity.autoqa_severity
+   FROM ((((agric_field_details t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_field_details_severity ON (((max_agric_field_details_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_field_details_labor"," WITH max_agric_field_details_labor_severity AS (
+         SELECT agric_field_details_labor.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_field_details_labor
+             LEFT JOIN users_schema.advisory ON ((((((agric_field_details_labor.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_field_details_labor'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_field_details_labor.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    det.field_id AS ""Field ID"",
+    det.season AS ""Season"",
+    t.ind AS ""Individual ID"",
+    t.ag3a_70_preparing,
+    t.ag3a_70_weeding,
+    t.ag3a_70_fertilizing,
+    t.ag3a_70_harvesting,
+    max_agric_field_details_labor_severity.autoqa_severity
+   FROM (((((agric_field_details_labor t
+     JOIN agric_field_details det ON (((t.parent_uuid)::text = (det.uuid)::text)))
+     JOIN agric ON (((det.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_field_details_labor_severity ON (((max_agric_field_details_labor_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_crops_by_field"," WITH max_agric_crops_by_field_severity AS (
+         SELECT agric_crops_by_field.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_crops_by_field
+             LEFT JOIN users_schema.advisory ON ((((((agric_crops_by_field.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_crops_by_field'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_crops_by_field.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.field_id AS ""Field ID"",
+    t.season AS ""Season"",
+    t.zaocode AS ""Crop ID"",
+    t.crop_name AS ""Crop name"",
+    t.ag4a_01,
+    t.ag4a_02,
+    t.ag4a_04,
+    t.ag4a_05,
+    t.ag4a_05_other,
+    t.ag4a_vs_5a,
+    date_part('day'::text, t.ag4a_vs_5a) AS ag4a_vs_5a_day,
+    date_part('month'::text, t.ag4a_vs_5a) AS ag4a_vs_5a_month,
+    date_part('year'::text, t.ag4a_vs_5a) AS ag4a_vs_5a_year,
+    t.ag4a_06,
+    t.ag4a_08,
+    t.ag4a_15,
+    t.ag4a_15_unit,
+    t.ag4a_16,
+    t.ag4a_19,
+    t.ag4a_21,
+    t.ag4a_23,
+    max_agric_crops_by_field_severity.autoqa_severity
+   FROM ((((agric_crops_by_field t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_crops_by_field_severity ON (((max_agric_crops_by_field_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_crops_by_hh"," WITH max_agric_crops_by_hh_severity AS (
+         SELECT agric_crops_by_hh.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_crops_by_hh
+             LEFT JOIN users_schema.advisory ON ((((((agric_crops_by_hh.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_crops_by_hh'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_crops_by_hh.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.season AS ""Season"",
+    t.zaocode AS ""Crop ID"",
+    t.crop_name AS ""Crop name"",
+    t.ag5a_01,
+    t.ag5a_02_1,
+    t.ag5a_02_2,
+    t.ag5a_03,
+    t.ag5a_12_1,
+    t.ag5a_20,
+    t.ag5a_21,
+    t.ag5a_21_other,
+    t.ag5a_22,
+    t.ag5a_24,
+    t.ag5a_24_other,
+    t.ag5a_25,
+    t.ag5a_26,
+    max_agric_crops_by_hh_severity.autoqa_severity
+   FROM ((((agric_crops_by_hh t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_crops_by_hh_severity ON (((max_agric_crops_by_hh_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_perm_crops_by_field"," WITH max_agric_perm_crops_by_field_severity AS (
+         SELECT agric_perm_crops_by_field.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_perm_crops_by_field
+             LEFT JOIN users_schema.advisory ON ((((((agric_perm_crops_by_field.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_perm_crops_by_field'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_perm_crops_by_field.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.crop_type AS ""Crop type"",
+    t.field_id AS ""Field ID"",
+    t.field_name AS ""Field name"",
+    t.zaocode AS ""Crop ID"",
+    t.crop_name AS ""Crop name"",
+    t.ag6a_02,
+    t.ag6a_05,
+    t.ag6a_08_1,
+    t.ag6a_08_2,
+    t.ag6a_vs_09,
+    max_agric_perm_crops_by_field_severity.autoqa_severity
+   FROM ((((agric_perm_crops_by_field t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_perm_crops_by_field_severity ON (((max_agric_perm_crops_by_field_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_perm_crop"," WITH max_agric_perm_crop_severity AS (
+         SELECT agric_perm_crop.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_perm_crop
+             LEFT JOIN users_schema.advisory ON ((((((agric_perm_crop.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_perm_crop'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_perm_crop.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.crop_type AS ""Crop type"",
+    t.zaocode AS ""Crop ID"",
+    t.crop_name AS ""Crop name"",
+    t.ag7a_02,
+    t.ag7a_03_1,
+    t.ag7a_03_2,
+    t.ag7a_04,
+    max_agric_perm_crop_severity.autoqa_severity
+   FROM ((((agric_perm_crop t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_perm_crop_severity ON (((max_agric_perm_crop_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_byprod"," WITH max_agric_byprod_severity AS (
+         SELECT agric_byprod.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_byprod
+             LEFT JOIN users_schema.advisory ON ((((((agric_byprod.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_byprod'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_byprod.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.zaocode AS ""Crop ID"",
+    t.is_processed AS ""Is Processed"",
+    t.is_byproduct AS ""Is Byproduct"",
+    t.ag09_02_1,
+    t.ag09_03,
+    t.ag09_03_other,
+    t.ag09_03_by,
+    t.ag09_03_by_other,
+    t.ag09_03_product_name,
+    t.ag09_04_1,
+    t.ag09_04_2,
+    t.ag09_07,
+    t.ag09_07_2,
+    t.ag09_05,
+    t.ag09_06_1,
+    t.ag09_06_2,
+    t.ag09_08,
+    t.ag09_vs_8a,
+    t.ag09_vs_8b_1,
+    t.ag09_vs_8b_2,
+    t.ag09_10,
+    t.ag09_11,
+    max_agric_byprod_severity.autoqa_severity
+   FROM ((((agric_byprod t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_byprod_severity ON (((max_agric_byprod_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_livestock"," WITH max_agric_livestock_severity AS (
+         SELECT agric_livestock.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_livestock
+             LEFT JOIN users_schema.advisory ON ((((((agric_livestock.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_livestock'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_livestock.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.lvstkcode AS ""Livestock code"",
+    t.animal_name AS ""Animal name"",
+    t.ag10a_05_1,
+    t.ag10a_05_2,
+    t.ag10a_05_3,
+    t.ag10a_19,
+    t.ag10a_20,
+    t.ag10a_21,
+    t.ag10a_24,
+    t.ag10a_25,
+    t.ag10a_26,
+    t.ag10a_27,
+    t.ag10a_33,
+    t.ag10a_34,
+    t.ag10a_vs_01,
+    t.ag10a_vs_02,
+    t.ag10a_vs_03,
+    t.ag10a_vs_04,
+    max_agric_livestock_severity.autoqa_severity
+   FROM ((((agric_livestock t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_livestock_severity ON (((max_agric_livestock_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_livestock_byproduct"," WITH max_agric_livestock_byproduct_severity AS (
+         SELECT agric_livestock_byproduct.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_livestock_byproduct
+             LEFT JOIN users_schema.advisory ON ((((((agric_livestock_byproduct.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_livestock_byproduct'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_livestock_byproduct.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.itemcode AS ""Item code"",
+    t.ag10b_01,
+    t.ag10b_1a,
+    t.ag10b_1a_unit,
+    t.ag10b_1b,
+    t.ag10b_05_1,
+    t.ag10b_05_2,
+    t.ag10b_06,
+    max_agric_livestock_byproduct_severity.autoqa_severity
+   FROM ((((agric_livestock_byproduct t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_livestock_byproduct_severity ON (((max_agric_livestock_byproduct_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_livestock_by_field"," WITH max_agric_livestock_by_field_severity AS (
+         SELECT agric_livestock_by_field.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_livestock_by_field
+             LEFT JOIN users_schema.advisory ON ((((((agric_livestock_by_field.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_livestock_by_field'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_livestock_by_field.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.field_id AS ""Field ID"",
+    t.field_name AS ""Field name"",
+    t.ag10_vs_1,
+    t.ag10_vs_2,
+    t.ag10_vs_2_1,
+    t.ag10_vs_2_2,
+    t.ag10_vs_2_3,
+    t.ag10_vs_2_4,
+    t.ag10_vs_2_5,
+    t.ag10_vs_2_6,
+    t.ag10_vs_2_7,
+    t.ag10_vs_2_8,
+    t.ag10_vs_2_9,
+    t.ag10_vs_2_50,
+    t.ag10_vs_2_51,
+    t.ag10_vs_2_other,
+    t.ag10_vs_3,
+    t.ag10_vs_3_other,
+    max_agric_livestock_by_field_severity.autoqa_severity
+   FROM ((((agric_livestock_by_field t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_livestock_by_field_severity ON (((max_agric_livestock_by_field_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_implement"," WITH max_agric_implement_severity AS (
+         SELECT agric_implement.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_implement
+             LEFT JOIN users_schema.advisory ON ((((((agric_implement.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_implement'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_implement.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.itemcode AS ""Item code"",
+    t.toolname AS ""Tool name"",
+    t.ag11_01,
+    t.ag11_07,
+    max_agric_implement_severity.autoqa_severity
+   FROM ((((agric_implement t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_implement_severity ON (((max_agric_implement_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_extension"," WITH max_agric_extension_severity AS (
+         SELECT agric_extension.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_extension
+             LEFT JOIN users_schema.advisory ON ((((((agric_extension.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_extension'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_extension.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.source_id,
+    t.source_name,
+    t.sourceid,
+    t.ag12a_02_1,
+    t.ag12a_02_2,
+    t.ag12a_02_3,
+    t.ag12a_02_4,
+    t.ag12a_02_5,
+    t.ag12a_02_6,
+    t.ag12a_03,
+    t.ag12a_04,
+    t.ag12a_05,
+    max_agric_extension_severity.autoqa_severity
+   FROM ((((agric_extension t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_extension_severity ON (((max_agric_extension_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__agric_extension_family"," WITH max_agric_extension_family_severity AS (
+         SELECT agric_extension_family.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (agric_extension_family
+             LEFT JOIN users_schema.advisory ON ((((((agric_extension_family.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__agric_extension_family'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY agric_extension_family.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    agric.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    agric.landscape_no AS ""Landscape #"",
+    agric.hh_refno AS ""Household ID"",
+    agric.data_entry_date AS ""Data entry date"",
+    t.source_id_family,
+    t.source_name_family,
+    t.ag12b_06,
+    t.ag12b_08,
+    t.ag12b_09,
+    max_agric_extension_family_severity.autoqa_severity
+   FROM ((((agric_extension_family t
+     JOIN agric ON (((t.parent_uuid)::text = (agric.uuid)::text)))
+     JOIN max_agric_extension_family_severity ON (((max_agric_extension_family_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (agric.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (agric.country)::text) AND (landscape.landscape_no = agric.landscape_no))));"
+"curation__farmfieldsoils"," WITH max_farmfieldsoils_severity AS (
+         SELECT farmfieldsoils_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils farmfieldsoils_1
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_1.uuid
+        )
+ SELECT farmfieldsoils.uuid,
+    farmfieldsoils.survey_uuid,
+    farmfieldsoils.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    farmfieldsoils.region AS ""Region"",
+    farmfieldsoils.district AS ""District"",
+    farmfieldsoils.hh_refno AS ""Household ID"",
+    farmfieldsoils.landscape_no AS ""Landscape #"",
+    farmfieldsoils.enumerator_id AS ""Enumerator ID"",
+    farmfieldsoils.data_collection_date AS ""Data collection date"",
+    farmfieldsoils.number_of_fields AS ""Number of fields"",
+    farmfieldsoils.selected_first_field AS ""Selected first field"",
+    farmfieldsoils.selected_second_field AS ""Selected second field"",
+    farmfieldsoils.selected_first_field_other AS ""Selected first field other"",
+    farmfieldsoils.selected_second_field_other AS ""Selected second field other"",
+    farmfieldsoils.survey_instrument AS ""Survey Instrument"",
+    farmfieldsoils.survey_type AS ""Survey Type"",
+    max_farmfieldsoils_severity.autoqa_severity
+   FROM (((farmfieldsoils
+     JOIN max_farmfieldsoils_severity ON (((max_farmfieldsoils_severity.uuid)::text = (farmfieldsoils.uuid)::text)))
+     JOIN country ON (((country.country)::text = (farmfieldsoils.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (farmfieldsoils.country)::text) AND (landscape.landscape_no = farmfieldsoils.landscape_no))));"
+"curation__farmfieldsoils_field_elegibility"," WITH max_farmfieldsoils_field_elegibility_severity AS (
+         SELECT farmfieldsoils_field_elegibility_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_field_elegibility farmfieldsoils_field_elegibility_1
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_field_elegibility_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_field_elegibility'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_field_elegibility_1.uuid
+        )
+ SELECT farmfieldsoils_field_elegibility.uuid,
+    farmfieldsoils_field_elegibility.parent_uuid,
+    farmfieldsoils_field_elegibility.survey_uuid,
+    ffs.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    ffs.landscape_no AS ""Landscape #"",
+    ffs.hh_refno AS ""Household ID"",
+    farmfieldsoils_field_elegibility.field_no AS ""Field #"",
+    farmfieldsoils_field_elegibility.a_1 AS ""Larger than 100 sqm"",
+    farmfieldsoils_field_elegibility.a_2 AS ""Cultivated currently or last season"",
+    farmfieldsoils_field_elegibility.a_3 AS ""One of Three major crops grown"",
+    farmfieldsoils_field_elegibility.a_4 AS ""Purestand/monoculture"",
+    farmfieldsoils_field_elegibility.a_5 AS ""Eligible for First Field Testing"",
+    farmfieldsoils_field_elegibility.a_6 AS ""Eligible for Second Field Testing"",
+    max_farmfieldsoils_field_elegibility_severity.autoqa_severity
+   FROM ((((farmfieldsoils_field_elegibility
+     JOIN farmfieldsoils ffs ON (((farmfieldsoils_field_elegibility.parent_uuid)::text = (ffs.uuid)::text)))
+     JOIN max_farmfieldsoils_field_elegibility_severity ON (((max_farmfieldsoils_field_elegibility_severity.uuid)::text = (farmfieldsoils_field_elegibility.uuid)::text)))
+     JOIN country ON (((country.country)::text = (ffs.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (ffs.country)::text) AND (landscape.landscape_no = ffs.landscape_no))));"
+"curation__farmfieldsoils_soil_measurements"," WITH max_farmfieldsoils_soil_measurements_severity AS (
+         SELECT farmfieldsoils_soil_measurements_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_soil_measurements farmfieldsoils_soil_measurements_1
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_soil_measurements_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_soil_measurements'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_soil_measurements_1.uuid
+        )
+ SELECT farmfieldsoils_soil_measurements.uuid,
+    farmfieldsoils_soil_measurements.parent_uuid,
+    farmfieldsoils_soil_measurements.survey_uuid,
+    ffs.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    ffs.landscape_no AS ""Landscape #"",
+    ffs.hh_refno AS ""Household ID"",
+    farmfieldsoils_soil_measurements.field_no AS ""Field #"",
+    farmfieldsoils_soil_measurements.b_8 AS ""Slope of field"",
+    farmfieldsoils_soil_measurements.b_9 AS ""Visible Signs of Erosion"",
+    farmfieldsoils_soil_measurements.b_9_a AS ""Erosion Control/Water Harvesting Facility"",
+    farmfieldsoils_soil_measurements.b_9_b AS ""Type of Erosion Control/Water Harvesting Present"",
+    farmfieldsoils_soil_measurements.b_9_b_1 AS ""Terraces"",
+    farmfieldsoils_soil_measurements.b_9_b_2 AS ""Erosion Control Bunds"",
+    farmfieldsoils_soil_measurements.b_9_b_3 AS ""Gabions / Sand Bags"",
+    farmfieldsoils_soil_measurements.b_9_b_4 AS ""Vetiver Grass"",
+    farmfieldsoils_soil_measurements.b_9_b_5 AS ""Tree Belts"",
+    farmfieldsoils_soil_measurements.b_9_b_6 AS ""Water Harvest Bunds"",
+    farmfieldsoils_soil_measurements.b_9_b_7 AS ""Drainage Ditches"",
+    farmfieldsoils_soil_measurements.b_9_b_8 AS ""Dam"",
+    farmfieldsoils_soil_measurements.b_10_1 AS ""Rooted Plants"",
+    farmfieldsoils_soil_measurements.b_10_2 AS ""Litter Cover"",
+    farmfieldsoils_soil_measurements.b_10_3 AS ""Downed Wood"",
+    farmfieldsoils_soil_measurements.b_10_4 AS ""Stone Or Gravel"",
+    farmfieldsoils_soil_measurements.b_10_5 AS ""Dung"",
+    farmfieldsoils_soil_measurements.b_10_6 AS ""Disturbed Soil (Generally Means Tilled)"",
+    farmfieldsoils_soil_measurements.b_10_7 AS ""Undisturbed, Bare & Porous Soil"",
+    farmfieldsoils_soil_measurements.b_10_8 AS ""Undisturbed, Bare But Sealed Soil"",
+    farmfieldsoils_soil_measurements.b_10_9 AS ""Sodic Soil"",
+    farmfieldsoils_soil_measurements.b_10_10 AS ""Microfloral Crust"",
+    farmfieldsoils_soil_measurements.b_10_11 AS ""Termite Mound"",
+    farmfieldsoils_soil_measurements.barcode_id AS ""Barcode Id"",
+    max_farmfieldsoils_soil_measurements_severity.autoqa_severity
+   FROM ((((farmfieldsoils_soil_measurements
+     JOIN farmfieldsoils ffs ON (((farmfieldsoils_soil_measurements.parent_uuid)::text = (ffs.uuid)::text)))
+     JOIN max_farmfieldsoils_soil_measurements_severity ON (((max_farmfieldsoils_soil_measurements_severity.uuid)::text = (farmfieldsoils_soil_measurements.uuid)::text)))
+     JOIN country ON (((country.country)::text = (ffs.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (ffs.country)::text) AND (landscape.landscape_no = ffs.landscape_no))));"
+"curation__farmfieldsoils_lab"," WITH max_farmfieldsoils_lab_severity AS (
+         SELECT farmfieldsoils_lab_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_lab farmfieldsoils_lab_1
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_lab_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_lab'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_lab_1.uuid
+        )
+ SELECT farmfieldsoils_lab.uuid,
+    farmfieldsoils_lab.survey_uuid,
+    farmfieldsoils_lab.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    farmfieldsoils_lab.landscape_no AS ""Landscape #"",
+    farmfieldsoils_lab.hh_refno AS ""Household ID"",
+    farmfieldsoils_lab.enumerator_id AS ""Enumerator ID"",
+    farmfieldsoils_lab.date AS ""Date"",
+    farmfieldsoils_lab.selected_first_field AS ""Selected first field"",
+    farmfieldsoils_lab.selected_second_field AS ""Selected second field"",
+    max_farmfieldsoils_lab_severity.autoqa_severity
+   FROM (((farmfieldsoils_lab
+     JOIN max_farmfieldsoils_lab_severity ON (((max_farmfieldsoils_lab_severity.uuid)::text = (farmfieldsoils_lab.uuid)::text)))
+     JOIN country ON (((country.country)::text = (farmfieldsoils_lab.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (farmfieldsoils_lab.country)::text) AND (landscape.landscape_no = farmfieldsoils_lab.landscape_no))));"
+"curation__farmfieldsoils_processed"," WITH max_farmfieldsoils_processed_severity AS (
+         SELECT farmfieldsoils_processed_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_processed farmfieldsoils_processed_1
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_processed_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_processed'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_processed_1.uuid
+        )
+ SELECT farmfieldsoils_processed.uuid,
+    farmfieldsoils_processed.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    farmfieldsoils_processed.landscape_no AS ""Landscape #"",
+    farmfieldsoils_processed.hh_refno AS ""Household ID"",
+    farmfieldsoils_processed.field_no AS ""Field #"",
+    farmfieldsoils_processed.sample_date AS ""Sampling date"",
+    farmfieldsoils_processed.soil_depth_class AS ""Sampling depth class"",
+    farmfieldsoils_processed.sample_depth_top,
+    farmfieldsoils_processed.sample_depth_bottom,
+    farmfieldsoils_processed.ssn AS ""SSN"",
+    farmfieldsoils_processed.acidified_carbon AS ""Carbon content for acid treated sample to remove carbonates (% "",
+    farmfieldsoils_processed.acidified_nitrogen AS ""Nitrogen content for acid treated sample to remove carbonates ("",
+    farmfieldsoils_processed.clay_cnls AS ""Clay content by hydrometer method (%)"",
+    farmfieldsoils_processed.clay_icraf AS ""Clay content for calgon dispersed particles-recorded after 4 mi"",
+    farmfieldsoils_processed.baseum AS ""Sum of Mehlich-3 bases (Ca Mg K Na) (cmolc kg^-1)"",
+    farmfieldsoils_processed.exacidity AS ""Exchangeable Acidity (cmolc kg^-1)"",
+    farmfieldsoils_processed.ec AS ""Soil conductivity/ Salinity (uS/cm)"",
+    farmfieldsoils_processed.exch_al AS ""Exchangeable Aluminium (meq/100g)"",
+    farmfieldsoils_processed.ph AS ""Soil pH in water (soil to water ratio of 1 to 2 weight to volum"",
+    farmfieldsoils_processed.psi AS ""P sorption index (Bache and Williams 1971)"",
+    farmfieldsoils_processed.sand_cnls AS ""Sand content by hydrometer method (%)"",
+    farmfieldsoils_processed.sand_icraf AS ""Sand content for calgon dispersed particles-recorded after 4 mi"",
+    farmfieldsoils_processed.silt_cnls AS ""Silt content by hydrometer method (%)"",
+    farmfieldsoils_processed.silt_icraf AS ""Silt content for calgon dispersed particles-recorded after 4 mi"",
+    farmfieldsoils_processed.total_carbon AS ""Total Carbon content (% by weight)"",
+    farmfieldsoils_processed.total_nitrogen AS ""Total Nitrogen content (% by weight)"",
+    farmfieldsoils_processed.m3_al AS ""Exchangeable aluminium concentration by Mehlich 3 extraction (m"",
+    farmfieldsoils_processed.m3_b AS ""Boron concentration by Mehlich 3 extraction (mg kg^-1)"",
+    farmfieldsoils_processed.m3_ca AS ""Exchangeable calcium concentration by Mehlich 3 extraction (mg "",
+    farmfieldsoils_processed.m3_cu AS ""Copper concentration by Mehlich 3 extraction (mg kg^-1)"",
+    farmfieldsoils_processed.m3_fe AS ""Iron concentration by Mehlich 3 extraction (mg kg^-1)"",
+    farmfieldsoils_processed.m3_k AS ""Potassium concentration by Mehlich 3 extraction (mg kg^-1)"",
+    farmfieldsoils_processed.m3_mg AS ""Exchangeable Magnesium by wet method (mg kg^-1)"",
+    farmfieldsoils_processed.m3_mn AS ""Exchangeable Manganese concentration by Mehlich 3 extraction (m"",
+    farmfieldsoils_processed.m3_na AS ""Exchangeable Sodium concentration by Mehlich 3 extraction (mg k"",
+    farmfieldsoils_processed.m3_p AS ""Phosphorus by Mehlich 3 extraction (mg kg^-1)"",
+    farmfieldsoils_processed.m3_s AS ""Sulphur by Mehlich 3 extraction (mg kg^-1)"",
+    farmfieldsoils_processed.m3_zn AS ""Zinc by Mehlich 3 extraction (mg kg^-1)"",
+    farmfieldsoils_processed.al AS ""Aluminium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.bi AS ""Bismuth total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.br AS ""Bromine total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.cl AS ""Chlorine total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.cu AS ""Copper total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.ga AS ""Gallium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.k AS ""Potassium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.la AS ""Lanthanum total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.mg AS ""Magnesium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.na AS ""Sodium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.ni AS ""Nickel total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.p AS ""Phosphorus total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.pb AS ""Lead total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.pr AS ""Praseodymium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.sc AS ""Scandium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.sm AS ""Samarium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.sr AS ""Strontium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.ta AS ""Tantalum total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.th AS ""Thorium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.v AS ""Vanadium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.w AS ""Tungsten total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.y AS ""Yttrium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.zn AS ""Zinc total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.zr AS ""Zirconium total element concentration TXRF (mg kg^-1)"",
+    farmfieldsoils_processed.barcode_id AS ""Barcode ID"",
+    max_farmfieldsoils_processed_severity.autoqa_severity
+   FROM (((farmfieldsoils_processed
+     JOIN max_farmfieldsoils_processed_severity ON (((max_farmfieldsoils_processed_severity.uuid)::text = (farmfieldsoils_processed.uuid)::text)))
+     JOIN country ON (((country.country)::text = (farmfieldsoils_processed.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (farmfieldsoils_processed.country)::text) AND (landscape.landscape_no = farmfieldsoils_processed.landscape_no))));"
+"curation__farmfieldsoils_lab_weights"," WITH max_farmfieldsoils_lab_weights_severity AS (
+         SELECT farmfieldsoils_lab_weights_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_lab_weights farmfieldsoils_lab_weights_1
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_lab_weights_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_lab_weights'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_lab_weights_1.uuid
+        )
+ SELECT farmfieldsoils_lab_weights.uuid,
+    farmfieldsoils_lab_weights.parent_uuid,
+    farmfieldsoils_lab_weights.survey_uuid,
+    ffs.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    ffs.landscape_no AS ""Landscape #"",
+    ffs.hh_refno AS ""Household ID"",
+    farmfieldsoils_lab_weights.field_no AS ""Field #"",
+    farmfieldsoils_lab_weights.depth AS ""Depth"",
+    farmfieldsoils_lab_weights.weight_moisture_bag AS ""Weight moisture bag"",
+    farmfieldsoils_lab_weights.sample_weight_fine AS ""Sample weight fine"",
+    farmfieldsoils_lab_weights.sample_weight_coarse AS ""Sample weight coarse"",
+    farmfieldsoils_lab_weights.barcode_id AS ""Barcode ID"",
+    max_farmfieldsoils_lab_weights_severity.autoqa_severity
+   FROM ((((farmfieldsoils_lab_weights
+     JOIN farmfieldsoils_lab ffs ON (((farmfieldsoils_lab_weights.parent_uuid)::text = (ffs.uuid)::text)))
+     JOIN max_farmfieldsoils_lab_weights_severity ON (((max_farmfieldsoils_lab_weights_severity.uuid)::text = (farmfieldsoils_lab_weights.uuid)::text)))
+     JOIN country ON (((country.country)::text = (ffs.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (ffs.country)::text) AND (landscape.landscape_no = ffs.landscape_no))));"
+"curation__weatherdata"," SELECT t.id AS uuid,
+    t.""time"" AS ""Date time"",
+    ws.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    ws.name AS ""Weather station name"",
+    ws.gps_lat AS latitude,
+    ws.gps_long AS longitude,
+    t.temp_c AS ""Temperature (degrees centigrade)"",
+    t.rh_pct AS ""Relative humidity (%)"",
+    t.pressure_mbar AS ""Pressure (mbar)"",
+    t.solar_radiation_wm2 AS ""Solar radiation (w/m2)"",
+    t.wind_speed_ms AS ""Wind speed (m/s)"",
+    t.gust_speed_ms AS ""Gust speed (m/s)"",
+    t.rain_mm AS ""Precipitation (mm)"",
+    t.batt_v AS ""Battery (V)"",
+    0 AS autoqa_severity
+   FROM ((weatherdata t
+     JOIN weatherstation ws ON ((t.station = ws.id)))
+     JOIN country ON (((country.country)::text = (ws.country)::text)));"
+"curation__farmfieldsoils_yields_maize"," WITH max_farmfieldsoils_yields_maize_severity AS (
+         SELECT farmfieldsoils_yields_maize.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_maize
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_maize.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_maize'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_maize.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    t.landscape_no AS ""Landscape #"",
+    t.hh_refno AS ""Household ID"",
+    t.data_collection_date AS ""Data Collection Date"",
+    t.region AS ""Region"",
+    t.district AS ""District"",
+    t.enumerator_id AS ""Enumerator ID"",
+    t.farmers_ref AS ""Farmer ID"",
+    t.number_of_fields AS ""Number of fields"",
+    t.selected_first_field AS ""Selected First Field"",
+    t.selected_second_field AS ""Selected Second Field"",
+    max_farmfieldsoils_yields_maize_severity.autoqa_severity
+   FROM (((farmfieldsoils_yields_maize t
+     JOIN max_farmfieldsoils_yields_maize_severity ON (((max_farmfieldsoils_yields_maize_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (t.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (t.country)::text) AND (landscape.landscape_no = t.landscape_no))));"
+"curation__farmfieldsoils_yields_maize_field"," WITH max_farmfieldsoils_yields_maize_field_severity AS (
+         SELECT farmfieldsoils_yields_maize_field.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_maize_field
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_maize_field.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_maize_field'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_maize_field.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    mz.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    mz.landscape_no AS ""Landscape #"",
+    mz.hh_refno AS ""Household ID"",
+    mz.data_collection_date AS ""Data Collection Date"",
+    t.field_no AS ""Field ID"",
+    t.field_name AS ""Field Name"",
+    t.a_1,
+    t.a_2,
+    t.a_3,
+    t.a_5,
+    t.a_6,
+    max_farmfieldsoils_yields_maize_field_severity.autoqa_severity
+   FROM ((((farmfieldsoils_yields_maize_field t
+     JOIN max_farmfieldsoils_yields_maize_field_severity ON (((max_farmfieldsoils_yields_maize_field_severity.uuid)::text = (t.uuid)::text)))
+     JOIN farmfieldsoils_yields_maize mz ON (((mz.uuid)::text = (t.parent_uuid)::text)))
+     JOIN country ON (((country.country)::text = (mz.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (mz.country)::text) AND (landscape.landscape_no = mz.landscape_no))));"
+"curation__farmfieldsoils_yields_maize_field_characteristic"," WITH max_farmfieldsoils_yields_maize_field_characteristic_severity AS (
+         SELECT farmfieldsoils_yields_maize_field_characteristic.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_maize_field_characteristic
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_maize_field_characteristic.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_maize_field_characteristic'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_maize_field_characteristic.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    mz.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    mz.landscape_no AS ""Landscape #"",
+    mz.hh_refno AS ""Household ID"",
+    mz.data_collection_date AS ""Data Collection Date"",
+    t.field_no AS ""Field ID"",
+    t.b_103,
+    t.b_103_a,
+    t.b_106,
+    t.b_107,
+    t.b_109,
+    t.b_109_name,
+    t.b_109_other,
+    t.b_110,
+    t.b_112,
+    t.b_114,
+    t.b_114_name,
+    t.b_114_other,
+    t.b_115,
+    t.b_117,
+    t.b_119,
+    t.b_119_name,
+    t.b_119_other,
+    t.b_120,
+    t.b_122,
+    t.b_122_b,
+    t.b_122_b_name,
+    t.b_122_b_other,
+    t.b_122_b_1,
+    t.b_122_b_2,
+    t.b_123,
+    t.b_125,
+    t.b_126,
+    t.b_126_a_1,
+    t.b_126_a_2,
+    t.b_126_a_3,
+    t.b_126_a_4,
+    t.b_126_a_5,
+    t.b_126_a_90,
+    t.b_126_b,
+    t.b_128,
+    t.b_128_a,
+    t.b_128_b,
+    t.b_128_c,
+    t.b_11_130_1 AS c_130_1,
+    t.b_11_130_2 AS c_130_2,
+    t.b_11_132 AS c_132,
+    t.b_11_104 AS c_104,
+    t.b_11_105 AS c_105,
+    t.b_11_133 AS c_133,
+    t.b_11_134 AS c_134,
+    t.b_11_136 AS c_136,
+    t.b_11_137 AS c_137,
+    t.b_13_8 AS cc_8,
+    t.b_13_9 AS cc_9,
+    t.b_13_10 AS cc_10,
+    t.b_13_11 AS cc_11,
+    t.b_13_11_1 AS cc_11_1,
+    t.b_13_11_2 AS cc_11_2,
+    t.b_13_11_3 AS cc_11_3,
+    t.b_13_11_4 AS cc_11_4,
+    t.b_13_11_5 AS cc_11_5,
+    t.b_13_11_6 AS cc_11_6,
+    t.b_13_11_7 AS cc_11_7,
+    t.b_13_11_8 AS cc_11_8,
+    t.b_14_1,
+    t.b_14_2,
+    t.b_14_3,
+    t.b_14_4,
+    t.b_14_5,
+    t.b_14_6,
+    t.b_14_7,
+    t.b_14_8,
+    t.b_14_9,
+    t.b_14_10,
+    t.b_14_11,
+    t.b_13_13 AS cc_13,
+    max_farmfieldsoils_yields_maize_field_characteristic_severity.autoqa_severity
+   FROM ((((farmfieldsoils_yields_maize_field_characteristic t
+     JOIN max_farmfieldsoils_yields_maize_field_characteristic_severity ON (((max_farmfieldsoils_yields_maize_field_characteristic_severity.uuid)::text = (t.uuid)::text)))
+     JOIN farmfieldsoils_yields_maize mz ON (((mz.uuid)::text = (t.parent_uuid)::text)))
+     JOIN country ON (((country.country)::text = (mz.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (mz.country)::text) AND (landscape.landscape_no = mz.landscape_no))));"
+"curation__farmfieldsoils_yields_paddy_maize"," WITH max_farmfieldsoils_yields_paddy_maize_severity AS (
+         SELECT farmfieldsoils_yields_paddy_maize.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_paddy_maize
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_paddy_maize.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_paddy_maize'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_paddy_maize.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    t.landscape_no AS ""Landscape #"",
+    t.hh_refno AS ""Household ID"",
+    t.data_collection_date AS ""Data Collection Date"",
+    t.region AS ""Region"",
+    t.district AS ""District"",
+    t.enumerator_id AS ""Enumerator ID"",
+    t.farmers_ref AS ""Farmer ID"",
+    t.number_of_fields AS ""Number of fields"",
+    t.selected_first_field AS ""Selected First Field"",
+    t.selected_second_field AS ""Selected Second Field"",
+    max_farmfieldsoils_yields_paddy_maize_severity.autoqa_severity
+   FROM (((farmfieldsoils_yields_paddy_maize t
+     JOIN max_farmfieldsoils_yields_paddy_maize_severity ON (((max_farmfieldsoils_yields_paddy_maize_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (t.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (t.country)::text) AND (landscape.landscape_no = t.landscape_no))));"
+"curation__farmfieldsoils_yields_paddy_maize_field"," WITH max_farmfieldsoils_yields_paddy_maize_field_severity AS (
+         SELECT farmfieldsoils_yields_paddy_maize_field.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_paddy_maize_field
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_paddy_maize_field.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_paddy_maize_field'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_paddy_maize_field.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    mz.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    mz.landscape_no AS ""Landscape #"",
+    mz.hh_refno AS ""Household ID"",
+    mz.data_collection_date AS ""Data Collection Date"",
+    t.field_no AS ""Field ID"",
+    t.field_name AS ""Field Name"",
+    t.a_1,
+    t.a_2,
+    t.a_3,
+    t.a_5,
+    t.a_6,
+    max_farmfieldsoils_yields_paddy_maize_field_severity.autoqa_severity
+   FROM ((((farmfieldsoils_yields_paddy_maize_field t
+     JOIN max_farmfieldsoils_yields_paddy_maize_field_severity ON (((max_farmfieldsoils_yields_paddy_maize_field_severity.uuid)::text = (t.uuid)::text)))
+     JOIN farmfieldsoils_yields_paddy_maize mz ON (((mz.uuid)::text = (t.parent_uuid)::text)))
+     JOIN country ON (((country.country)::text = (mz.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (mz.country)::text) AND (landscape.landscape_no = mz.landscape_no))));"
+"curation__farmfieldsoils_yields_paddy_maize_field_characteristi"," WITH max_farmfieldsoils_yields_paddy_maize_field_characteristic_seve AS (
+         SELECT farmfieldsoils_yields_paddy_maize_field_characteristic.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_paddy_maize_field_characteristic
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_paddy_maize_field_characteristic.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_paddy_maize_field_characteristic'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_paddy_maize_field_characteristic.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    mz.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    mz.landscape_no AS ""Landscape #"",
+    mz.hh_refno AS ""Household ID"",
+    mz.data_collection_date AS ""Data Collection Date"",
+    t.field_no AS ""Field ID"",
+    t.b_103,
+    t.b_103_a,
+    t.b_106,
+    t.b_107,
+    t.b_109,
+    t.b_109_name,
+    t.b_109_other,
+    t.b_110,
+    t.b_112,
+    t.b_114,
+    t.b_114_name,
+    t.b_114_other,
+    t.b_115,
+    t.b_117,
+    t.b_119,
+    t.b_119_name,
+    t.b_119_other,
+    t.b_120,
+    t.b_122,
+    t.b_122_b,
+    t.b_122_b_name,
+    t.b_122_b_other,
+    t.b_122_b_1,
+    t.b_122_b_2,
+    t.b_123,
+    t.b_125,
+    t.b_126,
+    t.b_126_a_1,
+    t.b_126_a_2,
+    t.b_126_a_3,
+    t.b_126_a_4,
+    t.b_126_a_5,
+    t.b_126_a_90,
+    t.b_126_b,
+    t.b_128,
+    t.b_128_a,
+    t.b_128_b,
+    t.b_128_c,
+    t.b_11_130_1,
+    t.b_11_130_2,
+    t.b_11_132,
+    t.b_11_104,
+    t.b_11_105,
+    t.b_11_133,
+    t.b_11_134,
+    t.b_11_136,
+    t.b_11_137,
+    t.b_11_134_r,
+    t.b_11_136_r,
+    t.b_11_137_r,
+    t.b_13_8,
+    t.b_13_9,
+    t.b_13_10,
+    t.b_13_11,
+    t.b_13_11_1,
+    t.b_13_11_2,
+    t.b_13_11_3,
+    t.b_13_11_4,
+    t.b_13_11_5,
+    t.b_13_11_6,
+    t.b_13_11_7,
+    t.b_13_11_8,
+    t.b_12_1,
+    t.b_12_2,
+    t.b_12_3,
+    t.b_12_4,
+    t.b_12_5,
+    t.b_12_6,
+    t.b_12_7,
+    t.b_12_8,
+    t.b_12_9,
+    t.b_12_10,
+    t.b_12_11,
+    t.b_14_1,
+    t.b_14_2,
+    t.b_14_3,
+    t.b_14_4,
+    t.b_14_5,
+    t.b_14_6,
+    t.b_14_7,
+    t.b_14_8,
+    t.b_14_9,
+    t.b_14_10,
+    t.b_14_11,
+    t.b_13_13,
+    max_farmfieldsoils_yields_paddy_maize_field_characteristic_seve.autoqa_severity
+   FROM ((((farmfieldsoils_yields_paddy_maize_field_characteristic t
+     JOIN max_farmfieldsoils_yields_paddy_maize_field_characteristic_seve ON (((max_farmfieldsoils_yields_paddy_maize_field_characteristic_seve.uuid)::text = (t.uuid)::text)))
+     JOIN farmfieldsoils_yields_paddy_maize mz ON (((mz.uuid)::text = (t.parent_uuid)::text)))
+     JOIN country ON (((country.country)::text = (mz.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (mz.country)::text) AND (landscape.landscape_no = mz.landscape_no))));"
+"curation__farmfieldsoils_yields_weight"," WITH max_farmfieldsoils_yields_weight_severity AS (
+         SELECT farmfieldsoils_yields_weight.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_weight
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_weight.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_weight'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_weight.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    t.landscape_no AS ""Landscape #"",
+    t.hh_refno AS ""Household ID"",
+    t.data_collection_date AS ""Data Collection Date"",
+    t.region AS ""Region"",
+    t.district AS ""District"",
+    t.enumerator_id AS ""Enumerator ID"",
+    t.number_of_fields AS ""Number of fields"",
+    max_farmfieldsoils_yields_weight_severity.autoqa_severity
+   FROM (((farmfieldsoils_yields_weight t
+     JOIN max_farmfieldsoils_yields_weight_severity ON (((max_farmfieldsoils_yields_weight_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (t.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (t.country)::text) AND (landscape.landscape_no = t.landscape_no))));"
+"curation__farmfieldsoils_yields_weight_crop"," WITH max_farmfieldsoils_yields_weight_crop_severity AS (
+         SELECT farmfieldsoils_yields_weight_crop.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (farmfieldsoils_yields_weight_crop
+             LEFT JOIN users_schema.advisory ON ((((((farmfieldsoils_yields_weight_crop.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__farmfieldsoils_yields_weight_crop'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY farmfieldsoils_yields_weight_crop.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    yw.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    yw.landscape_no AS ""Landscape #"",
+    yw.hh_refno AS ""Household ID"",
+    yw.data_collection_date AS ""Data Collection Date"",
+    t.field_no AS ""Field #"",
+    t.dry_crop_id AS ""Dry Crop ID"",
+    t.""141_a1"" AS d_141_a1,
+    t.""141_a2"" AS d_141_a2,
+    t.""141_b"" AS d_141_b,
+    t.""141_b_other"" AS d_141_b_other,
+    max_farmfieldsoils_yields_weight_crop_severity.autoqa_severity
+   FROM ((((farmfieldsoils_yields_weight_crop t
+     JOIN max_farmfieldsoils_yields_weight_crop_severity ON (((max_farmfieldsoils_yields_weight_crop_severity.uuid)::text = (t.uuid)::text)))
+     JOIN farmfieldsoils_yields_weight yw ON (((yw.uuid)::text = (t.parent_uuid)::text)))
+     JOIN country ON (((country.country)::text = (yw.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (yw.country)::text) AND (landscape.landscape_no = yw.landscape_no))));"
+"curation__household"," WITH max_household_severity AS (
+         SELECT household_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (household household_1
+             LEFT JOIN users_schema.advisory ON ((((((household_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY household_1.uuid
+        )
+ SELECT household.uuid,
+    household.survey_uuid,
+    household.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    household.region AS ""Region"",
+    household.district AS ""District"",
+    household.landscape_no AS ""Landscape #"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    household.hh_refno AS ""Household ID"",
+    household.clerk_id AS ""Clerk ID"",
+    household.clerk_code,
+    household.data_clerk_code_2,
+    household.data_entry_date AS ""Data entry date"",
+    household.data_entry_date_2,
+    household.questionnaire_inspection_date AS ""Questionnaire inspection date"",
+    household.supervisor_id AS ""Supervisor ID"",
+    household.supervisor_code,
+    household.hh_head_refno AS ""Household head ID"",
+    household.interview_date AS ""Interview Date"",
+    household.interview_time AS ""Interview Time"",
+    household.observations AS ""Observations"",
+    household.survey_instrument AS ""Survey Instrument"",
+    household.time_finish AS ""Finish Time"",
+    ""household_secV"".refused AS ""Number Refused"",
+    max_household_severity.autoqa_severity
+   FROM ((((household
+     JOIN max_household_severity ON (((max_household_severity.uuid)::text = (household.uuid)::text)))
+     JOIN country ON (((country.country)::text = (household.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (household.country)::text) AND (landscape.landscape_no = household.landscape_no))))
+     LEFT JOIN ""household_secV"" ON (((household.hh_refno = ""household_secV"".hh_refno) AND (household.interview_date = ""household_secV"".end_date))));"
+"curation__household_secHV2"," WITH max_household_sechv2_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secHV2"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secHV2'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.hh_hv105b_01,
+    t.hh_hv105c_01,
+    t.hh_hv106_01,
+    t.hh_hv109_01,
+    t.hh_hv109a_01,
+    t.hh_hv109b_01,
+    t.hh_hv109c_01,
+    t.hh_hv109c_01_1,
+    t.hh_hv109c_01_2,
+    t.hh_hv109c_01_3,
+    t.hh_hv109c_01_4,
+    t.hh_hv109c_01_5,
+    t.hh_hv109c_01_6,
+    t.hh_hv109c_01_7,
+    t.hh_hv109c_01_8,
+    t.hh_hv109c_01_9,
+    t.hh_hv109c_01_10,
+    t.hh_hv109c_01_11,
+    t.hh_hv109c_01_12,
+    t.hv2_10_01,
+    t.hv2_10_02,
+    t.hv2_10_03,
+    t.hv2_10_04,
+    t.hv2_10_05,
+    t.hv2_10_06,
+    t.hv2_10_07,
+    t.hv2_10_08,
+    t.hv2_10_09,
+    t.hv2_10_09_oth,
+    t.hv2_11_01,
+    t.hv2_12_01,
+    t.hv2_13_01,
+    t.hv2_14_01,
+    t.hv2_15_01,
+    t.hv2_11_02,
+    t.hv2_12_02,
+    t.hv2_13_02,
+    t.hv2_14_02,
+    t.hv2_15_02,
+    t.hv2_11_03,
+    t.hv2_12_03,
+    t.hv2_13_03,
+    t.hv2_14_03,
+    t.hv2_15_03,
+    t.hv2_11_04,
+    t.hv2_12_04,
+    t.hv2_13_04,
+    t.hv2_14_04,
+    t.hv2_15_04,
+    t.hv2_11_05,
+    t.hv2_12_05,
+    t.hv2_13_05,
+    t.hv2_14_05,
+    t.hv2_15_05,
+    t.hv2_11_06,
+    t.hv2_12_06,
+    t.hv2_13_06,
+    t.hv2_14_06,
+    t.hv2_15_06,
+    t.hv2_11_07,
+    t.hv2_12_07,
+    t.hv2_13_07,
+    t.hv2_14_07,
+    t.hv2_15_07,
+    t.hv2_11_08,
+    t.hv2_12_08,
+    t.hv2_13_08,
+    t.hv2_14_08,
+    t.hv2_15_08,
+    t.hv2_11_09,
+    t.hv2_12_09,
+    t.hv2_13_09,
+    t.hv2_14_09,
+    t.hv2_15_09,
+    max_household_sechv2_severity.autoqa_severity
+   FROM ((((""household_secHV2"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_sechv2_severity ON (((max_household_sechv2_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secI"," WITH max_household_seci_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secI"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secI'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.hh_i01,
+    t.hh_i02_1,
+    t.hh_i02_2,
+    t.hh_i02_3,
+    t.hh_i02_4,
+    t.hh_i02_5,
+    t.hh_i02_6,
+    t.hh_i02_7,
+    t.hh_i02_8,
+    t.hh_i031,
+    t.hh_i032,
+    t.hh_i04_1,
+    t.hh_i04_1_other,
+    t.hh_i04_2,
+    t.hh_i04_2_other,
+    t.hh_i04_3,
+    t.hh_i04_3_other,
+    t.hh_i05,
+    t.hh_i05_other,
+    t.hh_i05_2,
+    t.hh_i05_2_other,
+    t.hh_i06,
+    t.hh_i07_1,
+    t.hh_i07_2,
+    t.hh_i07_3,
+    t.hh_i08,
+    t.hh_i09_2012,
+    t.hh_i09_2012_1,
+    t.hh_i09_2012_2,
+    t.hh_i09_2012_3,
+    t.hh_i09_2012_4,
+    t.hh_i09_2012_5,
+    t.hh_i09_2012_6,
+    t.hh_i09_2012_7,
+    t.hh_i09_2012_8,
+    t.hh_i09_2012_9,
+    t.hh_i09_2012_10,
+    t.hh_i09_2012_11,
+    t.hh_i09_2012_12,
+    t.hh_i09_2013,
+    t.hh_i09_2013_1,
+    t.hh_i09_2013_2,
+    t.hh_i09_2013_3,
+    t.hh_i09_2013_4,
+    t.hh_i09_2013_5,
+    t.hh_i09_2013_6,
+    t.hh_i09_2013_7,
+    t.hh_i09_2013_8,
+    t.hh_i09_2013_9,
+    t.hh_i09_2013_10,
+    t.hh_i09_2013_11,
+    t.hh_i09_2013_12,
+    t.hh_i10_1,
+    t.hh_i10_2,
+    t.hh_i10_3,
+    t.hh_i10_1oth,
+    t.hh_i10_2oth,
+    t.hh_i10_3oth,
+    max_household_seci_severity.autoqa_severity
+   FROM ((((""household_secI"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_seci_severity ON (((max_household_seci_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secE"," WITH max_household_sece_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secE"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secE'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.parent_uuid,
+    hh_secb.ind AS ""Individual ID"",
+    t.hh_e04,
+    t.hh_e06,
+    t.hh_e08,
+    t.hh_e22_1,
+    t.hh_e22_2,
+    t.hh_e23,
+    t.hh_e24_1,
+    t.hh_e24_2,
+    t.hh_e25,
+    t.hh_e26,
+    t.hh_e27,
+    t.hh_e28,
+    t.hh_e51,
+    t.hh_e52,
+    t.hh_e64_1,
+    t.hh_e64_2,
+    t.hh_e65_1,
+    t.hh_e65_2,
+    max_household_sece_severity.autoqa_severity
+   FROM (((((""household_secE"" t
+     JOIN ""household_secB"" hh_secb ON (((t.parent_uuid)::text = (hh_secb.uuid)::text)))
+     JOIN household hh ON (((hh_secb.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_sece_severity ON (((max_household_sece_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secU"," WITH max_household_secu_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secU"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secU'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.parent_uuid,
+    hh_secb.ind AS ""Individual ID"",
+    t.u1_01,
+    t.u2_01,
+    t.u3_01,
+    t.u4_01,
+    t.u5_01,
+    t.u6_01,
+    t.u7_01,
+    t.u7_01_other,
+    max_household_secu_severity.autoqa_severity
+   FROM (((((""household_secU"" t
+     JOIN ""household_secB"" hh_secb ON (((t.parent_uuid)::text = (hh_secb.uuid)::text)))
+     JOIN household hh ON (((hh_secb.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secu_severity ON (((max_household_secu_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secJ1"," WITH max_household_secj1_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secJ1"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secJ1'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.hh_j01,
+    t.hh_j02,
+    t.hh_j02oth,
+    t.hh_j03,
+    t.hh_j04_1,
+    t.hh_j04_2,
+    t.hh_j05,
+    t.hh_j05_other,
+    t.hh_j06,
+    t.hh_j06_other,
+    t.hh_j07,
+    t.hh_j07_other,
+    t.hh_j08,
+    t.hh_j08_other,
+    t.hh_j09,
+    t.hh_j09_other,
+    t.hh_j10,
+    t.hh_j11,
+    t.hh_j11_other,
+    t.hh_j12,
+    t.hh_j12_other,
+    t.hh_j13,
+    t.hh_j13_other,
+    t.hh_j14,
+    t.hh_j14_oth,
+    t.hh_j15,
+    t.hh_j15_oth,
+    t.hh_j16_1,
+    t.hh_j16_2,
+    t.hh_j16_1oth,
+    t.hh_j16_2oth,
+    t.hh_j17_1,
+    t.hh_j17_2,
+    t.hh_j17_1oth,
+    t.hh_j17_2oth,
+    t.hh_j18_1,
+    t.hh_j18_2,
+    t.hh_j18_1oth,
+    t.hh_j18_2oth,
+    t.hh_j19_1,
+    t.hh_j19_2,
+    t.hh_j19_1oth,
+    t.hh_j19_2oth,
+    t.hh_j20,
+    max_household_secj1_severity.autoqa_severity
+   FROM ((((""household_secJ1"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secj1_severity ON (((max_household_secj1_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secJ2"," WITH max_household_secj2_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secJ2"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secJ2'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.j20b_02,
+    t.j20c_02,
+    t.j20c_02_1,
+    t.j20c_02_2,
+    t.j20c_02_3,
+    t.j20c_02_4,
+    t.j20c_02_5,
+    t.j20c_02_6,
+    t.j20c_02_7,
+    t.j20c_02_8,
+    t.j20c_02_9,
+    t.j20c_02_10,
+    t.j20c_02_11,
+    t.j20c_02_12,
+    t.j22_02,
+    t.j22_02_other,
+    t.j23_02_1,
+    t.j23_02_2,
+    t.j24_02,
+    t.j22_03,
+    t.j22_03_other,
+    t.j23_03_1,
+    t.j23_03_2,
+    t.j24_03,
+    t.j22_04,
+    t.j22_04_other,
+    t.j23_04_1,
+    t.j23_04_2,
+    t.j24_04,
+    t.j22_05,
+    t.j22_05_other,
+    t.j23_05_1,
+    t.j23_05_2,
+    t.j24_05,
+    t.j22_06,
+    t.j22_06_other,
+    t.j23_06_1,
+    t.j23_06_2,
+    t.j24_06,
+    t.j22_07,
+    t.j22_07_other,
+    t.j23_07_1,
+    t.j23_07_2,
+    t.j24_07,
+    t.j22_08,
+    t.j22_08_other,
+    t.j23_08_1,
+    t.j23_08_2,
+    t.j24_08,
+    t.j22_09,
+    t.j22_09_other,
+    t.j23_09_1,
+    t.j23_09_2,
+    t.j24_09,
+    t.j22_10,
+    t.j22_10_other,
+    t.j23_10_1,
+    t.j23_10_2,
+    t.j24_10,
+    t.j22_11,
+    t.j22_11_other,
+    t.j23_11_1,
+    t.j23_11_2,
+    t.j24_11,
+    t.j22_12,
+    t.j22_12_other,
+    t.j23_12_1,
+    t.j23_12_2,
+    t.j24_12,
+    t.j22_13,
+    t.j22_13_other,
+    t.j22_14,
+    t.j22_14_other,
+    t.j23_14_1,
+    t.j23_14_2,
+    t.j24_14,
+    max_household_secj2_severity.autoqa_severity
+   FROM ((((""household_secJ2"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secj2_severity ON (((max_household_secj2_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secHV1"," WITH max_household_sechv1_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secHV1"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secHV1'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.parent_uuid,
+    hh_secb.ind AS ""Individual ID"",
+    t.hh_hv103,
+    t.hh_hv104,
+    t.hh_hv105,
+    t.hh_hv105_other,
+    t.hh_hv105_unit,
+    t.hh_hv105a,
+    max_household_sechv1_severity.autoqa_severity
+   FROM (((((""household_secHV1"" t
+     JOIN ""household_secB"" hh_secb ON (((t.parent_uuid)::text = (hh_secb.uuid)::text)))
+     JOIN household hh ON (((hh_secb.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_sechv1_severity ON (((max_household_sechv1_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secK2"," WITH max_household_seck2_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secK2"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secK2'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.k2_8_a,
+    t.k2_8_b,
+    t.k2_8_c,
+    t.k2_8_d,
+    t.k2_8_e,
+    t.k2_8_f,
+    t.k2_8_g,
+    t.k2_8_h,
+    t.k2_8_i,
+    t.k2_8_j,
+    t.k2_9,
+    t.k2_10_a,
+    t.k2_11_a,
+    t.k2_10_b,
+    t.k2_11_b,
+    t.k2_10_c,
+    t.k2_11_c,
+    t.k2_10_d,
+    t.k2_11_d,
+    max_household_seck2_severity.autoqa_severity
+   FROM ((((""household_secK2"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_seck2_severity ON (((max_household_seck2_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secL"," WITH max_household_secl_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secL"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secL'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.l_101_1,
+    t.l_101_2,
+    t.l_102_1,
+    t.l_102_2,
+    t.l_103_1,
+    t.l_103_2,
+    t.l_199_1,
+    t.l_199_2,
+    t.l_201_1,
+    t.l_201_2,
+    t.l_202_1,
+    t.l_202_2,
+    t.l_203_1,
+    t.l_203_2,
+    t.l_203a_1,
+    t.l_203a_2,
+    t.l_203b_1,
+    t.l_203b_2,
+    t.l_204_1,
+    t.l_204_2,
+    t.l_205_1,
+    t.l_205_2,
+    t.l_206_1,
+    t.l_206_2,
+    t.l_207_1,
+    t.l_207_2,
+    t.l_207a_1,
+    t.l_207a_2,
+    t.l_208_1,
+    t.l_208_2,
+    t.l_209_1,
+    t.l_209_2,
+    t.l_211_1,
+    t.l_211_2,
+    t.l_212_1,
+    t.l_212_2,
+    t.l_213_1,
+    t.l_213_2,
+    t.l_214_1,
+    t.l_214_2,
+    t.l_215_1,
+    t.l_215_2,
+    t.l_216_1,
+    t.l_216_2,
+    t.l_217_1,
+    t.l_217_2,
+    t.l_217a_1,
+    t.l_217a_2,
+    t.l_218_1,
+    t.l_218_2,
+    t.l_219_1,
+    t.l_219_2,
+    t.l_220_1,
+    t.l_220_2,
+    t.l_221_1,
+    t.l_221_2,
+    t.l_222_1,
+    t.l_222_2,
+    t.l_223_1,
+    t.l_223_2,
+    t.l_224_1,
+    t.l_224_2,
+    t.l_224a_1,
+    t.l_224a_2,
+    t.l_224b_1,
+    t.l_224b_2,
+    max_household_secl_severity.autoqa_severity
+   FROM ((((""household_secL"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secl_severity ON (((max_household_secl_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secM"," WITH max_household_secm_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secM"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secM'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.l_301_1,
+    t.l_301_2,
+    t.l_302_1,
+    t.l_302_2,
+    t.l_303_1,
+    t.l_303_2,
+    t.l_304_1,
+    t.l_304_2,
+    t.l_305_1,
+    t.l_305_2,
+    t.l_306_1,
+    t.l_306_2,
+    t.l_307_1,
+    t.l_307_2,
+    t.l_308_1,
+    t.l_308_2,
+    t.l_309_1,
+    t.l_309_2,
+    t.l_310_1,
+    t.l_310_2,
+    t.l_311_1,
+    t.l_311_2,
+    t.l_312_1,
+    t.l_312_2,
+    t.l_313_1,
+    t.l_313_2,
+    t.l_314_1,
+    t.l_314_2,
+    t.l_315_1,
+    t.l_315_2,
+    t.l_316_1,
+    t.l_316_2,
+    t.l_317_1,
+    t.l_317_2,
+    t.l_318_1,
+    t.l_318_2,
+    t.l_319_1,
+    t.l_319_2,
+    t.l_320_1,
+    t.l_320_2,
+    t.l_320a_1,
+    t.l_320a_2,
+    t.l_320b_1,
+    t.l_320b_2,
+    max_household_secm_severity.autoqa_severity
+   FROM ((((""household_secM"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secm_severity ON (((max_household_secm_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secN"," WITH max_household_secn_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secN"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secN'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.n_401,
+    t.n_402,
+    t.n_403,
+    t.n_404,
+    t.n_405,
+    t.n_406,
+    t.n_407,
+    t.n_408,
+    t.n_409,
+    t.n_410,
+    t.n_411,
+    t.n_412,
+    t.n_413,
+    t.n_414,
+    t.n_415,
+    t.n_416,
+    t.n_417,
+    t.n_418,
+    t.n_419,
+    t.n_420,
+    t.n_421,
+    t.n_422,
+    t.n_423,
+    t.n_424,
+    t.n_425,
+    t.n_426,
+    t.n_427,
+    t.n_428,
+    t.n_429,
+    t.n_430,
+    t.n_431,
+    t.n_432,
+    t.n_433,
+    t.n_434,
+    t.n_435,
+    t.n_436,
+    t.n_437,
+    t.n_438,
+    t.n_439,
+    t.n_440,
+    t.n_441,
+    t.n_442,
+    t.n_443,
+    t.n_444,
+    t.n_445,
+    t.n_446,
+    t.n_447,
+    t.n_448,
+    t.n_449,
+    t.n_450,
+    t.n_451,
+    t.n_452,
+    t.n_453,
+    t.n_454,
+    t.n_455,
+    t.n_456,
+    t.n_457,
+    t.n_458,
+    t.n_459,
+    t.n_460,
+    t.n_461,
+    t.n_462,
+    t.n_463,
+    t.n_464,
+    t.n_465,
+    t.n_466,
+    t.n_467,
+    t.n_468,
+    max_household_secn_severity.autoqa_severity
+   FROM ((((""household_secN"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secn_severity ON (((max_household_secn_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secB"," WITH max_household_secb_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secB"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secB'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.ind AS ""Individual ID"",
+    t.hh_b02,
+    t.hh_b05,
+    t.hh_b03,
+    t.hh_b04,
+    t.hh_b07,
+    t.hh_b08,
+    max_household_secb_severity.autoqa_severity
+   FROM ((((""household_secB"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secb_severity ON (((max_household_secb_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secC"," WITH max_household_secc_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secC"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secC'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.survey_uuid,
+    t.parent_uuid,
+    hh.country AS ""Country"",
+    country.partner_institution AS ""Partner Organization"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    hh_secb.ind AS ""Individual ID"",
+    t.hh_c01,
+    t.hh_c02,
+    t.hh_c03,
+    t.hh_c07,
+    max_household_secc_severity.autoqa_severity
+   FROM (((((""household_secC"" t
+     JOIN ""household_secB"" hh_secb ON (((t.parent_uuid)::text = (hh_secb.uuid)::text)))
+     JOIN household hh ON (((hh_secb.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_secc_severity ON (((max_household_secc_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
+"curation__household_secK1"," WITH max_household_seck1_severity AS (
+         SELECT t_1.uuid,
+            COALESCE(max(advisory.severity), 0) AS autoqa_severity
+           FROM (""household_secK1"" t_1
+             LEFT JOIN users_schema.advisory ON ((((((t_1.uuid)::text = (advisory.row_id)::text) AND ((advisory.table_name)::text = 'curation__household_secK1'::text)) AND (advisory.resolved = false)) AND (advisory.ignored = false))))
+          GROUP BY t_1.uuid
+        )
+ SELECT t.uuid,
+    t.parent_uuid,
+    t.survey_uuid,
+    hh.country AS ""Country"",
+    landscape.centerpoint_longitude AS longitude,
+    landscape.centerpoint_latitude AS latitude,
+    country.partner_institution AS ""Partner Organization"",
+    hh.landscape_no AS ""Landscape #"",
+    hh.hh_refno AS ""Household ID"",
+    hh.data_entry_date AS ""Data entry date"",
+    t.k_02_1,
+    t.k_02_2,
+    t.k_03_1,
+    t.k_03_2,
+    t.k_04,
+    t.k_05_1,
+    t.k_05_2,
+    t.k_05a,
+    t.k_06_1,
+    t.k_06_2,
+    t.k_item,
+    t.k_item_code,
+    t.k_item_other,
+    max_household_seck1_severity.autoqa_severity
+   FROM ((((""household_secK1"" t
+     JOIN household hh ON (((t.parent_uuid)::text = (hh.uuid)::text)))
+     JOIN max_household_seck1_severity ON (((max_household_seck1_severity.uuid)::text = (t.uuid)::text)))
+     JOIN country ON (((country.country)::text = (hh.country)::text)))
+     JOIN landscape ON ((((landscape.country)::text = (hh.country)::text) AND (landscape.landscape_no = hh.landscape_no))));"
