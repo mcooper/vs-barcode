@@ -1,6 +1,7 @@
 setwd('D://Documents and Settings/mcooper/GitHub/vs-data-tools/flagging/')
 
 library(dplyr)
+library(DBI)
 
 source('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/updating-plant-names/update-names/production_connection.R')
 con <- src_postgres(dbname = production_dbname, host = production_host, port = production_port, user = production_user, password = production_password)
@@ -73,7 +74,7 @@ for (i in views){
   drop <- paste0('DROP VIEW IF EXISTS flagging__', i)
   create <- paste0('CREATE OR REPLACE view flagging__', i, ' AS ', query)
   
-  dbSendQuery(con$con, sql(final))
+  waste <- dbGetQuery(con$con, sql(query))
   dbSendQuery(con$con, sql(drop))
   dbSendQuery(con$con, sql(create))
 
