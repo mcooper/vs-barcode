@@ -10,10 +10,39 @@ table <- read.csv('flag-rules.csv', stringsAsFactors = F, na.strings = "")
 
 views <- unique(table$table)
 
+parsedict <- function(d){
+  d <- substr(d, start=2, stop=nchar(d)-1)
+  d <- strsplit(d, ', ')[[1]]
+  clean <- data.frame(stringsAsFactors=F)
+  for (i in d){
+    end <- gregexpr(':', i, fixed=T)[[1]][1]
+    code <- substr(i, 1, end-1)
+    if (!grepl("'", code)){
+      code <- paste0("'", code, "'")
+    }
+    word <- substr(i, end+1, nchar(i))
+    clean <-bind_rows(clean, data.frame(code, word, stringsAsFactors=F))
+  }
+  clean
+}
+
 for (i in views){
   sel <- table[table$table==i, ]
   str <- ''
   for (j in 1:nrow(sel)){
+    if (!is.na(sel$unitvar[j])){
+      cd <- parsedict(sel$unitcat[j])
+      for(k in 1:nrow(cd)){
+        mx <- paste0('uv', k, 'mx')
+        mn <- paste0('uv', k, 'mn')
+        if (!is.na(sel[j, mx])){
+          str <- paste0(str, "CASE WHEN ", sel$var[j], " > ", sel[j, mx], " AND ", sel$unitvar[j], " = ", cd$code[k], " THEN '", sel$var[j], " is greater than ", gsub("'", "", sel[j, mx]), " WITH UNIT", gsub("'", '', cd$word[k]), "; ' ELSE '' END || ")
+        }
+        if (!is.na(sel[j, mn])){
+          str <- paste0(str, "CASE WHEN ", sel$var[j], " <= ", sel[j, mn], " AND ", sel$unitvar[j], " = ", cd$code[k], " THEN '", sel$var[j], " is greater than ", gsub("'", "", sel[j, mn]), " WITH UNIT", gsub("'", '', cd$word[k]), "; ' ELSE '' END || ")
+        }
+      }
+    }
     if (!is.na(sel$allmax[j])){
       str <- paste0(str, "CASE WHEN ", sel$var[j], " > ", sel$allmax[j], " THEN '", sel$var[j], " is greater than ", gsub("'", "", sel$allmax[j]), "; ' ELSE '' END || ")
     }
@@ -74,7 +103,7 @@ for (i in views){
   drop <- paste0('DROP VIEW IF EXISTS flagging__', i)
   create <- paste0('CREATE OR REPLACE view flagging__', i, ' AS ', query)
   
-  waste <- dbGetQuery(con$con, sql(query))
+  dbGetQuery(con$con, sql(query))
   dbSendQuery(con$con, sql(drop))
   dbSendQuery(con$con, sql(create))
 
