@@ -91,7 +91,7 @@ for (i in views){
   }
   
   if (str == ''){
-    str <- "''"
+    str <- "''::text"
   } else{
     str <- substr(str, 1, nchar(str)-3)
   }
@@ -103,7 +103,10 @@ for (i in views){
   drop <- paste0('DROP VIEW IF EXISTS flagging__', i)
   create <- paste0('CREATE OR REPLACE view flagging__', i, ' AS ', query)
   
+  options(warn=2)
   dbGetQuery(con$con, sql(query))
+  options(warn=1)
+  
   dbSendQuery(con$con, sql(drop))
   dbSendQuery(con$con, sql(create))
 
