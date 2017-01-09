@@ -91,3 +91,7 @@ SET v1_4_a = pgp_sym_decrypt(v1_4_a_cpt, 'PASSWORD'),
 v1_4_a_cpt=NULL
 WHERE v1_4_a_cpt IS NOT NULL;
 
+UPDATE "household_member_ref"
+SET indid = pgp_sym_decrypt(indid_cpt, 'PASSWORD'),
+indid_cpt=NULL
+WHERE indid_cpt IS NOT NULL; 

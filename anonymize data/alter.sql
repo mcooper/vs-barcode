@@ -36,3 +36,4 @@ ALTER TABLE "household_secV" ADD COLUMN v1_3_a_cpt bytea;
 
 ALTER TABLE "household_secV" ADD COLUMN v1_4_a_cpt bytea;
 
+ALTER TABLE "household_member_ref" ADD COLUMN indid_cpt bytea;
