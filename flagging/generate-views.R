@@ -100,8 +100,8 @@ for (i in views){
   template <- readChar(tempname, file.info(tempname)$size)
   
   query <- paste0('SELECT *,\n', str, ' AS "flag"\n FROM (', template, ') a') 
-  drop <- paste0('DROP VIEW IF EXISTS flagging__', i)
-  create <- paste0('CREATE OR REPLACE view flagging__', i, ' AS ', query)
+  drop <- paste0('DROP MATERIALIZED VIEW IF EXISTS "flagging__', i, '"')
+  create <- paste0('CREATE materialized view "flagging__', i, '" AS ', query)
   
   options(warn=2)
   dbGetQuery(con$con, sql(query))
