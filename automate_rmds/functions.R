@@ -1,4 +1,10 @@
 recodeString <- function(values){
+  #Ad-Hoc coding of 71 = bananas
+  #71 used to be bananas but we got rid of that category
+  if (grepl("300: 'Green Tomato'", values)){
+    values <- paste0(values, ", 71: 'Bananas'")
+  }
+  
   t <- gsub(': ', '=', values)
   t <- gsub('\\{|\\}', '', t)
   
