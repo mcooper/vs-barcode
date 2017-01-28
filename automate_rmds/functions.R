@@ -148,3 +148,17 @@ count_outliers <- function(data, var, gp_var){
   list(data=out, colnames=gsub('.', ' ', names(out), fixed = T))
 }
 
+getFlags <- function(data){
+  flags <- data[, 'flag'] %>% sapply(FUN=str_split, pattern = "; ")
+  names(flags) <- NULL
+  flags <- unlist(flags)
+  flags <- flags[flags != '']
+  flags
+}
+
+tableFlags <- function(flags, var){
+  tab <- flags[grepl(var, flags)] %>% table()
+  df <- data.frame(Flag=names(tab), Count=as.numeric(tab))
+  df
+}
+

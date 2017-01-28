@@ -47,24 +47,33 @@ library(lubridate)
 library(ggplot2)
 library(dplyr)
 library(knitr)
+library(stringr)
 library(RPostgreSQL)
 
 source(\'D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/functions.R\')
 
 pg_conf <- read.csv(\'D:/Documents and Settings/mcooper/GitHub/vitalsigns-data-reports/rds_settings\', stringsAsFactors=FALSE)
 
-vs_db <- src_postgres(dbname=\'vitalsigns\', host=pg_conf$host,
-user=pg_conf$user, password=pg_conf$pass,
-port=pg_conf$port)
+
+#vs_db <- src_postgres(dbname=\'vitalsigns\', host=pg_conf$host,
+#user=pg_conf$user, password=pg_conf$pass,
+#port=pg_conf$port)
+
+#Do it local to test
+vs_db <- src_postgres(dbname=\'vitalsigns_local\', host=\'localhost\',
+user=\'postgres\', password=\'postgres\',
+port=2222)
 
 country <- "', c, '"
-
-data <- tbl(vs_db, \'curation__', t, '\') %>% 
-data.frame(stringsAsFactors=F)
 
 if (country != \'ALL\'){
   data <- filter(data, Country==country)
 }
+
+data <- tbl(vs_db, \'flagging__', t, '\') %>% 
+data.frame(stringsAsFactors=F)
+
+flags <- getFlags(data)
 
 gp_var <- get_gp_var(country)
 
@@ -86,6 +95,12 @@ getBody <- function(sel){
 
 ```{r, echo=FALSE, warning=FALSE, messages=FALSE, fig.align="center"}
 ', disp(make.names(sel$User_Vars[j]), type = sel$type[j], values=sel$values[j]), '
+
+tf <- tableFlags(flags, "', sel$User_Vars[j], '")
+
+if (nrow(tf) > 0){
+  kable(tf)
+}
 
 ```
 
