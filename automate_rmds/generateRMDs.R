@@ -54,6 +54,7 @@ source(\'D:/Documents and Settings/mcooper/GitHub/vs-data-tools/automate_rmds/fu
 
 pg_conf <- read.csv(\'D:/Documents and Settings/mcooper/GitHub/vitalsigns-data-reports/rds_settings\', stringsAsFactors=FALSE)
 
+options(scipen=20)
 
 #vs_db <- src_postgres(dbname=\'vitalsigns\', host=pg_conf$host,
 #user=pg_conf$user, password=pg_conf$pass,
