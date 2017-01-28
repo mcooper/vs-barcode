@@ -100,7 +100,9 @@ disp <- function(var, type, values=NA){
       kable(nullsd[[1]], col.names=nullsd[[2]])
 
       }else{
+      
       data$recoded <- recode(data[ , "', var, '"], ', recodeString(values), ')
+      data$recoded <- substr(data$recoded, start=1, stop=40)
 
       print(
       
