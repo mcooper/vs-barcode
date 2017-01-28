@@ -157,7 +157,7 @@ getFlags <- function(data){
 }
 
 tableFlags <- function(flags, var){
-  tab <- flags[grepl(var, flags)] %>% table()
+  tab <- flags[grepl(var, flags, fixed=TRUE)] %>% table()
   df <- data.frame(Flag=names(tab), Count=as.numeric(tab))
   df
 }

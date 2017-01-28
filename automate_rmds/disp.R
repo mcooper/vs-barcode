@@ -158,7 +158,7 @@ disp <- function(var, type, values=NA){
         print(
 
         ggplot(data, aes_string(x="', var, '", fill=gp_var)) +
-        geom_histogram()
+        geom_histogram(binwidth=30)
 
         )
         
