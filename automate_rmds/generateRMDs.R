@@ -67,12 +67,12 @@ port=2222)
 
 country <- "', c, '"
 
+data <- tbl(vs_db, \'flagging__', t, '\') %>% 
+data.frame(stringsAsFactors=F)
+
 if (country != \'ALL\'){
   data <- filter(data, Country==country)
 }
-
-data <- tbl(vs_db, \'flagging__', t, '\') %>% 
-data.frame(stringsAsFactors=F)
 
 flags <- getFlags(data)
 
