@@ -56,14 +56,14 @@ pg_conf <- read.csv(\'D:/Documents and Settings/mcooper/GitHub/vitalsigns-data-r
 
 options(scipen=20)
 
-#vs_db <- src_postgres(dbname=\'vitalsigns\', host=pg_conf$host,
-#user=pg_conf$user, password=pg_conf$pass,
-#port=pg_conf$port)
+vs_db <- src_postgres(dbname=\'vitalsigns\', host=pg_conf$host,
+user=pg_conf$user, password=pg_conf$pass,
+port=pg_conf$port)
 
 #Do it local to test
-vs_db <- src_postgres(dbname=\'vitalsigns_local\', host=\'localhost\',
-user=\'postgres\', password=\'postgres\',
-port=2222)
+#vs_db <- src_postgres(dbname=\'vitalsigns_local\', host=\'localhost\',
+#user=\'postgres\', password=\'postgres\',
+#port=2222)
 
 country <- "', c, '"
 
@@ -119,7 +119,7 @@ getFoot <- function(c, t, sel){
   foot <- paste0('
 #Raw Data
 ```{r, echo=FALSE, warning=FALSE}
-DT::datatable(data[ ,(names(data) %in% c("', paste(dispnames, collapse='", "'), '"))])
+DT::datatable(data[ ,(names(data) %in% c("', paste(dispnames, collapse='", "'), '", "flag"))])
 ```
 
 ```{r, include=FALSE}

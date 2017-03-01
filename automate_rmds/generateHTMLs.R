@@ -24,7 +24,9 @@ HTMLs <- list.files(recursive=TRUE, pattern='html')
 
 RMDsel <- RMDs[!substr(RMDs, 1, nchar(RMDs)-4) %in% substr(HTMLs, 1, nchar(HTMLs) - 5)]
 
-for (i in RMDsel){
+#RMDsel <- RMDsel[grepl('TZA', RMDsel)]
+
+for (i in rev(RMDsel)){
   tryCatch({
     rmarkdown::render(paste0(getwd(),'/',i), output_format='html_document')},
     error=function(e){print(e)})
