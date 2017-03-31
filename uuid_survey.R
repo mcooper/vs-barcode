@@ -1,10 +1,6 @@
 library(dplyr)
-detach("package:raster", unload=TRUE)
 
-setwd('D:/Documents and Settings/mcooper/GitHub/vitalsigns-analysis/Food Security')
-
-source('../production_connection.R')
-#source('../local_connection.R')
+source('D:/Documents and Settings/mcooper/GitHub/vitalsigns-analysis/production_connection.R')
 
 con <- src_postgres(dbname = dbname, host = host, port = port, user = user, password = password)
 
@@ -40,16 +36,19 @@ library(httr)
 csrf <- GET(url='http://surveys.vitalsigns.org')$cookies$value[1]
 
 POST('http://surveys.vitalsigns.org', body=list(id_username='username',
-                                                id_password='password',
+                                                id_password='ReeZ2eu5',
                                                 submit = 'Sign in',
                                                 csrfmiddlewaretoken=csrf))
-
-t <- read.csv(paste0('http://surveys.vitalsigns.org/vs2015v1/forms/Ffs_10_oct_2014_v1/data.csv'), error=function(e){print(e)})
 
 df <- data.frame()
 for (i in 1:nrow(forms)){
   print(forms[i,])
   tryCatch({
-      t <- read.csv(paste0('http://surveys.vitalsigns.org/vs2015v1/forms/', forms[i,], '/data.csv'))}, error=function(e){print(e)})
-  df <- bind_rows(df, data.frame(survey_uuid=t$X_uuid, form=forms[i,]))
+      t <- read.csv(paste0('http://surveys.vitalsigns.org/vs2015v1/forms/', forms[i,], '/data.csv'))
+      df <- bind_rows(df, data.frame(survey_uuid=t$X_uuid, form=forms[i,], time=t$X_submission_time))
+      }, 
+      error=function(e){print(e)})
 }
+
+df[!(df$survey_uuid %in% all$survey_uuid), ]
+
