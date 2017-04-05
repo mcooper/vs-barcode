@@ -35,8 +35,9 @@ library(httr)
 
 csrf <- GET(url='http://surveys.vitalsigns.org')$cookies$value[1]
 
-POST('http://surveys.vitalsigns.org', body=list(id_username='username',
-                                                id_password='ReeZ2eu5',
+#Be sure to use formhub admin
+POST('http://surveys.vitalsigns.org', body=list(id_username='',
+                                                id_password='',
                                                 submit = 'Sign in',
                                                 csrfmiddlewaretoken=csrf))
 
@@ -44,11 +45,25 @@ df <- data.frame()
 for (i in 1:nrow(forms)){
   print(forms[i,])
   tryCatch({
-      t <- read.csv(paste0('http://surveys.vitalsigns.org/vs2015v1/forms/', forms[i,], '/data.csv'))
+      t <- read.csv(paste0('http://surveys.vitalsigns.org/vsadmin/forms/', forms[i,], '/data.csv'))
       df <- bind_rows(df, data.frame(survey_uuid=t$X_uuid, form=forms[i,], time=t$X_submission_time))
       }, 
       error=function(e){print(e)})
 }
 
-df[!(df$survey_uuid %in% all$survey_uuid), ]
+sel <- df[!(df$survey_uuid %in% all$survey_uuid), ]
+
+library(lubridate)
+
+sel$time <- ymd_hms(sel$time)
+
+dim(sel[sel$time < ymd_hms('2017-03-01 0:00:00'), ])
+
+
+
+
+
+
+
+
 
