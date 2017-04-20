@@ -1,6 +1,8 @@
 library(dplyr)
 
-source('D:/Documents and Settings/mcooper/GitHub/vitalsigns-analysis/production_connection.R')
+setwd('D:/Documents and Settings/mcooper/GitHub/vs-data-tools/formhub/')
+
+source('../production_connection.R')
 
 con <- src_postgres(dbname = dbname, host = host, port = port, user = user, password = password)
 
@@ -35,9 +37,11 @@ library(httr)
 
 csrf <- GET(url='http://surveys.vitalsigns.org')$cookies$value[1]
 
+source('pw.R')
+
 #Be sure to use formhub admin
-POST('http://surveys.vitalsigns.org', body=list(id_username='',
-                                                id_password='',
+POST('http://surveys.vitalsigns.org', body=list(id_username=id_username,
+                                                id_password=id_password,
                                                 submit = 'Sign in',
                                                 csrfmiddlewaretoken=csrf))
 
@@ -45,7 +49,7 @@ df <- data.frame()
 for (i in 1:nrow(forms)){
   print(forms[i,])
   tryCatch({
-      t <- read.csv(paste0('http://surveys.vitalsigns.org/vsadmin/forms/', forms[i,], '/data.csv'))
+      t <- read.csv(paste0('http://surveys.vitalsigns.org/', id_username, '/forms/', forms[i,] , '/data.csv'))
       df <- bind_rows(df, data.frame(survey_uuid=t$X_uuid, form=forms[i,], time=t$X_submission_time))
       }, 
       error=function(e){print(e)})
