@@ -12,14 +12,7 @@ con <- src_postgres(dbname = dbname, host = host, port = port, user = user, pass
 ###########
 
 #Get Ind-level
-secB <- tbl(con, 'household_secB') %>% select(-parent_uuid) %>% data.frame()
-secU <- tbl(con, 'household_secU') %>% select(-parent_uuid) %>% data.frame()
-secC <- tbl(con, 'household_secC') %>% select(-parent_uuid) %>% data.frame()
-secE <- tbl(con, 'household_secE') %>% select(-parent_uuid) %>% data.frame()
-secHV1 <- tbl(con, 'household_secHV1') %>% select(-parent_uuid) %>% data.frame()
-
-ind <- Reduce(function(...) merge(..., by=c('uuid', 'survey_uuid')),
-              list(secB, secU, secC, secE, secHV1))
+ind <- tbl(con, 'household_individuals') %>% select(-parent_uuid) %>% data.frame()
 
 #Get HH-level data
 secHV2 <- tbl(con, 'household_secHV2') %>% data.frame()
