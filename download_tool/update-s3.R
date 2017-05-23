@@ -12,8 +12,8 @@ vs_db <- src_postgres(dbname='vitalsigns', host=pg_conf$host,
 aws.signature::use_credentials()
 
 views <- c("c__eplot", "c__household", "c__eplot_subplot", "c__eplot_subplot_vegetation", 
-           "c__eplot_subplot_tree", "c__eplot_subplot_tree_stem",
-           "c__household_field", "c__rra", "c__rra_tree", 
+           "c__eplot_subplot_tree", "c__eplot_subplot_tree_stem", "c__household_extension",
+           "c__household_field", "c__rra", "c__rra_tree", "c__household_cropbyprod",
            "c__household_field_season_fieldcrop", "c__weatherstation_data", 
            "c__household_field_season_individual", "c__household_field_permcrop", 
            "c__household_field_season", "c__water", "c__household_fieldcrop", 
