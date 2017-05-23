@@ -1,0 +1,14 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household_field),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+field_no,Field ID,,
+crop_name,Crop Name,"{300: 'Green Tomato', 11: 'Maize', 12: 'Paddy', 13: 'Sorghum', 14: 'Bulrush Millet', 15: 'Finger Millet', '71b': 'Banana Beer', 17: 'Barley', 18: 'Black Pepper', 19: 'Seaweed', 302: 'Bamboo', 22: 'Sweet Potatoes', 23: 'Irish Potatoes', 24: 'Yams', 25: 'Cocoyams', 26: 'Onions', 27: 'Ginger', 31: 'Beans', 32: 'Cowpeas', 33: 'Green Gram', 34: 'Pigeon Pea', 35: 'Chickpeas', 36: 'Bambara Nuts', 37: 'Field Peas', 38: 'Malay Apple', 39: 'Star Fruit', 41: 'Sunflower', 42: 'Sesame/Simsim', 43: 'Groundnut', 44: 'Palm Oil', 45: 'Coconut', 46: 'Cashew Nut', 303: 'Firewood/Fodder', 48: 'Castor Seed', 305: 'Medicinal Plant', 306: 'Fence Tree', 51: 'Tobacco', 52: 'Pyrethrum', 53: 'Sisal', 54: 'Coffee', 55: 'Tea', 56: 'Cocoa', 57: 'Rubber', 58: 'Wattle', 59: 'Kapok', 60: 'Sugar Cane', 61: 'Cardamom ', '71c': 'Banana Sweet', 63: 'Tamarind', 64: 'Cinnamon', 65: 'Nutmeg', 66: 'Clove', 67: 'Bread Fruit', 68: 'Pomelo', 69: 'Jack Fruit', 70: 'Passion Fruit', 72: 'Avocado', 73: 'Mango', 74: 'Papaw', 75: 'Pineapple', 76: 'Orange', 77: 'Grapefruit', 78: 'Grapes', 79: 'Mandarin', 80: 'Guava', 81: 'Blood Fruit', 82: 'Apples', 851: 'Lime', 852: 'Lemon', 301: 'Monkeybread/Baobab', 86: 'Cabbage', 87: 'Tomatoes', 88: 'Spinach', 89: 'Carrot', 90: 'Chilies', 91: 'Amaranths', 92: 'Pumpkins', 93: 'Cucumber', 94: 'Egg Plant', 95: 'Water Mellon', 96: 'Cauliflower', 97: 'Durian', 98: 'Bilimbi', 99: 'Rambutan', 100: 'Okra', 101: 'Kiwi', 62: 'Jute', 21: 'Cassava', 47: 'Soyabeans', '71a': 'Banana Food', 304: 'Timber', 200: 'Custard Apple', 201: 'God Fruit', 202: 'Mitobo', 203: 'Plum', 204: 'Peaches', 205: 'Pomegranate', 210: 'Date', 211: 'Tungamaa', 50: 'Cotton', 16: 'Wheat', 'None': 'None', 83: 'Pears', 84: 'Peaches'}",Agriculture Management Intensity Survey
+ag6a_02,How many of these plants/ trees are on this field?,,Agriculture Management Intensity Survey
+ag6a_05,Was cultivation intercropped during the most recent completed season?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag6a_08_1,What was the total amount harvested in the last 12 months?,,Agriculture Management Intensity Survey
+ag6a_08_2,Unit,"{1: 'Kg', 2: 'Liter', 3: 'Milliliter'}",Agriculture Management Intensity Survey
+ag6a_09,What is the estimated value of the total amount of the crop harvested in the past 12 months?,,Agriculture Management Intensity Survey

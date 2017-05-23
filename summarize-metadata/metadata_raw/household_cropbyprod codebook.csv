@@ -1,0 +1,31 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Survey"
+"crop_name","Select crops to be included in Section 9?","{300: 'Green Tomato', 11: 'Maize', 12: 'Paddy', 13: 'Sorghum', 14: 'Bulrush Millet', 15: 'Finger Millet', '71b': 'Banana Beer', 17: 'Barley', 18: 'Black Pepper', 19: 'Seaweed', 302: 'Bamboo', 22: 'Sweet Potatoes', 23: 'Irish Potatoes', 24: 'Yams', 25: 'Cocoyams', 26: 'Onions', 27: 'Ginger', 31: 'Beans', 32: 'Cowpeas', 33: 'Green Gram', 34: 'Pigeon Pea', 35: 'Chickpeas', 36: 'Bambara Nuts', 37: 'Field Peas', 38: 'Malay Apple', 39: 'Star Fruit', 41: 'Sunflower', 42: 'Sesame/Simsim', 43: 'Groundnut', 44: 'Palm Oil', 45: 'Coconut', 46: 'Cashew Nut', 303: 'Firewood/Fodder', 48: 'Castor Seed', 305: 'Medicinal Plant', 306: 'Fence Tree', 51: 'Tobacco', 52: 'Pyrethrum', 53: 'Sisal', 54: 'Coffee', 55: 'Tea', 56: 'Cocoa', 57: 'Rubber', 58: 'Wattle', 59: 'Kapok', 60: 'Sugar Cane', 61: 'Cardamom ', '71c': 'Banana Sweet', 63: 'Tamarind', 64: 'Cinnamon', 65: 'Nutmeg', 66: 'Clove', 67: 'Bread Fruit', 68: 'Pomelo', 69: 'Jack Fruit', 70: 'Passion Fruit', 72: 'Avocado', 73: 'Mango', 74: 'Papaw', 75: 'Pineapple', 76: 'Orange', 77: 'Grapefruit', 78: 'Grapes', 79: 'Mandarin', 80: 'Guava', 81: 'Blood Fruit', 82: 'Apples', 851: 'Lime', 852: 'Lemon', 301: 'Monkeybread/Baobab', 86: 'Cabbage', 87: 'Tomatoes', 88: 'Spinach', 89: 'Carrot', 90: 'Chilies', 91: 'Amaranths', 92: 'Pumpkins', 93: 'Cucumber', 94: 'Egg Plant', 95: 'Water Mellon', 96: 'Cauliflower', 97: 'Durian', 98: 'Bilimbi', 99: 'Rambutan', 100: 'Okra', 101: 'Kiwi', 62: 'Jute', 21: 'Cassava', 47: 'Soyabeans', '71a': 'Banana Food', 304: 'Timber', 200: 'Custard Apple', 201: 'God Fruit', 202: 'Mitobo', 203: 'Plum', 204: 'Peaches', 205: 'Pomegranate', 210: 'Date', 211: 'Tungamaa', 50: 'Cotton', 16: 'Wheat', 'None': 'None', 83: 'Pears', 84: 'Peaches'}","Agriculture Management Intensity Survey"
+"ag09_03","What is the [PROCESSED PRODUCT] produced from this crop?","{1: 'Flour', 2: 'Seed', 3: 'Palm Oil', 4: 'Juice', '3a': 'Simsim Oil', 6: 'Pulp', 7: 'Rubber', 5: 'Thread'}","Agriculture Management Intensity Survey"
+"ag09_03_other","What is the [PROCESSED PRODUCT] produced from this crop?","{1: 'Flour', 2: 'Seed', 3: 'Palm Oil', 4: 'Juice', '3a': 'Simsim Oil', 6: 'Pulp', 7: 'Rubber', 5: 'Thread'}","Agriculture Management Intensity Survey"
+"ag09_03_by","What is the [BY-PRODUCT] produced from this crop?","{16: 'Outer Cover', 17: 'No Waste', '16a': 'Seed Cake', 9: 'Maize Bran (Husk)', 10: 'Wet Husk (Wheat, Barley)', 11: 'Rice Cover', 12: 'Juice', 13: 'Thread', 14: 'Pulp', 15: 'Palm Oil'}","Agriculture Management Intensity Survey"
+"ag09_03_by_other","What is the [BY-PRODUCT] produced from this crop?","{16: 'Outer Cover', 17: 'No Waste', '16a': 'Seed Cake', 9: 'Maize Bran (Husk)', 10: 'Wet Husk (Wheat, Barley)', 11: 'Rice Cover', 12: 'Juice', 13: 'Thread', 14: 'Pulp', 15: 'Palm Oil'}","Agriculture Management Intensity Survey"
+"ag09_03_product_name","Product Name",,"Agriculture Management Intensity Survey"
+"ag09_04_1","AMOUNT - What is the quantity produced in the last 12 months?",,"Agriculture Management Intensity Survey"
+"ag09_04_2","UNIT","{1: 'Kg', 2: 'Liter', 3: 'Milliliter'}","Agriculture Management Intensity Survey"
+"ag09_07","AMOUNT - How much [CROP] did you use as input for the sold [BY-PRODUCT/PROCESSED PRODUCT]?",,"Agriculture Management Intensity Survey"
+"ag09_07_2","UNIT","{1: 'Kg', 2: 'Liter', 3: 'Milliliter'}","Agriculture Management Intensity Survey"
+"ag09_05","Was any [BY-PRODUCT/PROCESSED PRODUCT] sold?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag09_06_1","AMOUNT - How much was sold?",,"Agriculture Management Intensity Survey"
+"ag09_06_2","UNIT","{1: 'Kg', 2: 'Liter', 3: 'Milliliter'}","Agriculture Management Intensity Survey"
+"ag09_08","What was total sales in local currency?",,"Agriculture Management Intensity Survey"
+"ag09_8a","Did you give out [BY-PRODUCT/PROCESSED PRODUCT] for in-kind/barter?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag09_8b_1","AMOUNT - How much was given away?",,"Agriculture Management Intensity Survey"
+"ag09_8b_2","UNIT","{1: 'Kg', 2: 'Liter', 3: 'Milliliter'}","Agriculture Management Intensity Survey"
+"ag09_10","Did you incur any other expenses such as labor costs, additional inputs etc. in the production of [BY-PRODUCT/PROCESSED PRODUCT]?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag09_11","What were the total costs of these additional expenses?",,"Agriculture Management Intensity Survey"
+"is_processed","Add a Processed product / By-Product","{1: 'Processed', 2: 'By-Product'}","Agriculture Management Intensity Survey"
+"is_byproduct","Add a Processed product / By-Product","{1: 'Processed', 2: 'By-Product'}","Agriculture Management Intensity Survey"

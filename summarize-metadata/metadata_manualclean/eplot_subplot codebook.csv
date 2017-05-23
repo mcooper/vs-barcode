@@ -1,0 +1,29 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (eplot),,
+country,Country,,
+landscape_no,Landscape Number,,
+eplot_no,Eplot Number,,
+round,The round of data collection,,
+subplot,Subplot Number,,
+field_date,Field data collection date,,E-Plot Biomass Measurements
+latitude,Latitude of the southeast corner of the Eplot,,E-Plot Biomass Measurements
+longitude,Longitude of the southeast corner of the Eplot,,E-Plot Biomass Measurements
+mass,Herbaceous Mass Score - Herbaceous layer (Herbaceous mass and Dry-Weight-Rank Method),,E-Plot Biomass Measurements
+crust,Microfloral Crust,,E-Plot Biomass Measurements
+disturbed,Disturbed Soil,,E-Plot Biomass Measurements
+downed,Downed Wood,,E-Plot Biomass Measurements
+dung,Dung,,E-Plot Biomass Measurements
+herbaceous,Herbaceous Crown Cover Score (0-10),,E-Plot Biomass Measurements
+herbaceous_erosion,Soil Erosion Score (0-3),,E-Plot Biomass Measurements
+litter,Litter Cover,,E-Plot Biomass Measurements
+porous,Undisturbed Bare & Porous Soil,,E-Plot Biomass Measurements
+rooted,Rooted Plants,,E-Plot Biomass Measurements
+sealed,Undisturbed but Sealed Soil,,E-Plot Biomass Measurements
+sodic,Sodic Soil,,E-Plot Biomass Measurements
+stone,Stone or Gravel,,E-Plot Biomass Measurements
+termite,Termite Mound,,E-Plot Biomass Measurements
+densiometer_e,Woody Canopy Cover Score - E,,E-Plot Biomass Measurements
+densiometer_n,Woody Canopy Cover Score - N,,E-Plot Biomass Measurements
+densiometer_s,Woody Canopy Cover Score - S,,E-Plot Biomass Measurements
+densiometer_w,Woody Canopy Cover Score - W,,E-Plot Biomass Measurements

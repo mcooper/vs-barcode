@@ -1,0 +1,29 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Management Intensity Survey"
+"animal_name","- Select all types of livestock owned or sold by the household in the last 12 months.","{1: 'Bulls', 2: 'Cows', 11: 'Ducks', 4: 'Heifers', 5: 'Male Calves', 6: 'Female Calves', '12a': 'Hare', 8: 'Sheep', 9: 'Pigs ', 10: 'Chickens', 7: 'Goats', '10a': 'Guinea Fowl', 13: 'Grass Cutter', 14: 'Donkeys', 15: 'Dogs', 16: 'Other', '15a': 'Ox', 3: 'Steers', 12: 'Rabbits'}","Agriculture Management Intensity Survey"
+"animal_name","Animal ID",,"Agriculture Management Intensity Survey"
+"animal_name","Animal Name",,"Agriculture Management Intensity Survey"
+"ag10a_05_1","Indigenous - How many ${fd10_animal_name} does this household currently own?",,"Agriculture Management Intensity Survey"
+"ag10a_05_2","Improved Beef - How many ${fd10_animal_name} does this household currently own?",,"Agriculture Management Intensity Survey"
+"ag10a_05_3","Improved Dairy",,"Agriculture Management Intensity Survey"
+"ag10a_19","Have you sold any ${fd10_animal_name} alive in the last 12 months?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag10a_20","How many ${fd10_animal_name} have you sold in the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10a_21","What was the total value of sales?",,"Agriculture Management Intensity Survey"
+"ag10a_24","Did you slaughter any ${fd10_animal_name} in the past 12 months?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag10a_25","How many ${fd10_animal_name} did you slaughter in the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10a_26","How many of the ${fd10_animal_name} slaughtered did you sell?",,"Agriculture Management Intensity Survey"
+"ag10a_27","What was the total value of the sold slaughtered ${fd10_animal_name}?",,"Agriculture Management Intensity Survey"
+"ag10a_33","did you hire any labor to help you with the ${fd10_animal_name} in the past 12 months?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag10a_34","What was the total cost of this labor for ${fd10_animal_name} in the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10a_01","Legume forage - What did this ${fd10_animal_name} eat over the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10a_02","Green Grass/ fresh crop cutting - What did this ${fd10_animal_name} eat over the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10a_03","Crop residue (Maize/hay) - What did this ${fd10_animal_name} eat over the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10a_04","Rough grazing",,"Agriculture Management Intensity Survey"

@@ -1,0 +1,12 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+item,Possession,,Household Survey
+itemcode,Code for Possession,,Household Survey
+count,count of possession owned,,Household Survey

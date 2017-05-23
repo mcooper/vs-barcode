@@ -1,0 +1,13 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (rra),,
+country,Country,,
+rra_no,Rapid Roadside Assessment Number,,
+latitude,Latitude of the RRA,,
+longitude,Longitude of the RRA,,
+rra_date,Date,,Rapid Roadside Assessments
+rra_plant_type,Is this a tree or a crop?,"{1: 'Tree', 2: 'Herbaceous and Crop'}",Rapid Roadside Assessments
+common,Common Name,,Rapid Roadside Assessments
+genus,Genus,,Rapid Roadside Assessments
+species,Species,,Rapid Roadside Assessments
+subspecies,Subspecies,,Rapid Roadside Assessments

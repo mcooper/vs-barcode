@@ -1,0 +1,26 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"hh_k_item","Item",,"Household Survey"
+"hh_k_item","Item Code",,"Household Survey"
+"hh_k_item","Within the past 7 days, did the members of this household eat/drink any [. . .] within the household?","{'0206': 'Cooking Bananas, Plantains', '0110': 'Buns', '0603': 'Canned Vegetables', '0302': 'Sweets', '0107a': 'Sorghum (Flour)', '0105': 'Maize (Flour)', '0503b': 'Other Nuts', '0303e': 'Canned Fruits', '0503a': 'Almonds', '0303': 'Honey', '0301': 'Sugar', '0806': 'Other Domestic Meat Products', '0901': 'Fresh Milk', '0111': 'Macaroni, Spaghetti', '0803': 'Pork Including Sausages And Bacon', '0303b': 'Jams', '0801': 'Goat Meat', '0501a': 'Groundnut Paste/Powder', '0802': 'Beef Including Minced Sausage', '1107': 'Local Brews', '0401': 'Peas', '0401c': 'Other Pulses', '0805': 'Wild Birds', '0504a': 'Sesame/Simsim', '0504': 'Seeds And Products From Nuts/Seeds (Excl. Cooking Oil)', '0303a': 'Syrups', '0804': 'Chicken', '0603a': 'Dried Vegetables', '0201': 'Cassava Fresh', '0902': 'Milk Products (Like Cream, Cheese, Yoghurt Etc)', '0108': 'Wheat', '0804a': 'Other Poultry', '0203': 'Sweet Potatoes', '1106': 'Bottled Beer', '1105': 'Prepared Tea', '0401d': 'Soyabeans', '0112': 'Other Cereal Products', '0503': 'Cashew', '0107': 'Millet (Flour)', '1003': 'Salt', '0903a': 'Powder Milk', '0806a': 'Other Wild Meat Products', '1101': 'Tea Leaves', '1102': 'Coffee', '0110a': 'Cakes', '0704': 'Sugarcane', '0103': 'Maize (Green, Cob)', '0602a': 'Cabbage', '0701': 'Ripe Bananas', '0104': 'Maize (Grain)', '0106': 'Millet (Grain)', '0108a': 'Barley Grain', '1108': 'Wine And Spirits', '0109': 'Bread', '0809': 'Dried/Salted Fish And Seafood (Incl. Dagaa)', '1002c': 'Other Fat Products', '0703': 'Mangoes', '0303d': 'Jellies', '0501': 'Groundnuts In Shell/Shelled', '1105a': 'Prepared Coffee', '0601b': 'Carrots', '0102': 'Rice (Husked)', '1103': 'Other Raw Materials For Drinks', '0602': 'Spinach', '0903': 'Canned Milk', '0602b': 'Other Green Vegetables', '1001': 'Cooking Oil', '0110b': 'Biscuits', '0601c': 'Green Pepper', '0703a': 'Avocadoes', '0502': 'Coconuts (Mature/Immature)', '1002': 'Butter', '1002a': 'Margarine', '1102a': 'Cocoa', '0601': 'Onions', '1004': 'Other Spices', '1104': 'Bottled/Canned Soft Drinks (Soda, Juice, Water)', '0101': 'Rice (Paddy)', '0204': 'Yams/Cocoyams', '0807': 'Eggs', '0603b': 'Wild Vegetables', '0401b': 'Lentils', '0808': 'Fresh Fish And Seafood (Including Dagaa)', '0202': 'Cassava Dry/Flour', '0810': 'Package/Canned Fish', '0108b': 'Other Cereals', '0106a': 'Sorghum (Grain)', '0702': 'Citrus Fruits (Oranges, Lemon, Tangerines, Etc.)', '0504b': 'Sunflower Seeds', '1002b': 'Ghee', '0303c': 'Marmalade', '0805a': 'Wild Insects', '0205': 'Irish Potatoes', '0703b': 'Other Fruits ', '0601d': 'Other Vegetables', '0401a': 'Beans', '0601a': 'Tomatoes', '0207': 'Other Starches'}","Household Survey"
+"hh_k_item_other","specify other cereal product",,"Household Survey"
+"hh_k_item_other","specify other raw materials",,"Household Survey"
+"hh_k_item_other","specify other spices",,"Household Survey"
+"hh_k_item_other","specify other starch",,"Household Survey"
+"hh_k_02_1","UNIT - How much ${k_item} in total did your household consume in the past 7 days?","{'Pieces': 'Pieces', 'Litre': 'Litre', 'Millilitre': 'Millilitre', 'Grams': 'Grams', 'Kilograms': 'Kilograms'}","Household Survey"
+"hh_k_02_2","QUANTITY",,"Household Survey"
+"hh_k_03_1","UNIT - How much ${k_item} came from purchases during the past 7 days?","{'Pieces': 'Pieces', 'Litre': 'Litre', 'Millilitre': 'Millilitre', 'Grams': 'Grams', 'Kilograms': 'Kilograms'}","Household Survey"
+"hh_k_03_2","QUANTITY",,"Household Survey"
+"hh_k_04","How much did you spend on the ${k_03_2}   ${k_03_1} of ${k_item}?",,"Household Survey"
+"hh_k_05_1","UNIT - How much came from own-production?","{'Pieces': 'Pieces', 'Litre': 'Litre', 'Millilitre': 'Millilitre', 'Grams': 'Grams', 'Kilograms': 'Kilograms'}","Household Survey"
+"hh_k_05_2","QUANTITY",,"Household Survey"
+"hh_k_05a","How much would you spend at the market for ${k_05_2}   ${k_05_1} of ${k_item}?",,"Household Survey"
+"hh_k_06_1","UNIT - How much ${k_item} came from gifts and other sources?","{'Pieces': 'Pieces', 'Litre': 'Litre', 'Millilitre': 'Millilitre', 'Grams': 'Grams', 'Kilograms': 'Kilograms'}","Household Survey"
+"hh_k_06_2","QUANTITY",,"Household Survey"

@@ -1,0 +1,16 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+resource,Natural Resource Name,,
+hh_hv2_10,"Does your household use this resource from nearby fallow lands, forest, woodland, shrubland, rivers, creeks, or other area?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_hv2_11,During which season do you depend more on the resource?,"{1: 'Wet Season', 2: 'Dry Season'}",Household Survey
+hh_hv2_12,How often do you collect the resource?,"{1: 'Weekly', 2: 'Monthly', 3: 'Seasonally', 4: 'Annually'}",Household Survey
+hh_hv2_13,If you could no longer collect the resource would you be willing to purchase it at the market?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_hv2_14,How much would you be willing to spend on the resource?,,Household Survey
+hh_hv2_15,How has the availability of the resource changed over the past 5 years?,"{1: 'Declined', 2: 'About The Same', 3: 'Increased'}",Household Survey

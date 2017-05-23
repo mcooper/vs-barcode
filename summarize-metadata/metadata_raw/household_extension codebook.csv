@@ -1,0 +1,21 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household reference number,,
+round,The round of data collection,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+ag_date_of_interview,Date of interview,,Agriculture Management Intensity Survey
+source_name,Source of advice,"{1: 'Ministry Of Agriculture', 2: 'Ngo', 3: 'Cooperative', 4: 'Large Scale Farmer/Outgrowers', 5: 'Research Organization/University', '3a': ""Community Based Farmer'S Organisations (Cbos)/Farmer Based Organisations (Fbos)""}",Agriculture Management Intensity Survey
+source_name_other,"Other, please specify",,Agriculture Management Intensity Survey
+ag12a_02_1,Did you receive advice about Agricultural production?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_02_2,Did you receive advice about Agro- processing?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_02_3,Did you receive advice about Marketing?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_02_4,Did you receive advice about Fishing Production?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_02_5,Did you receive advice about Livestock production?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_02_6,Did you receive advice about Prevention of Livestock diseases?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_03,How would you rate the advice received?,"{1: 'Good', 2: 'Average', 3: 'Bad'}",Agriculture Management Intensity Survey
+ag12a_04,Did you pay anything in order to receive the advice?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_05,How much did you pay (in local currency)?,,Agriculture Management Intensity Survey

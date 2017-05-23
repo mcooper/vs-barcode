@@ -1,0 +1,16 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Management Intensity Survey"
+"source_name_family","In the past 12 months did anyone in your household receive any information about agricultural prices from any of the following?","{1: 'Ministry Of Agriculture', 2: 'Ngo', 3: 'Cooperative', 4: 'Large Scale Farmer/Outgrowers', 5: 'Radio', '3a': ""Community Based Farmer'S Organisations (Cbos)/Farmer Based Organisations (Fbos)"", 7: 'Neighbour', 9: 'Chief Farmer', 6: 'Publication (Newspapers/Articles)', '6a': 'Market Women / Middlemen'}","Agriculture Management Intensity Survey"
+"source_name_family","Source ID Family",,"Agriculture Management Intensity Survey"
+"source_name_family","Source ID Name",,"Agriculture Management Intensity Survey"
+"ag12b_06","other, please specify",,"Agriculture Management Intensity Survey"
+"ag12b_08","Did you pay anything in order to receive advice from ${fd12_source_name_family}","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag12b_09","How much did you pay for advice from ${fd12_source_name_family}?",,"Agriculture Management Intensity Survey"

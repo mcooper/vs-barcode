@@ -1,0 +1,20 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household_field_season)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"field_no",,,
+"season","Season - either long rainy or short rainy",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Management Intensity Survey"
+"ind_refno",,,
+"ag3a_70_preparing","Ridging, Fertilizing, Other Non-Harvest Activities - During the last completed Long Rainy Season/Major Cropping Season, how many days did ${fd37_name} spend on the following activities on this field?",,"Agriculture Management Intensity Survey"
+"ag3a_70_preparing","Ridging, Fertilizing, Other Non-Harvest Activities - During the last completed Short Rainy Season/Minor Cropping Season, how many days did ${fd3b7_name} spend on the following activities on this field?",,"Agriculture Management Intensity Survey"
+"ag3a_70_weeding","Harvesting",,"Agriculture Management Intensity Survey"
+"ag3a_70_fertilizing","Land preparation and planting - During the last completed Long Rainy Season/Major Cropping Season, how many days did ${fd37_name} spend on the following activities on this field?",,"Agriculture Management Intensity Survey"
+"ag3a_70_fertilizing","Land preparation and planting - During the last completed Short Rainy Season/Minor Cropping Season, how many days did ${fd3b7_name} spend on the following activities on this field?",,"Agriculture Management Intensity Survey"
+"ag3a_70_harvesting","Weeding - During the last completed Long Rainy Season/Major Cropping Season, how many days did ${fd37_name} spend on the following activities on this field?",,"Agriculture Management Intensity Survey"
+"ag3a_70_harvesting","Weeding - During the last completed Short Rainy Season/Minor Cropping Season, how many days did ${fd3b7_name} spend on the following activities on this field?",,"Agriculture Management Intensity Survey"

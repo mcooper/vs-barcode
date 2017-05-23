@@ -1,0 +1,56 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+ind_refno,Individual Reference Number,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+ag_date_of_interview,Date of interview,,Agriculture Management Intensity Survey
+ag_indid_age,Age (From Agriculture survey),,Agriculture Management Intensity Survey
+ag_indid_gender,Sex (From Agriculture survey),"{1: 'Male', 2: 'Female'}",Agriculture Management Intensity Survey
+ag_indid_respondent,Is this person a respondent to this questionnaire?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+hh_b02,Sex (From Household survey),"{1: 'Male', 2: 'Female'}",Household Survey
+hh_b03,In what month and year was individual born?,,Household Survey
+hh_b04,Age (Fom Household survey),,Household Survey
+hh_b05,What is the relationship to the head of household for individual?,"{1: 'Head', 2: 'Spouse', 3: 'Son/Daughter', 4: 'Step Son/Daughter', 5: 'Sister/Brother', 6: 'Grandchild', 7: 'Father/Mother', 8: 'Other Relative', 9: 'Live-In Servant', 10: 'Other Non-Relatives'}",Household Survey
+hh_b07,Did individual eat meals in this household in the last 7 days?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_b08,For how many days in the last 30 days was individual present?,,Household Survey
+hh_c01,Is individual over 5 years old?,,Household Survey
+hh_c02,Can individual read or write?,"{1: 'Any Local Language', 2: 'English', 3: 'Any Local Language And English', 4: 'Any Other Language', 5: 'No'}",Household Survey
+hh_c03,Has individual ever attended school?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_c07,What is the highest grade completed by individual?,"{1: 'Pp', 2: 'Adult', '31': 'S5', '14': 'University', '61': 'Other (Specify In Next Question)', '32': 'L6', '33': 'U6', '25': 'Sss2', 11: 'P1', 12: 'P2', 13: 'P3', 14: 'P4', 15: 'P5', 16: 'P6', 17: 'P7', 18: 'P8', 20: 'Ms+Course', 21: 'S1', 22: 'S2', 23: 'S3', 24: 'S4', 25: ""O'+Course"", '13': 'Vocational Training', '04': 'P4', '20': 'M1', '29': 'S3', 31: 'S5', 32: 'S6', 33: ""'A' +Course"", 34: 'Diploma', '11': 'S5', '05': 'P5', '17': 'Jss1', '08': 'S2', 41: 'U1', 42: 'U2', 43: 'U3', 44: 'U4', 45: 'U5+', '30': 'S4', '27': 'S1', '43': 'Nursing', '28': 'S2', '22': 'M3', '07': 'S1', '16': 'P6', '10': 'S4', '42': 'Teacher Train', '41': 'Voc / Technical / Computer / Comm / Agric', '12': 'S6', '15': 'Postgraduate', '26': 'Sss3', '23': 'M4', '53': 'Other Tertiary', '09': 'S3', '06': 'P6', '01': 'P1', '51': 'Polytechnic', '21': 'M2', '00': 'None', '52': 'University', '24': 'Sss1', '02': 'P2', '19': 'Jss3', '18': 'Jss2', '03': 'P3'}",Household Survey
+hh_e04,"Did you do any work of any type for pay, profit, barter or home use during the last 7 days?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_e06,Is individual working as,"{1: 'Paid Employee', 2: 'Self Employed (With Employees)', 3: 'Self Employed (Without Employees)', 4: 'Unpaid Family Helper (Agric)', 5: 'Unpaid Family Helper (Non-Agric)', 6: 'On Your Own Farm/Shamba'}",Household Survey
+hh_e08,Did you do any wage work during the last 12 months?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_e22_1,Wages from work,,Household Survey
+hh_e22_2,Time Unit,"{1: 'Hour', 2: 'Day', 3: 'Week', 4: 'Fortnight', 5: 'Month', 6: 'Quarter', 7: 'Half Year', 8: 'Year'}",Household Survey
+hh_e23,Do you receive any payment for this work in any other form?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_e24_1,Value of payment in other form,,Household Survey
+hh_e24_2,Time Unit,"{1: 'Hour', 2: 'Day', 3: 'Week', 4: 'Fortnight', 5: 'Month', 6: 'Quarter', 7: 'Half Year', 8: 'Year'}",Household Survey
+hh_e25,How many hours did you work last week?,,Household Survey
+hh_e26,"During the last 12 months, for how many months did you work in this job?",,Household Survey
+hh_e27,"During the last 12 months, how many weeks per month do you usually work in this job?",,Household Survey
+hh_e28,"During the last 12 months, how many hours per week do you usually work in this job?",,Household Survey
+hh_e51,"Did you operate any business or do any self-employed activity during the last week, other than agriculture?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_e52,"Did you operate any business or do any self-employed activity during the last 12 months, other than agriculture?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_e64_1,Gross income/takings from your business,,Household Survey
+hh_e64_2,Time Unit,"{'month': 'Month', 'week ': 'Week'}",Household Survey
+hh_e65_1,Net income (profit),,Household Survey
+hh_e65_2,Time Unit,"{'month': 'Month', 'week ': 'Week'}",Household Survey
+hh_hv103,Does individual collect fuelwood for household and/or commercial use?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_hv104,How frequently does individual collect firewood?,"{1: 'Weekly', 2: 'Monthly', 3: 'Seasonally', 4: 'Annually'}",Household Survey
+hh_hv105,How much does individual collect during that collection period?,,Household Survey
+hh_hv105_other,What are the bundles carried on? (other),,Household Survey
+hh_hv105_unit,What are the bundles carried on?,"{1: 'Head', 2: 'Back', 3: 'Bike', 4: 'Other (Specify)'}",Household Survey
+hh_hv105a,How many hours does individual spend on each fuelwood collection trip? (From home departure to return),,Household Survey
+hh_u1,Is child 0-60 Months old?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_u2,Weight in KGs of child,,Household Survey
+hh_u3,Height in CMs of child,,Household Survey
+hh_u4,Was child measured standing or lying down?,"{1: 'Standing', 2: 'Lying Down'}",Household Survey
+hh_u5,Upper arm circumference of child,,Household Survey
+hh_u6,Was child measured?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_u7,WHY NOT?,"{1: 'Currently Not Home', 2: 'Too Ill', 3: 'Unwilling'}",Household Survey
+hh_u7_other,WHY NOT? (other),,Household Survey

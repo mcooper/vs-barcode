@@ -1,0 +1,71 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (eplot),,
+country,Country,,
+landscape_no,Landscape Number,,
+eplot_no,Eplot Number,,
+round,The round of data collection,,
+depth_class,Soil Depth Class,,
+latitude,Latitude of the southeast corner of the Eplot,,
+longitude,Longitude of the southeast corner of the Eplot,,
+soil_sample_date,Soil Sample Date,,
+soil_tin_fresh_weight,Weight of soil moisture tin + fresh soil subsample,,E-Plot Soil Sampling and Processing
+soil_tin_weight,Weight of soil moisture tin,,E-Plot Soil Sampling and Processing
+soil_weight,Total weight of cumulative Mass sample,,E-Plot Soil Sampling and Processing
+lab_restriction_depth,Depth of Restriction if any,,E-Plot Soil Sampling and Processing
+lab_tin_dry_weight,Weight of Cumulative Soil Moisture Tin + Oven/or Air Dried Soil,,E-Plot Soil Sampling and Processing
+lab_total_dry_weight,Total Air Dried Weight of Composite Sample in Bag,,E-Plot Soil Sampling and Processing
+lab_fine_dry_weight,Total Weight of Composite Soil Fine Fraction (< 2mm),,E-Plot Soil Sampling and Processing
+lab_coarse_dry_weight,Total Weight of Composite Sample Coarse Fraction (> 2mm),,E-Plot Soil Sampling and Processing
+proc_acidified_carbon,Carbon content of acid treated sample to remove carbonates (% by weight),,Lab Results From ICRAF Nairobi
+proc_acidified_nitrogen,Nitrogen content of acid treated sample to remove carbonates (% by weight),,Lab Results From ICRAF Nairobi
+proc_clay_cnls,Clay content by wet sieving method (% by volume),,Lab Results From ICRAF Nairobi
+proc_clay_icraf,Clay content of calgon dispersed particles after 4 minutes of ultrasonication (% by volume),,Lab Results From ICRAF Nairobi
+proc_baseum,"Sum of Mehlich-3 bases (Ca, Mg, K, Na) (cmolc kg^-1)",,Lab Results From ICRAF Nairobi
+proc_exacidity,Exchangeable Acidity (cmolc kg^-1),,Lab Results From ICRAF Nairobi
+proc_ec,Soil electrical conductivity (soil: water ratio of 1:2 weight to volume basis) (dS m^-1),,Lab Results From ICRAF Nairobi
+proc_exch_al,Exchangeable aluminium concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_ph,Soil pH in water (soil: water ratio of 1:2 weight to volume basis) (units),,Lab Results From ICRAF Nairobi
+proc_psi,P sorption index (Bache and Williams 1971),,Lab Results From ICRAF Nairobi
+proc_sand_cnls,Sand content by wet sieving method (% by volume),,Lab Results From ICRAF Nairobi
+proc_sand_icraf,Sand content of calgon dispersed particles after 4 minutes of ultrasonication (% by volume),,Lab Results From ICRAF Nairobi
+proc_silt_cnls,Silt content by wet sieving method (% by volume),,Lab Results From ICRAF Nairobi
+proc_silt_icraf,Silt content of calgon dispersed particles after 4 minutes of ultrasonication (% by volume),,Lab Results From ICRAF Nairobi
+proc_total_carbon,Total Carbon content (% by weight),,Lab Results From ICRAF Nairobi
+proc_total_nitrogen,Total Nitrogen content (% by weight),,Lab Results From ICRAF Nairobi
+proc_m3_al,Exchangeable aluminium concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_b,Boron concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_ca,Exchangeable calcium concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_cu,Copper concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_fe,Iron concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_k,Potassium concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_mg,Exchangeable Magnesium by wet method (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_mn,Exchangeable Manganese concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_na,Exchangeable Sodium concentration by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_p,Phosphorus by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_s,Sulphur by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_m3_zn,Zinc by Mehlich 3 extraction (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_al,Aluminium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_bi,Bismuth total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_br,Bromine total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_cl,Chlorine total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_cu,Copper total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_ga,Gallium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_k,Potassium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_la,Lanthanum total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_mg,Magnesium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_na,Sodium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_ni,Nickel total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_p,Phosphorus total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_pb,Lead total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_pr,Praseodymium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_sc,Scandium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_sm,Samarium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_sr,Strontium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_ta,Tantalum total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_th,Thorium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_v,Vanadium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_w,Tungsten total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_y,Yttrium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_zn,Zinc total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi
+proc_zr,Zirconium total element concentration TXRF (mg kg^-1),,Lab Results From ICRAF Nairobi

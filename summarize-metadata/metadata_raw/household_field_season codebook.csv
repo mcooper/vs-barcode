@@ -1,0 +1,140 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household_field)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"field_no","Field ID",,
+"season","Season - either long rainy or short rainy",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Survey"
+"ag3a_03","How did you use this FIELD during the last completed Long Rainy Season / Major Cropping Season?","{1: 'Cultivated', 2: 'Rented Out', 3: 'Given Out', 4: 'Fallow', 5: 'Forest'}","Agriculture Management Intensity Survey"
+"ag3a_03","How did you use this FIELD during the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Cultivated', 2: 'Rented Out', 3: 'Given Out', 4: 'Fallow', 5: 'Forest'}","Agriculture Management Intensity Survey"
+"ag3a_03_other","How did you use this FIELD during the last completed Long Rainy Season / Major Cropping Season?","{1: 'Cultivated', 2: 'Rented Out', 3: 'Given Out', 4: 'Fallow', 5: 'Forest'}","Agriculture Management Intensity Survey"
+"ag3a_03_other","How did you use this FIELD during the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Cultivated', 2: 'Rented Out', 3: 'Given Out', 4: 'Fallow', 5: 'Forest'}","Agriculture Management Intensity Survey"
+"ag3a_04","What was the total income from renting out this FIELD during the last completed Long Rainy Season / Major Cropping Season?",,"Agriculture Management Intensity Survey"
+"ag3a_04","What was the total income from renting out this FIELD during the last completed Short Rainy Season / Minor Cropping Season?",,"Agriculture Management Intensity Survey"
+"ag3a_07_1","What was the main crop cultivated on this FIELD in the last completed Long Rainy Season / Major Cropping Season?","{300: 'Green Tomato', 11: 'Maize', 12: 'Paddy', 13: 'Sorghum', 14: 'Bulrush Millet', 15: 'Finger Millet', '71b': 'Banana Beer', 17: 'Barley', 18: 'Black Pepper', 19: 'Seaweed', 302: 'Bamboo', 22: 'Sweet Potatoes', 23: 'Irish Potatoes', 24: 'Yams', 25: 'Cocoyams', 26: 'Onions', 27: 'Ginger', 31: 'Beans', 32: 'Cowpeas', 33: 'Green Gram', 34: 'Pigeon Pea', 35: 'Chickpeas', 36: 'Bambara Nuts', 37: 'Field Peas', 38: 'Malay Apple', 39: 'Star Fruit', 41: 'Sunflower', 42: 'Sesame/Simsim', 43: 'Groundnut', 44: 'Palm Oil', 45: 'Coconut', 46: 'Cashew Nut', 303: 'Firewood/Fodder', 48: 'Castor Seed', 305: 'Medicinal Plant', 306: 'Fence Tree', 51: 'Tobacco', 52: 'Pyrethrum', 53: 'Sisal', 54: 'Coffee', 55: 'Tea', 56: 'Cocoa', 57: 'Rubber', 58: 'Wattle', 59: 'Kapok', 60: 'Sugar Cane', 61: 'Cardamom ', '71c': 'Banana Sweet', 63: 'Tamarind', 64: 'Cinnamon', 65: 'Nutmeg', 66: 'Clove', 67: 'Bread Fruit', 68: 'Pomelo', 69: 'Jack Fruit', 70: 'Passion Fruit', 72: 'Avocado', 73: 'Mango', 74: 'Papaw', 75: 'Pineapple', 76: 'Orange', 77: 'Grapefruit', 78: 'Grapes', 79: 'Mandarin', 80: 'Guava', 81: 'Blood Fruit', 82: 'Apples', 851: 'Lime', 852: 'Lemon', 301: 'Monkeybread/Baobab', 86: 'Cabbage', 87: 'Tomatoes', 88: 'Spinach', 89: 'Carrot', 90: 'Chilies', 91: 'Amaranths', 92: 'Pumpkins', 93: 'Cucumber', 94: 'Egg Plant', 95: 'Water Mellon', 96: 'Cauliflower', 97: 'Durian', 98: 'Bilimbi', 99: 'Rambutan', 100: 'Okra', 101: 'Kiwi', 62: 'Jute', 21: 'Cassava', 47: 'Soyabeans', '71a': 'Banana Food', 304: 'Timber', 200: 'Custard Apple', 201: 'God Fruit', 202: 'Mitobo', 203: 'Plum', 204: 'Peaches', 205: 'Pomegranate', 210: 'Date', 211: 'Tungamaa', 50: 'Cotton', 16: 'Wheat', 'None': 'None', 83: 'Pears', 84: 'Peaches'}","Agriculture Management Intensity Survey"
+"ag3a_07_1","What was the main crop cultivated on this FIELD in the last completed Short Rainy Season / Minor Cropping Season?","{300: 'Green Tomato', 11: 'Maize', 12: 'Paddy', 13: 'Sorghum', 14: 'Bulrush Millet', 15: 'Finger Millet', '71b': 'Banana Beer', 17: 'Barley', 18: 'Black Pepper', 19: 'Seaweed', 302: 'Bamboo', 22: 'Sweet Potatoes', 23: 'Irish Potatoes', 24: 'Yams', 25: 'Cocoyams', 26: 'Onions', 27: 'Ginger', 31: 'Beans', 32: 'Cowpeas', 33: 'Green Gram', 34: 'Pigeon Pea', 35: 'Chickpeas', 36: 'Bambara Nuts', 37: 'Field Peas', 38: 'Malay Apple', 39: 'Star Fruit', 41: 'Sunflower', 42: 'Sesame/Simsim', 43: 'Groundnut', 44: 'Palm Oil', 45: 'Coconut', 46: 'Cashew Nut', 303: 'Firewood/Fodder', 48: 'Castor Seed', 305: 'Medicinal Plant', 306: 'Fence Tree', 51: 'Tobacco', 52: 'Pyrethrum', 53: 'Sisal', 54: 'Coffee', 55: 'Tea', 56: 'Cocoa', 57: 'Rubber', 58: 'Wattle', 59: 'Kapok', 60: 'Sugar Cane', 61: 'Cardamom ', '71c': 'Banana Sweet', 63: 'Tamarind', 64: 'Cinnamon', 65: 'Nutmeg', 66: 'Clove', 67: 'Bread Fruit', 68: 'Pomelo', 69: 'Jack Fruit', 70: 'Passion Fruit', 72: 'Avocado', 73: 'Mango', 74: 'Papaw', 75: 'Pineapple', 76: 'Orange', 77: 'Grapefruit', 78: 'Grapes', 79: 'Mandarin', 80: 'Guava', 81: 'Blood Fruit', 82: 'Apples', 851: 'Lime', 852: 'Lemon', 301: 'Monkeybread/Baobab', 86: 'Cabbage', 87: 'Tomatoes', 88: 'Spinach', 89: 'Carrot', 90: 'Chilies', 91: 'Amaranths', 92: 'Pumpkins', 93: 'Cucumber', 94: 'Egg Plant', 95: 'Water Mellon', 96: 'Cauliflower', 97: 'Durian', 98: 'Bilimbi', 99: 'Rambutan', 100: 'Okra', 101: 'Kiwi', 62: 'Jute', 21: 'Cassava', 47: 'Soyabeans', '71a': 'Banana Food', 304: 'Timber', 200: 'Custard Apple', 201: 'God Fruit', 202: 'Mitobo', 203: 'Plum', 204: 'Peaches', 205: 'Pomegranate', 210: 'Date', 211: 'Tungamaa', 50: 'Cotton', 16: 'Wheat', 'None': 'None', 83: 'Pears', 84: 'Peaches'}","Agriculture Management Intensity Survey"
+"ag3a_10","What was the soil quality of this FIELD?","{1: 'Good', 2: 'Average', 3: 'Bad'}","Agriculture Management Intensity Survey"
+"ag3a_14","Was there any erosion control/water harvesting facility on this FIELD in the last completed Long Rainy Season / Major Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_14","Was there any erosion control/water harvesting facility on this FIELD in the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_15_1","PRIMARY - What type of erosion control/water harvesting facility was on this FIELD?","{1: 'Terraces', 2: 'Erosion Control Bunds', 3: 'Gabions / Sandbags', 4: 'Vetiver Grass', 5: 'Tree Belts', 6: 'Water Harvest Bunds', 7: 'Drainage Ditches', 8: 'Dam'}","Agriculture Management Intensity Survey"
+"ag3a_15_2","SECONDARY","{1: 'Terraces', 2: 'Erosion Control Bunds', 3: 'Gabions / Sandbags', 4: 'Vetiver Grass', 5: 'Tree Belts', 6: 'Water Harvest Bunds', 7: 'Drainage Ditches', 8: 'Dam'}","Agriculture Management Intensity Survey"
+"ag3a_17","Was this FIELD irrigated in the last completed Long Rainy Season / Major Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_17","Was this FIELD irrigated in the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_18","What was the type of irrigation?","{1: 'Flooding', 2: 'Sprinkler', 3: 'Drip Irrigation', 4: 'Bucket / Watering Can', 5: 'Water Hose'}","Agriculture Management Intensity Survey"
+"ag3a_18_other","What was the type of irrigation?","{1: 'Flooding', 2: 'Sprinkler', 3: 'Drip Irrigation', 4: 'Bucket / Watering Can', 5: 'Water Hose'}","Agriculture Management Intensity Survey"
+"ag3a_20","What was the source of water?","{1: 'Well', 2: 'Borehole', 3: 'Pond/Dam', 4: 'River / Stream', '3a': 'Tank', '3c': 'Dug-Outs'}","Agriculture Management Intensity Survey"
+"ag3a_20_other","What was the source of water?","{1: 'Well', 2: 'Borehole', 3: 'Pond/Dam', 4: 'River / Stream', '3a': 'Tank', '3c': 'Dug-Outs'}","Agriculture Management Intensity Survey"
+"ag31_13","What was the total value of irrigation services purchased or rented?",,"Agriculture Management Intensity Survey"
+"ag3a_23","What would the value of this FIELD be if it were sold today?",,"Agriculture Management Intensity Survey"
+"ag3a_24","What was the ownership status of this field in the last completed Long Rainy Season / Major Cropping Season?","{1: 'Owned (Family/Clans/Stool Land)', 2: 'Used Free Of Charge', 3: 'Rented In', 4: 'Shared - Rent', 5: 'Shared - Own'}","Agriculture Management Intensity Survey"
+"ag3a_24","What was the ownership status of this field in the Short Rainy Season / Minor Cropping Season?","{1: 'Owned (Family/Clans/Stool Land)', 2: 'Used Free Of Charge', 3: 'Rented In', 4: 'Shared - Rent', 5: 'Shared - Own'}","Agriculture Management Intensity Survey"
+"ag3a_24_other","What was the ownership status of this field in the last completed Long Rainy Season / Major Cropping Season?","{1: 'Owned (Family/Clans/Stool Land)', 2: 'Used Free Of Charge', 3: 'Rented In', 4: 'Shared - Rent', 5: 'Shared - Own'}","Agriculture Management Intensity Survey"
+"ag3a_24_other","What was the ownership status of this field in the Short Rainy Season / Minor Cropping Season?","{1: 'Owned (Family/Clans/Stool Land)', 2: 'Used Free Of Charge', 3: 'Rented In', 4: 'Shared - Rent', 5: 'Shared - Own'}","Agriculture Management Intensity Survey"
+"ag3a_28","What type of title did your household have for this FIELD?","{1: 'Granted Right Of Occupancy', 2: 'Certificate Of Customary Right Of Occupancy', 3: 'Residential License', 4: 'Traditional-Authorities-Witnessed Purchase Agreement', 5: 'Local-Court-Certified Purchase Agreement', 6: 'Inheritance Letter', 7: ""Letter Of Allocation From Village Gov'T"", 8: 'Other Government Document', 9: 'Official Correspondence', 10: 'Utility Or Other Bill', 11: 'None', '2a': 'Mailo/Freehold Tenure'}","Agriculture Management Intensity Survey"
+"ag3a_34","What share of output from this FIELD did you give as rent, if any, in the last completed Long Rainy Season / Major Cropping Season?","{1: 'None', 2: 'Almost None', 3: 'Abusa (One Third)', 4: 'Abusa (Two Third)', 5: 'Abunu (Half)'}","Agriculture Management Intensity Survey"
+"ag3a_34","What share of output from this FIELD did you give as rent, if any, in the Short Rainy Season / Minor Cropping Season?","{1: 'None', 2: 'Almost None', 3: 'Abusa (One Third)', 4: 'Abusa (Two Third)', 5: 'Abunu (Half)'}","Agriculture Management Intensity Survey"
+"ag3a_33_17","DID THE HOUSEHOLD CULTIVATE THIS FIELD  in the last completed Long Rainy Season/Major Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_33_17","DID THE HOUSEHOLD CULTIVATE THIS FIELD in the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_39","Did you use any ORGANIC FERTILIZER on this FIELD in the last completed Long Rainy Season/Major Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_39","Did you use any ORGANIC FERTILIZER on this FIELD in the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_39a","What type of organic fertilizer did you apply in the greatest quantity on this field?","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39a_other","What type of organic fertilizer did you apply in the greatest quantity on this field?","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39b","What was the source of the crop residue/compost used on this plot?","{1: 'Same Field', 2: 'Another Field From Same Farm', 3: 'External To The Field'}","Agriculture Management Intensity Survey"
+"ag3a_39b_other","What was the source of the crop residue/compost used on this plot?","{1: 'Same Field', 2: 'Another Field From Same Farm', 3: 'External To The Field'}","Agriculture Management Intensity Survey"
+"ag3a_40","What was the quantity of organic fertilizer used? KGS",,"Agriculture Management Intensity Survey"
+"ag3a_41","Was any of this purchased?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_42","How much was purchased? (KGS)",,"Agriculture Management Intensity Survey"
+"ag3a_43","What was the total value of organic fertilizer purchased?",,"Agriculture Management Intensity Survey"
+"ag3a_45","Did you use any inorganic fertilizer on this FIELD in the last completed Long Rainy Season / Major Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_45","Did you use any inorganic fertilizer on this FIELD in the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_46","What type of inorganic fertilizer did you use in the greatest quantity on this field?","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_46_other","What type of inorganic fertilizer did you use in the greatest quantity on this field?","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_47","What quantity of [FERTILIZER] did you use? (KGs)",,"Agriculture Management Intensity Survey"
+"ag3a_48","Did you receive a voucher/ certificate for any of this [FERTILIZER]?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_49","What was the total value of [FERTILIZER] purchased?",,"Agriculture Management Intensity Survey"
+"ag3a_52","Did you use any other inorganic fertilizer on this FIELD in the last completed Long Rainy Season / Major Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_52","Did you use any other inorganic fertilizer on this FIELD in the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_53","What type of inorganic fertilizer did you use in the second greatest quantity on this field?","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_53_other","What type of inorganic fertilizer did you use in the second greatest quantity on this field?","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_54","What quantity of [FERTILIZER] did you use? (KGs)",,"Agriculture Management Intensity Survey"
+"ag3a_55","Did you receive a voucher/ certificate for any of this [FERTILIZER]?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_56","What was the total value of [FERTILIZER] purchased?",,"Agriculture Management Intensity Survey"
+"ag3a_58","Did you use any pesticide/ herbicide on this FIELD in the last completed Long Rainy Season / Major Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_58","Did you use any pesticide/ herbicide on this FIELD in the last completed Short Rainy Season / Minor Cropping Season?","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"ag3a_59","What was the main type of pesticide/herbicide that you applied?","{1: 'Pesticide', 2: 'Herbicide', 3: 'Fungicide'}","Agriculture Management Intensity Survey"
+"ag3a_59_other","What was the main type of pesticide/herbicide that you applied?","{1: 'Pesticide', 2: 'Herbicide', 3: 'Fungicide'}","Agriculture Management Intensity Survey"
+"ag3a_60_1","What quantity of this pesticide/herbicide did you use?",,"Agriculture Management Intensity Survey"
+"ag3a_60_2","What quantity of this pesticide/herbicide did you use?","{1: 'Kg', 2: 'Litre', 3: 'Millilitre'}","Agriculture Management Intensity Survey"
+"ag3a_61","What was the total value of this pesticides/ herbicides purchased?",,"Agriculture Management Intensity Survey"
+"ag3a_72_1","Woman Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_1","Woman Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_2","Man Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_2","Man Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_21","Child Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_21","Child Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_3","Total Wages paid",,"Agriculture Management Intensity Survey"
+"ag3a_72_4","Woman Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for WEEDING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_4","Woman Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for WEEDING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_5","Man Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for WEEDING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_5","Man Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for WEEDING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_51","Child Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for WEEDING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_51","Child Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for WEEDING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_6","Total Wages paid",,"Agriculture Management Intensity Survey"
+"ag3a_72_62","Man Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_62","Man Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_61","Woman Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_61","Woman Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_63","Child Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_63","Child Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_64","Total Wages paid",,"Agriculture Management Intensity Survey"
+"ag3a_72_7","Woman Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for HARVESTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_7","Woman Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for HARVESTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_8","Man Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for HARVESTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_8","Man Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for HARVESTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_81","Child Days - During the last completed Long Rainy Season / Major Cropping Season, how many days did your household have hired labor for this field for HARVESTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_81","Child Days - During the last completed Short Rainy Season / Minor Cropping Season, how many days did your household have hired labor for this field for HARVESTING?
+INCLUDE IN-KIND PAYMENTS",,"Agriculture Management Intensity Survey"
+"ag3a_72_9","Total Wages paid",,"Agriculture Management Intensity Survey"
+"ag3a_39_1","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39_2","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39_3","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39_4","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39_5","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39_6","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39_7","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_39_8","Select all types of organic fertilizer that you used","{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}","Agriculture Management Intensity Survey"
+"ag3a_45_dap","Select all the types of inorganic fertilizer that  you used on this field","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_45_urea","Select all the types of inorganic fertilizer that  you used on this field","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_45_tsp","Select all the types of inorganic fertilizer that  you used on this field","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_45_can","Select all the types of inorganic fertilizer that  you used on this field","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_45_sa","Select all the types of inorganic fertilizer that  you used on this field","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_45_npk","Select all the types of inorganic fertilizer that  you used on this field","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"
+"ag3a_45_mrp","Select all the types of inorganic fertilizer that  you used on this field","{'MRP': 'Rock Phosphate (Mrp) [Minjingu]', 'UREA': 'Urea', 'CAN': 'Calcium Ammonium Nitrate (Can)', 'SA': 'Sulphate Of Ammonium (Sa)', 'DAP': 'Di-Ammoium Phosphate (Dap)', 'TSP': 'Triple Super Phosphate (Tsp)', 'NPK': 'Nitrogen Phosphate Potassium (Npk)'}","Agriculture Management Intensity Survey"

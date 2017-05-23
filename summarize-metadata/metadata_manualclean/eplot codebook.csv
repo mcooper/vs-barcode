@@ -1,0 +1,48 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+country,Country,"{'TZA': 'Tanzania', 'GHA': 'Ghana', 'KEN': 'Kenya', 'UGA': 'Uganda', 'RWA': 'Rwanda'}",
+landscape_no,Landscape Number,,
+eplot_no,Eplot Number,,
+round,The round of data collection,,
+field_date,Field data collection date,,E-Plot Biomass Measurements
+field_radius,Sub-plot radius,,E-Plot Biomass Measurements
+gpsne_accuracy,Accuracy (m),,E-Plot Biomass Measurements
+gpsne_lat,Latitude,,E-Plot Biomass Measurements
+gpsne_long,Longitude,,E-Plot Biomass Measurements
+gpsnw_accuracy,Accuracy (m),,E-Plot Biomass Measurements
+gpsnw_lat,Latitude,,E-Plot Biomass Measurements
+gpsnw_long,Longitude,,E-Plot Biomass Measurements
+gpsse_accuracy,Accuracy (m),,E-Plot Biomass Measurements
+gpsse_start,GPS start time,,E-Plot Biomass Measurements
+gpsse_end,GPS end time,,E-Plot Biomass Measurements
+gpsse_lat,Latitude,,E-Plot Biomass Measurements
+gpsse_long,Longitude,,E-Plot Biomass Measurements
+gpsse_measurement_counts,Number of measurement counts on average,,E-Plot Biomass Measurements
+gpssw_accuracy,Accuracy (m),,E-Plot Biomass Measurements
+gpssw_lat,Latitude,,E-Plot Biomass Measurements
+gpssw_long,Longitude,,E-Plot Biomass Measurements
+field_observations,Notes about the E-plot,,E-Plot Biomass Measurements
+soil_sample_date,Date of Sampling and Weighing Samples,,E-Plot Soil Sampling and Processing
+soil_se_top_restriction_depth,"Depth to sampling restriction, southeast corner, topsoil",,E-Plot Soil Sampling and Processing
+soil_se_subsoil_restriction_depth,"Depth to sampling restriction, southeast corner, subsoil",,E-Plot Soil Sampling and Processing
+soil_se_50_80_restriction_depth,"Depth to sampling restriction, southeast corner, 50-80cm",,E-Plot Soil Sampling and Processing
+soil_ne_sub_restriction_depth,"Depth to sampling restriction, northeast corner, topsoil",,E-Plot Soil Sampling and Processing
+soil_ne_top_restriction_depth,"Depth to sampling restriction, northeast corner, subsoil",,E-Plot Soil Sampling and Processing
+soil_nw_sub_restriction_depth,"Depth to sampling restriction, northwest corner, topsoil",,E-Plot Soil Sampling and Processing
+soil_nw_top_restriction_depth,"Depth to sampling restriction, northwest corner, subsoil",,E-Plot Soil Sampling and Processing
+soil_sw_sub_restriction_depth,"Depth to sampling restriction, sourthwest corner, topsoil",,E-Plot Soil Sampling and Processing
+soil_sw_top_restriction_depth,"Depth to sampling restriction, sourthwest corner, subsoil",,E-Plot Soil Sampling and Processing
+soil_se_50_80_texture,"Hand Texture, southeast corner, 50-80cm","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}",E-Plot Soil Sampling and Processing
+soil_se_80_100_texture,"Hand Texture, southeast corner, 80-100cm","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}",E-Plot Soil Sampling and Processing
+soil_composite_top_texture,"Hand Texture, composite, topsoil","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}",E-Plot Soil Sampling and Processing
+soil_composite_subsoil_texture,"Hand Texture, composite, subsoil","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}",E-Plot Soil Sampling and Processing
+soil_se_top_texture,"Hand Texture, southeast, topsoil",,E-Plot Soil Sampling and Processing
+soil_se_subsoil_texture,"Hand Texture, southeast, subsoil",,E-Plot Soil Sampling and Processing
+soil_ne_top_texture,"Hand Texture, northeast, topsoil",,E-Plot Soil Sampling and Processing
+soil_ne_sub_texture,"Hand Texture, northeast, subsoil",,E-Plot Soil Sampling and Processing
+soil_nw_top_texture,"Hand Texture, northwest, topsoil",,E-Plot Soil Sampling and Processing
+soil_nw_sub_texture,"Hand Texture, northwest, subsoil",,E-Plot Soil Sampling and Processing
+soil_sw_top_texture,"Hand Texture, southwest, topsoil",,E-Plot Soil Sampling and Processing
+soil_sw_sub_texture,"Hand Texture, southwest, subsoil",,E-Plot Soil Sampling and Processing
+soil_se_80_100_restriction_depth,"Depth to sampling restriction, southeast corner, 80-100cm",,E-Plot Soil Sampling and Processing
+lab_data_entry_date,Date of Weighing dried samples,,E-Plot Soil Sampling and Processing

@@ -1,0 +1,15 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Management Intensity Survey"
+"toolname","Does the household own, use, rent, or borrow any of the following items in the past 12 months?","{'13h': 'Sickle (For Cocoa Harvesting)', 1: 'Hand Hoe', 2: 'Hand-Powered Sprayer', 3: 'Ox Plough', 4: 'Ox Seed Planter', 5: 'Ox Cart', 6: 'Tractor', 7: 'Tractor Plough', 8: 'Tractor Harrow', 9: 'Sheller/Thresher', 10: 'Hand Mill/Grinder', 11: 'Watering Can', 12: 'Farm Buildings', 13: 'Geri Cans/Drums', '13g': '""Soso"" (Used To Dig Holes/Pluck Plantains/Harvest Yams)', '13c': 'Sheds', '13a': 'Cool Storage', '13i': 'Sickle (Grass Cutting/Threshing)', '13e': 'Cutlass', '13b': 'Silos', '13d': 'Storeroom', '13f': 'Axe'}","Agriculture Management Intensity Survey"
+"toolname","Tool ID",,"Agriculture Management Intensity Survey"
+"toolname","Tool Name",,"Agriculture Management Intensity Survey"
+"ag11_01","How many ${fd11_tool_name} does the household own?",,"Agriculture Management Intensity Survey"
+"ag11_07","How many ${fd11_tool_name} did the household rent or borrow in the last 12 months?",,"Agriculture Management Intensity Survey"

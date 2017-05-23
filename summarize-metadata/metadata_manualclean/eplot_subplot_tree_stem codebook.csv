@@ -1,0 +1,19 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (eplot_subplot_tree),,
+country,Country,,
+landscape_no,Landscape Number,,
+eplot_no,Eplot Number,,
+round,The round of data collection,,
+subplot,Subplot Number,,
+tree_code,Tree Number,,E-Plot Biomass Measurements
+stem_id,Stem Number,,E-Plot Biomass Measurements
+field_date,Field Data Collection Date,,E-Plot Biomass Measurements
+latitude,Latitude of the southeast corner of the Eplot,,E-Plot Biomass Measurements
+longitude,Longitude of the southeast corner of the Eplot,,E-Plot Biomass Measurements
+genus,Genus,,E-Plot Biomass Measurements
+species,Species,,E-Plot Biomass Measurements
+subspecies,Subspecies,,E-Plot Biomass Measurements
+multistem_height,Canopy Height (m),,E-Plot Biomass Measurements
+multistem_canopy_width,Canopy Width (m),,E-Plot Biomass Measurements
+multistem_circumference,Basal Circumference (cm),,E-Plot Biomass Measurements

@@ -1,0 +1,24 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Management Intensity Survey"
+"ag10b_01","Byproduct ID",,"Agriculture Management Intensity Survey"
+"ag10b_01","Byproduct Name",,"Agriculture Management Intensity Survey"
+"ag10b_01","By-Product Name",,"Agriculture Management Intensity Survey"
+"ag10b_01","Did your household produce any of the following products in the last 12 months?","{1: 'Cow Milk (Traditional)', 2: 'Cow Milk (Improved)', 3: 'Chicken Eggs (Traditional)', 4: 'Chicken Eggs (Improved)', 5: 'Ghee/Butter', 6: 'Cheese/Yogurt', 7: 'Honey', 8: 'Skins And Hides', 9: 'Manure'}","Agriculture Management Intensity Survey"
+"ag10b_1a","Quantity - How much of the ${fd10_other_b_byproduct_name} did you produce in the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10b_1a","Quantity - How much of the ${fd10b_byproduct_name} did you produce in the past 12 months?",,"Agriculture Management Intensity Survey"
+"ag10b_1a_unit","Units","{1: 'Litres', 2: 'Kgs', 3: 'Pieces'}","Agriculture Management Intensity Survey"
+"ag10b_1b","What was the total value of total ${fd10_other_b_byproduct_name} produced in the last 12 months?",,"Agriculture Management Intensity Survey"
+"ag10b_1b","What was the total value of total ${fd10b_byproduct_name} produced in the last 12 months?",,"Agriculture Management Intensity Survey"
+"ag10b_05_1","Quantity - How much of the ${fd10_other_b_byproduct_name} produced did you sell in the last 12 months?",,"Agriculture Management Intensity Survey"
+"ag10b_05_1","Quantity - How much of the ${fd10b_byproduct_name} produced did you sell in the last 12 months?",,"Agriculture Management Intensity Survey"
+"ag10b_05_2","Units","{1: 'Litres', 2: 'Kgs', 3: 'Pieces'}","Agriculture Management Intensity Survey"
+"ag10b_06","What was the total value of sales of ${fd10_other_b_byproduct_name} in the last 12 months?",,"Agriculture Management Intensity Survey"
+"ag10b_06","What was the total value of sales of ${fd10b_byproduct_name} in the last 12 months?",,"Agriculture Management Intensity Survey"

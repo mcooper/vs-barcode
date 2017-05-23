@@ -1,0 +1,58 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"ind_refno",,,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"ag_date_of_interview","Date of interview",,"Agriculture Management Intensity Survey"
+"ag_indid_age","Age - Section 1.  Household Roster:  PLEASE COPY THE FOLLOWING INFORMATION FROM THE HOUSEHOLD QUESTIONNAIRE",,"Agriculture Management Intensity Survey"
+"ag_indid_gender","Sex - Section 1.  Household Roster:  PLEASE COPY THE FOLLOWING INFORMATION FROM THE HOUSEHOLD QUESTIONNAIRE","{1: 'Male', 2: 'Female'}","Agriculture Management Intensity Survey"
+"ag_indid_respondent","Is this person a respondent to this questionnaire? - Section 1.  Household Roster:  PLEASE COPY THE FOLLOWING INFORMATION FROM THE HOUSEHOLD QUESTIONNAIRE","{1: 'Yes', 2: 'No'}","Agriculture Management Intensity Survey"
+"hh_b02","Sex of ${indid}? - Make a complete list of all individuals who normally live and eat their meals together in this household, starting with the head of household.","{1: 'Male', 2: 'Female'}","Household Survey"
+"hh_b03","In what month and year was ${b_name} born?",,"Household Survey"
+"hh_b04","How old is ${b_name} (in years)?",,"Household Survey"
+"hh_b05","What is the relationship to the head of household for ${indid}? - Make a complete list of all individuals who normally live and eat their meals together in this household, starting with the head of household.","{1: 'Head', 2: 'Spouse', 3: 'Son/Daughter', 4: 'Step Son/Daughter', 5: 'Sister/Brother', 6: 'Grandchild', 7: 'Father/Mother', 8: 'Other Relative', 9: 'Live-In Servant', 10: 'Other Non-Relatives'}","Household Survey"
+"hh_b07","Did ${b_name} eat meals in this house- hold in the last 7 days?","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_b08","For how many days in the last 30 days was ${b_name} present?",,"Household Survey"
+"hh_c01","Is ${C_name} over 5 years old? - Now Enter data from the C EDUCATION section for ${C_name}",,"Household Survey"
+"hh_c02","Can ${C_name} read or write? - Now Enter data from the C EDUCATION section for ${C_name}","{1: 'Any Local Language', 2: 'English', 3: 'Any Local Language And English', 4: 'Any Other Language', 5: 'No'}","Household Survey"
+"hh_c03","Has ${C_name} ever attended school? - Now Enter data from the C EDUCATION section for ${C_name}","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_c07","What is the highest grade completed by ${C_name}?","{1: 'Pp', 2: 'Adult', '31': 'S5', '14': 'University', '61': 'Other (Specify In Next Question)', '32': 'L6', '33': 'U6', '25': 'Sss2', 11: 'P1', 12: 'P2', 13: 'P3', 14: 'P4', 15: 'P5', 16: 'P6', 17: 'P7', 18: 'P8', 20: 'Ms+Course', 21: 'S1', 22: 'S2', 23: 'S3', 24: 'S4', 25: ""O'+Course"", '13': 'Vocational Training', '04': 'P4', '20': 'M1', '29': 'S3', 31: 'S5', 32: 'S6', 33: ""'A' +Course"", 34: 'Diploma', '11': 'S5', '05': 'P5', '17': 'Jss1', '08': 'S2', 41: 'U1', 42: 'U2', 43: 'U3', 44: 'U4', 45: 'U5+', '30': 'S4', '27': 'S1', '43': 'Nursing', '28': 'S2', '22': 'M3', '07': 'S1', '16': 'P6', '10': 'S4', '42': 'Teacher Train', '41': 'Voc / Technical / Computer / Comm / Agric', '12': 'S6', '15': 'Postgraduate', '26': 'Sss3', '23': 'M4', '53': 'Other Tertiary', '09': 'S3', '06': 'P6', '01': 'P1', '51': 'Polytechnic', '21': 'M2', '00': 'None', '52': 'University', '24': 'Sss1', '02': 'P2', '19': 'Jss3', '18': 'Jss2', '03': 'P3'}","Household Survey"
+"hh_e04","Did you do any work of any type for pay, profit, barter or home use during the last 7 days? - Now Enter data from the E LABOUR section for ${C_name}","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_e06","The following question refers to the economic activity on which you spend most of your time if you have more than one activity:
+
+Are you working as: - Now Enter data from the E LABOUR section for ${C_name}","{1: 'Paid Employee', 2: 'Self Employed (With Employees)', 3: 'Self Employed (Without Employees)', 4: 'Unpaid Family Helper (Agric)', 5: 'Unpaid Family Helper (Non-Agric)', 6: 'On Your Own Farm/Shamba'}","Household Survey"
+"hh_e08","Did you do any wage work during the last 12 months? - Now Enter data from the E LABOUR section for ${C_name}","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_e22_1","wages - Now Enter data from the E LABOUR section for ${C_name}; 9) How much was your last payment? IF RESPONDENT HAS NOT YET BEEN PAID, ASK: What payment do you expect?  What period of time did this payment cover?",,"Household Survey"
+"hh_e22_2","Time Unit - Now Enter data from the E LABOUR section for ${C_name}; 9) How much was your last payment? IF RESPONDENT HAS NOT YET BEEN PAID, ASK: What payment do you expect?  What period of time did this payment cover?","{1: 'Hour', 2: 'Day', 3: 'Week', 4: 'Fortnight', 5: 'Month', 6: 'Quarter', 7: 'Half Year', 8: 'Year'}","Household Survey"
+"hh_e23","Do you receive any payment for this work in any other form? - Now Enter data from the E LABOUR section for ${C_name}","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_e24_1","wages - Now Enter data from the E LABOUR section for ${C_name}; 11) What is the value of those payments? Over what time interval?",,"Household Survey"
+"hh_e24_2","Time Unit - Now Enter data from the E LABOUR section for ${C_name}","{1: 'Hour', 2: 'Day', 3: 'Week', 4: 'Fortnight', 5: 'Month', 6: 'Quarter', 7: 'Half Year', 8: 'Year'}","Household Survey"
+"hh_e25","How many hours did you work last week? - Now Enter data from the E LABOUR section for ${C_name}",,"Household Survey"
+"hh_e26","During the last 12 months, for how many months did you work in this job?  - Now Enter data from the E LABOUR section for ${C_name}",,"Household Survey"
+"hh_e27","During the last 12 months, how many weeks per month do you usually work in this job?  - Now Enter data from the E LABOUR section for ${C_name}",,"Household Survey"
+"hh_e28","During the last 12 months, how many hours per week do you usually work in this job?  - Now Enter data from the E LABOUR section for ${C_name}",,"Household Survey"
+"hh_e51","Did you operate any business or do any self-employed activity during the last week, other than agriculture? - Now Enter data from the E LABOUR section for ${C_name}","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_e52","Did you operate any business or do any self-employed activity during the last 12 months, other than agriculture? - Now Enter data from the E LABOUR section for ${C_name}","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_e64_1","gross - Now Enter data from the E LABOUR section for ${C_name}; 22) What gross income/takings did you get from your business or businesses in the last week/month?",,"Household Survey"
+"hh_e64_2","Now Enter data from the E LABOUR section for ${C_name}","{'month': 'Month', 'week ': 'Week'}","Household Survey"
+"hh_e65_1","net income (profit) - Now Enter data from the E LABOUR section for ${C_name}; 23) What was your net income (profit) from your business or businesses in the last week/month?",,"Household Survey"
+"hh_e65_2","Now Enter data from the E LABOUR section for ${C_name}","{'month': 'Month', 'week ': 'Week'}","Household Survey"
+"hh_hv103","Does ${C_name} collect fuelwood for household and/or commercial use? - Now Enter data from the HV1  NATURAL RESOURCE BASE section for ${C_name}","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_hv104","How frequently does ${C_name} collect firewood? - Now Enter data from the HV1  NATURAL RESOURCE BASE section for ${C_name}","{1: 'Weekly', 2: 'Monthly', 3: 'Seasonally', 4: 'Annually'}","Household Survey"
+"hh_hv105","How much does ${C_name} collect during that collection period? - Now Enter data from the HV1  NATURAL RESOURCE BASE section for ${C_name}",,"Household Survey"
+"hh_hv105_other","Specify the other thing that bundles are carried on (if necessary). - Now Enter data from the HV1  NATURAL RESOURCE BASE section for ${C_name}",,"Household Survey"
+"hh_hv105_unit","What are the bundles carried on? - Now Enter data from the HV1  NATURAL RESOURCE BASE section for ${C_name}","{1: 'Head', 2: 'Back', 3: 'Bike', 4: 'Other (Specify)'}","Household Survey"
+"hh_hv105a","How many hours does ${C_name} spend on each fuelwood collection trip? (From home departure to return) - Now Enter data from the HV1  NATURAL RESOURCE BASE section for ${C_name}",,"Household Survey"
+"hh_u1","Is  ${u_name} 0-60 Months old? - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_u2","Weight in KGs of  ${u_name} - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members",,"Household Survey"
+"hh_u3","Height in CMs of ${u_name} - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members",,"Household Survey"
+"hh_u4","HEIGHT / LENGTH MEASURED WITH CHILD STANDING OR LYING DOWN? - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members","{1: 'Standing', 2: 'Lying Down'}","Household Survey"
+"hh_u5","Upper arm circumference of ${u_name} - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members",,"Household Survey"
+"hh_u6","Was ${u_name} measured? - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members","{1: 'Yes', 2: 'No'}","Household Survey"
+"hh_u7","WHY NOT?   - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members","{1: 'Currently Not Home', 2: 'Too Ill', 3: 'Unwilling'}","Household Survey"
+"hh_u7_other","WHY NOT?   - The survey now will ask questions on anthropometric measures. Please assemble the equipment, and follow the instruction manual for taking height, weight, and upper arm measurements for each of the household members","{1: 'Currently Not Home', 2: 'Too Ill', 3: 'Unwilling'}","Household Survey"

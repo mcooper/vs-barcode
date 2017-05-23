@@ -1,0 +1,14 @@
+Variable,Definition,Values,Protocol
+time,Date and Time of Weather Observation,,Weather Stations
+country,Country,"{'TZA': 'Tanzania', 'GHA': 'Ghana', 'KEN': 'Kenya', 'UGA': 'Uganda', 'RWA': 'Rwanda'}",Weather Stations
+name,Weather Station Name,,Weather Stations
+latitude,Latitude,,Weather Stations
+longitude,Longitude,,Weather Stations
+temp_c,Temperature (degrees centigrade),,Weather Stations
+rh_pct,Relative humidity (%),,Weather Stations
+pressure_mbar,Pressure (mbar),,Weather Stations
+solar_radiation_wm2,Solar radiation (w/m2),,Weather Stations
+wind_speed_ms,Wind speed (m/s),,Weather Stations
+gust_speed_ms,Gust speed (m/s),,Weather Stations
+rain_mm,Precipitation (mm),,Weather Stations
+batt_v,Battery (V),,Weather Stations

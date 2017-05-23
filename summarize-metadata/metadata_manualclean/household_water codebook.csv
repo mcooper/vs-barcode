@@ -1,0 +1,14 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+source,Water Source,,
+hh_j22,What type of container is used to collect water the source?,"{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}",Household Survey
+hh_j23_1,What is the average number of containers fetched from the source?,,Household Survey
+hh_j23_2,at what Frequency?,"{1: 'Day', 2: 'Week', 3: 'Month'}",Household Survey
+hh_j24,What is the average price for a 20 liter jerry can from the source?,,Household Survey

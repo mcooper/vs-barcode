@@ -1,0 +1,14 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+ag_date_of_interview,Date of interview,,Agriculture Management Intensity Survey
+source_name_family,Source ID Name,"{1: 'Ministry Of Agriculture', 2: 'Ngo', 3: 'Cooperative', 4: 'Large Scale Farmer/Outgrowers', 5: 'Radio', '3a': ""Community Based Farmer'S Organisations (Cbos)/Farmer Based Organisations (Fbos)"", 7: 'Neighbour', 9: 'Chief Farmer', 6: 'Publication (Newspapers/Articles)', '6a': 'Market Women / Middlemen'}",Agriculture Management Intensity Survey
+ag12b_06,"other, please specify",,Agriculture Management Intensity Survey
+ag12b_08,Did you pay anything in order to receive advice this advice?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12b_09,How much did you pay for the advice?,,Agriculture Management Intensity Survey

@@ -1,0 +1,19 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (eplot_subplot_tree)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"eplot_no","Eplot Number",,
+"round","The round of data collection",,
+"subplot",,,
+"tree_code",,,
+"stem_id",,,
+"field_date","Date",,"E-Plot Biomass Measurements"
+"latitude","Latitude of the southeast corner of the Eplot",,
+"longitude","Longitude of the southeast corner of the Eplot",,
+"genus",,,
+"species",,,
+"subspecies",,,
+"multistem_height","Canopy Height (m) - Herbaceous layer (Herbaceous mass and Dry-Weight-Rank Method)",,"E-Plot Biomass Measurements"
+"multistem_canopy_width","Canopy Width (m) - Herbaceous layer (Herbaceous mass and Dry-Weight-Rank Method)",,"E-Plot Biomass Measurements"
+"multistem_circumference","Basal Circumference (cm) - Herbaceous layer (Herbaceous mass and Dry-Weight-Rank Method)",,"E-Plot Biomass Measurements"

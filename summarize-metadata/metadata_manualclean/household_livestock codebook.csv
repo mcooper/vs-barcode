@@ -1,0 +1,27 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+ag_date_of_interview,Date of interview,,Agriculture Management Intensity Survey
+animal_name,Animal Name,"{1: 'Bulls', 2: 'Cows', 11: 'Ducks', 4: 'Heifers', 5: 'Male Calves', 6: 'Female Calves', '12a': 'Hare', 8: 'Sheep', 9: 'Pigs ', 10: 'Chickens', 7: 'Goats', '10a': 'Guinea Fowl', 13: 'Grass Cutter', 14: 'Donkeys', 15: 'Dogs', 16: 'Other', '15a': 'Ox', 3: 'Steers', 12: 'Rabbits'}",Agriculture Management Intensity Survey
+ag10a_05_1,Indigenous - How many does this household currently own?,,Agriculture Management Intensity Survey
+ag10a_05_2,Improved - How many does this household currently own?,,Agriculture Management Intensity Survey
+ag10a_05_3,Improved Dairy - How many does this household currently own?,,Agriculture Management Intensity Survey
+ag10a_19,Have you sold any alive in the last 12 months?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag10a_20,How many have you sold in the past 12 months?,,Agriculture Management Intensity Survey
+ag10a_21,What was the total value of sales?,,Agriculture Management Intensity Survey
+ag10a_24,Did you slaughter any in the past 12 months?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag10a_25,How many did you slaughter in the past 12 months?,,Agriculture Management Intensity Survey
+ag10a_26,How many of the slaughtered did you sell?,,Agriculture Management Intensity Survey
+ag10a_27,What was the total value of the sold slaughtered?,,Agriculture Management Intensity Survey
+ag10a_33,did you hire any labor to help you with the in the past 12 months?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag10a_34,What was the total cost of this labor for in the past 12 months?,,Agriculture Management Intensity Survey
+ag10a_01,"From 0 to 10, how much of the animal's diet consisted of Legume forage",,Agriculture Management Intensity Survey
+ag10a_02,"From 0 to 10, how much of the animal's diet consisted of Green Grass/ fresh crop cutting",,Agriculture Management Intensity Survey
+ag10a_03,"From 0 to 10, how much of the animal's diet consisted of Crop residue (Maize/hay)",,Agriculture Management Intensity Survey
+ag10a_04,"From 0 to 10, how much of the animal's diet consisted of Rough grazing",,Agriculture Management Intensity Survey

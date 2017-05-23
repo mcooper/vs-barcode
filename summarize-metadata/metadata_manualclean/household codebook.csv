@@ -1,0 +1,182 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+country,Country,"{'TZA': 'Tanzania', 'GHA': 'Ghana', 'KEN': 'Kenya', 'UGA': 'Uganda', 'RWA': 'Rwanda'}",
+region,Region,,
+district,District,,
+ward,Ward/Parish/Sector,,
+town,Town / Village / Community,,
+landscape_no,Landscape Number,,
+hh_refno,Household Number,,
+round,The round of data collection,,
+hh_interview_date,Date of household portion of interview,,Household Survey
+hh_observations,Observations On The Interview: Record General Notes About The Interview And Record Any Special Information That Will Be Helpful For Supervisors And The Analysis Of This Questionnaire.,,Household Survey
+hh_hv105b_01,"If you have purchased or sold a bundle of fuelwood in the year, what was the cost per bundle?",,Household Survey
+hh_hv105c_01,What is your primary source of fuelwood for the household or commercial use ?,"{1: 'Forest', 2: 'Grassland', 3: 'From The Farm Fields, Boundaries, Fallow Lands Owned/Operated By The Household', 4: 'From The Farm Fields, Boundaries, Fallow Lands Owned By Neighbors', 5: 'From Private Or Community Woodlots', 6: 'From Roadsides', 7: 'Purchase From Neighbors', 8: 'Purchase From Nearby Town/Village', 9: 'Obtained By Exchange For Other Items (But Not Purchased)', 10: 'Received As A Gift', 11: 'Waste From Non-Farm Work (E.G. Carpentry,Builing, Etc.)', '1b': 'Shrubland', '1a': 'Woodland'}",Household Survey
+hh_hv106_01,In which direction is this primary source of fuelwood (only from the primary source in 5d)?,,Household Survey
+hh_hv109_01,How has availability changed over the past 5 years?      ,"{1: 'Decreased', 2: 'About The Same', 3: 'Increased'}",Household Survey
+hh_hv109a_01,What percentage of total fuelwood for the household comes from this primary source ?,"{1: '0', 2: '1 - 25%', 3: '26 - 50%', 4: '51 - 75%', 5: '76 - 100%'}",Household Survey
+hh_hv109b_01,"In the last 12 months, have you been faced with a situation when your household  did not have enough fuelwood for household and/or commercial use?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_hv109c_01,When did you experience this incident ?,"{1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}",Household Survey
+hh_hv109c_01_1,If the household experienced the incident in January,,Household Survey
+hh_hv109c_01_10,If the household experienced the incident in October,,Household Survey
+hh_hv109c_01_11,If the household experienced the incident in November,,Household Survey
+hh_hv109c_01_12,If the household experienced the incident in December,,Household Survey
+hh_hv109c_01_2,If the household experienced the incident in February,,Household Survey
+hh_hv109c_01_3,If the household experienced the incident in March,,Household Survey
+hh_hv109c_01_4,If the household experienced the incident in April,,Household Survey
+hh_hv109c_01_5,If the household experienced the incident in May,,Household Survey
+hh_hv109c_01_6,If the household experienced the incident in June,,Household Survey
+hh_hv109c_01_7,If the household experienced the incident in July,,Household Survey
+hh_hv109c_01_8,If the household experienced the incident in August,,Household Survey
+hh_hv109c_01_9,If the household experienced the incident in September,,Household Survey
+hh_i01,"In the past 7 days, did you worry that your household would not have enough food?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_i02_1,"Rely on less preferred foods? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i02_2,"Limit the variety of foods eaten? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i02_3,"Limit portion size at meal-times? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i02_4,"Reduce number of meals eaten in a day? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i02_5,"Restrict consumption by adults for small children to eat? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i02_6,"Borrow food, or rely on help from a friend or relative? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i02_7,"Have no food of any kind in your house-hold? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i02_8,"Go a whole day and night without eating anything? - In the past 7 days, how many days have you or someone in your household had to:","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_i031,"How many meals,  including breakfast are taken per day in your household? (Adults: over 5 Years Old)",,Household Survey
+hh_i032,"How many meals,  including breakfast are taken per day in your household? (children 6-59 months)",,Household Survey
+hh_i04_1,What was the 1st item your children less that 5 years of age (0-59 months) had for breakfast yesterday? (other),"{1: 'Tea/Drink With Sugar', 2: 'Milk/Milk Tea With Sugar', 3: 'Solid Food Only', 4: 'Tea/Drink With Solid Food', 5: 'Porridge With Groundnut Flour', 6: 'Porridge With Solid Food', 7: 'Porridge With Sugar', 8: 'Porridge With Milk', 9: 'Porridge Without Sugar', 10: 'Breastmilk', 11: 'Nothing', 101: 'Porridge With Milk And Sugar'}",Household Survey
+hh_i04_1_other,What was the 1st item your children less that 5 years of age (0-59 months) had for breakfast yesterday?,,Household Survey
+hh_i04_2,What was the 2nd item your children less that 5 years of age (0-59 months) had for breakfast yesterday? (other),"{1: 'Tea/Drink With Sugar', 2: 'Milk/Milk Tea With Sugar', 3: 'Solid Food Only', 4: 'Tea/Drink With Solid Food', 5: 'Porridge With Groundnut Flour', 6: 'Porridge With Solid Food', 7: 'Porridge With Sugar', 8: 'Porridge With Milk', 9: 'Porridge Without Sugar', 10: 'Breastmilk', 11: 'Nothing', 101: 'Porridge With Milk And Sugar'}",Household Survey
+hh_i04_2_other,What was the 2nd item your children less that 5 years of age (0-59 months) had for breakfast yesterday?,,Household Survey
+hh_i04_3,What was the 3rd item your children less that 5 years of age (0-59 months) had for breakfast yesterday? (other),"{1: 'Tea/Drink With Sugar', 2: 'Milk/Milk Tea With Sugar', 3: 'Solid Food Only', 4: 'Tea/Drink With Solid Food', 5: 'Porridge With Groundnut Flour', 6: 'Porridge With Solid Food', 7: 'Porridge With Sugar', 8: 'Porridge With Milk', 9: 'Porridge Without Sugar', 10: 'Breastmilk', 11: 'Nothing', 101: 'Porridge With Milk And Sugar'}",Household Survey
+hh_i04_3_other,What was the 3rd item your children less that 5 years of age (0-59 months) had for breakfast yesterday?,,Household Survey
+hh_i05,What was the 1st item your children between 5 to 13 years old had for breakfast yesterday?,"{1: 'Tea/Drink With Sugar', 2: 'Milk/Milk Tea With Sugar', 3: 'Solid Food Only', 4: 'Tea/Drink With Solid Food', 5: 'Porridge With Groundnut Flour', 6: 'Porridge With Solid Food', 7: 'Porridge With Sugar', 8: 'Porridge With Milk', 9: 'Porridge Without Sugar', 10: 'Breastmilk', 11: 'Nothing', 101: 'Porridge With Milk And Sugar'}",Household Survey
+hh_i05_2,What was the 2nd item your children between 5 to 13 years old had for breakfast yesterday?,,Household Survey
+hh_i05_2_other,What was the 2nd item your children between 5 to 13 years old had for breakfast yesterday? (other),"{1: 'Tea/Drink With Sugar', 2: 'Milk/Milk Tea With Sugar', 3: 'Solid Food Only', 4: 'Tea/Drink With Solid Food', 5: 'Porridge With Groundnut Flour', 6: 'Porridge With Solid Food', 7: 'Porridge With Sugar', 8: 'Porridge With Milk', 9: 'Porridge Without Sugar', 10: 'Breastmilk', 11: 'Nothing', 101: 'Porridge With Milk And Sugar'}",Household Survey
+hh_i05_other,What was the 1st item your children between 5 to 13 years old had for breakfast yesterday? (other),,Household Survey
+hh_i06,Do all household members eat roughly the same diet?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_i07_1,"men - Who in the household usually eats a more diverse variety of foods, a less diverse variety of foods?","{1: 'More Diverse', 2: 'Less Diverse', 3: 'Average'}",Household Survey
+hh_i07_2,"women - Who in the household usually eats a more diverse variety of foods, a less diverse variety of foods?","{1: 'More Diverse', 2: 'Less Diverse', 3: 'Average'}",Household Survey
+hh_i07_3,"Children (6-59 months)  - Who in the household usually eats a more diverse variety of foods, a less diverse variety of foods?","{1: 'More Diverse', 2: 'Less Diverse', 3: 'Average'}",Household Survey
+hh_i08,"In the last 12 months, have you been faced with a situation when you did not have enough food to feed the household?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_i09b,When the household experienced the incident last year,"{1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}",Household Survey
+hh_i09b_1,If the household experience the incident in January of last year,,Household Survey
+hh_i09b_2,If the household experience the incident in February of last year,,Household Survey
+hh_i09b_3,If the household experience the incident in March of last year,,Household Survey
+hh_i09b_4,If the household experience the incident in April of last year,,Household Survey
+hh_i09b_5,If the household experience the incident in May of last year,,Household Survey
+hh_i09b_6,If the household experience the incident in June of last year,,Household Survey
+hh_i09b_7,If the household experience the incident in July of last year,,Household Survey
+hh_i09b_8,If the household experience the incident in August of last year,,Household Survey
+hh_i09b_9,If the household experience the incident in September of last year,,Household Survey
+hh_i09b_10,If the household experience the incident in October of last year,,Household Survey
+hh_i09b_11,If the household experience the incident in November of last year,,Household Survey
+hh_i09b_12,If the household experience the incident in December of last year,,Household Survey
+hh_i09a,When the household experienced the incident this year,"{1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}",Household Survey
+hh_i09a_1,If the household experience the incident in January of this year,,Household Survey
+hh_i09a_2,If the household experience the incident in February of this year,,Household Survey
+hh_i09a_3,If the household experience the incident in March of this year,,Household Survey
+hh_i09a_4,If the household experience the incident in April of this year,,Household Survey
+hh_i09a_5,If the household experience the incident in May of this year,,Household Survey
+hh_i09a_6,If the household experience the incident in June of this year,,Household Survey
+hh_i09a_7,If the household experience the incident in July of this year,,Household Survey
+hh_i09a_8,If the household experience the incident in August of this year,,Household Survey
+hh_i09a_9,If the household experience the incident in September of this year,,Household Survey
+hh_i09a_10,If the household experience the incident in October of this year,,Household Survey
+hh_i09a_11,If the household experience the incident in November of this year,,Household Survey
+hh_i09a_12,If the household experience the incident in December of this year,,Household Survey
+hh_i10_1,First - What was the cause of this situation?,"{1: 'Inadequate Household Stocks Due To Drought/Poor Rains', 2: 'Inadequate Household Food Stocks Due To Crop Pest Damage', 3: 'Inadequate Household Food Stocks Due To Small Land Size', 4: 'Inadequate Household Food Stocks Due To Lack Of Farm Inputs', 5: 'Food In The Market Was Very Expensive', 6: 'Not Able To Reach The Market Due To High Transportation Costs', 7: 'No Food In The Market', 8: 'Floods/Water Logging/Hailstorm', 9: 'No Money', 10: 'Other, Specify'}",Household Survey
+hh_i10_1oth,First - Specify Other cause of the situation,,Household Survey
+hh_i10_2,Second - What was the cause of this situation?,"{1: 'Inadequate Household Stocks Due To Drought/Poor Rains', 2: 'Inadequate Household Food Stocks Due To Crop Pest Damage', 3: 'Inadequate Household Food Stocks Due To Small Land Size', 4: 'Inadequate Household Food Stocks Due To Lack Of Farm Inputs', 5: 'Food In The Market Was Very Expensive', 6: 'Not Able To Reach The Market Due To High Transportation Costs', 7: 'No Food In The Market', 8: 'Floods/Water Logging/Hailstorm', 9: 'No Money', 10: 'Other, Specify'}",Household Survey
+hh_i10_2oth,Second - Specify Other cause of the situation,,Household Survey
+hh_i10_3,Third - What was the cause of this situation?,"{1: 'Inadequate Household Stocks Due To Drought/Poor Rains', 2: 'Inadequate Household Food Stocks Due To Crop Pest Damage', 3: 'Inadequate Household Food Stocks Due To Small Land Size', 4: 'Inadequate Household Food Stocks Due To Lack Of Farm Inputs', 5: 'Food In The Market Was Very Expensive', 6: 'Not Able To Reach The Market Due To High Transportation Costs', 7: 'No Food In The Market', 8: 'Floods/Water Logging/Hailstorm', 9: 'No Money', 10: 'Other, Specify'}",Household Survey
+hh_i10_3oth,Third - Specify Other cause of the situation,,Household Survey
+hh_j01,What is HH tenure status of main residence?,"{1: 'Owner Occupied', 2: 'Employer Provided  - Subsidized', 3: 'Employer Provided - Free', 4: 'Rented', 5: 'Free', 6: 'Nomads'}",Household Survey
+hh_j02,Do you have any documentation of ownership of the dwelling?,"{1: 'Offer Of The Right Of Occupancy', 2: 'Title Deed For Land', 3: ""Letter Or Allocation  From Village Gov'T"", 4: 'Settlement Permit', 5: 'Traditional Right Of Occupancy', 6: 'Land Sale Agreement', 7: 'Inheritance Letter', 8: 'Other Title (Specify)', 9: 'Lease (For Renters)', 10: 'No Documentation At All'}",Household Survey
+hh_j02oth,Specify the other type of documentation,,Household Survey
+hh_j03,How much does this household pay per month to rent this dwelling?,,Household Survey
+hh_j04_1,(Main dwelling) - How many habitable rooms in each unit does this household occupy?,,Household Survey
+hh_j04_2,(Other dwelling) - How many habitable rooms in each unit does this household occupy? (other),,Household Survey
+hh_j05,The walls of the main dwelling are predominantly made of what materials?,"{1: 'Poles (Including Bamboo), Branches, Grass', 2: 'Poles And Mud/Mud And Stones', 3: 'Mud Only', 4: 'Mud Bricks', 5: 'Baked/Burnt Bricks', 6: 'Concrete, Cement, Stones'}",Household Survey
+hh_j05_other,The walls of the main dwelling are predominantly made of what materials? (other),,Household Survey
+hh_j06,The roof of the main dwelling is predominantly made of what materials?,"{1: 'Grass (Thatch), Leaves, Banana Leaves, Bamboo', 2: 'Mud And Grass', 3: 'Concrete, Cement', 4: 'Metal Sheets (Gci)', 5: 'Asbestos Sheets', 6: 'Tiles', '1a': 'Thatch And Wood'}",Household Survey
+hh_j06_other,The roof of the main dwelling is predominantly made of what materials? (other),,Household Survey
+hh_j07,The floor of the main dwelling is predominantly made of what materials?,"{1: 'Earth', 2: 'Concrete, Cement, Tiles, Timber'}",Household Survey
+hh_j07_other,The floor of the main dwelling is predominantly made of what materials? (other),,Household Survey
+hh_j08,How does the household dispose of its garbage?,"{1: 'Collected By Government', 2: 'Collected By Private Firm', 3: 'Government Bin', 4: 'Disposal Within Compound', 5: 'None Or Unauthorized Heap', '5b': 'Burning', '5a': 'Designated Disposal Site'}",Household Survey
+hh_j08_other,How does the household dispose of its garbage? (other),,Household Survey
+hh_j09,What is the main toilet facilities usually used in this household?,"{1: 'No Toilet', 2: 'Flush Toilet', 3: 'Pour Flush', 4: 'Kvip/Vip', 5: 'Ecosan', 6: 'Unimproved Pit Latrine (Slab Not Washable)', 7: 'Improved Pit Latrine (Slab Washable)'}",Household Survey
+hh_j09_other,What is the main toilet facilities usually used in this household? (other),,Household Survey
+hh_j10,Do you share this toilet facility with other households?,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_j11,Major fuel used for cooking?,"{1: 'Firewood', 2: 'Paraffin/Kerosene', 3: 'Electricity', 4: 'Gas Charcoal', 5: 'Animal Residual', 6: 'Gas (Biogas)'}",Household Survey
+hh_j11_other,Major fuel used for cooking? (other),,Household Survey
+hh_j12,Major fuel used for lighting?,"{1: 'Electricity', 2: 'Solar', 3: 'Gas', 4: 'Gas(Biogas)', 5: 'Lamp Oil ', 6: 'Candle ', 7: 'Firewood', 8: 'Private  Generator'}",Household Survey
+hh_j12_other,Major fuel used for lighting? (other),,Household Survey
+hh_j13,What is HH main source of electricity?,"{1: 'National Grid', 2: 'Community Generator', 3: 'Solar Panels', 4: 'Own Generator', 5: 'Car Battery', 6: 'Motorcycle Battery'}",Household Survey
+hh_j13_other,What is HH main source of electricity? (other),,Household Survey
+hh_j14,What is the household's main source of drinking water in the rainy season?,"{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j14_oth,specify other,,Household Survey
+hh_j15,What is the household's main source of drinking water in the dry season?,"{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j15_oth,specify other,,Household Survey
+hh_j16_1,First Measure - What measures does this household take to ensure the safety of drinking water?,"{1: 'Boil', 2: 'Use Water Filter', 3: 'Strain Through A Cloth', 4: 'Treated With Chemicals', 5: 'Bottled Water', 6: 'Other, Specify', 7: 'None', '5a': 'Sachet (Pure Water)'}",Household Survey
+hh_j16_1oth,specify other safety measure,,Household Survey
+hh_j16_2,Second Measure,"{1: 'Boil', 2: 'Use Water Filter', 3: 'Strain Through A Cloth', 4: 'Treated With Chemicals', 5: 'Bottled Water', 6: 'Other, Specify', 7: 'None', '5a': 'Sachet (Pure Water)'}",Household Survey
+hh_j16_2oth,specify other safety measure,,Household Survey
+hh_j17_1,What is the household's main source of water for cooking?,"{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j17_1oth,specify other water source for cooking,,Household Survey
+hh_j17_2,What is the household's main source of water for cooking?,"{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j17_2oth,specify other water source for cooking,,Household Survey
+hh_j18_1,"What is the household's main source of water for washing (for example laundry, bathing, etc)?","{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j18_1oth,specify other water source for laundry,,Household Survey
+hh_j18_2,"What is the household's main source of water for washing (for example laundry, bathing, etc)?","{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j18_2oth,specify other water source for laundry,,Household Survey
+hh_j19_1,What is the household's main source of water for gardening?,"{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j19_1oth,specify other water source for gardening,,Household Survey
+hh_j19_2,What is the household's main source of water for gardening?,"{0: 'Household does not use water for this purpose', 1: 'Piped Water Inside Dwelling', 2: 'Private Outside Standpipe/Tap', 3: 'Public Standpipe/Tap', 4: 'Neighbouring Household', 5: 'Water Vendor', 6: 'Subsidized Water Vending Station', 7: 'Water Truck/Tanker Service', 8: 'Protected Well With Pump', 9: 'Unprotected Well With Pump', 10: 'Protected Well Without Pump', 11: 'Unprotected Well Without Pump', 12: 'River, Lake, Spring, Pond', 13: 'Rainwater', 14: 'Other, Specify'}",Household Survey
+hh_j19_2oth,specify other water source for gardening,,Household Survey
+hh_j20,How satisfied are you in terms of the quality of the water delivered for drinking?,"{1: 'Very Satisfied', 2: 'Somewhat Satisfied', 3: 'Neither Satisfied Nor Unsatisfied', 4: 'Somewhat Unsatisfied', 5: 'Very Unsatisfied'}",Household Survey
+hh_j20b_02,"In the last 12 months, have you been faced with a situation when your household  did not have enough water to meet your family needs?","{1: 'Yes', 2: 'No'}",Household Survey
+hh_j20c_02,When did you experience this incident ?,"{1: 'January', 2: 'February', 3: 'March', 4: 'April', 5: 'May', 6: 'June', 7: 'July', 8: 'August', 9: 'September', 10: 'October', 11: 'November', 12: 'December'}",Household Survey
+hh_j20c_02_1,If the household experienced the incident in January,,Household Survey
+hh_j20c_02_10,If the household experienced the incident in October,,Household Survey
+hh_j20c_02_11,If the household experienced the incident in November,,Household Survey
+hh_j20c_02_12,If the household experienced the incident in December,,Household Survey
+hh_j20c_02_2,If the household experienced the incident in February,,Household Survey
+hh_j20c_02_3,If the household experienced the incident in March,,Household Survey
+hh_j20c_02_4,If the household experienced the incident in April,,Household Survey
+hh_j20c_02_5,If the household experienced the incident in May,,Household Survey
+hh_j20c_02_6,If the household experienced the incident in June,,Household Survey
+hh_j20c_02_7,If the household experienced the incident in July,,Household Survey
+hh_j20c_02_8,If the household experienced the incident in August,,Household Survey
+hh_j20c_02_9,If the household experienced the incident in September,,Household Survey
+hh_k2_10_a,What was the total number of days in which any meal was shared with Children 0-5 years,"{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_10_b,What was the total number of days in which any meal was shared with Children 6-15 years,"{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_10_c,What was the total number of days in which any meal was shared with Adults 16-65 years,"{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_10_d,What was the total number of days in which any meal was shared with People over 65 years old,"{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_11_a,What was the total number of meals that were shared over past 7 days with Children 0-5 years,,Household Survey
+hh_k2_11_b,What was the total number of meals that were shared over past 7 days with Children 6-15 years,,Household Survey
+hh_k2_11_c,What was the total number of meals that were shared over past 7 days with Adults 16-65 years,,Household Survey
+hh_k2_11_d,What was the total number of meals that were shared over past 7 days with People over 65 years old,,Household Survey
+hh_k2_8_a,"Over the past one week (7 days), how many days did you or others in your household consume any Cereals, Grains and Cereal Products","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_b,"Over the past one week (7 days), how many days did you or others in your household consume any Roots, Tubers, and Plantains","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_c,"Over the past one week (7 days), how many days did you or others in your household consume any Nuts and Pulses","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_d,"Over the past one week (7 days), how many days did you or others in your household consume any Vegetables","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_e,"Over the past one week (7 days), how many days did you or others in your household consume any Meat, Fish and Animal Products","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_f,"Over the past one week (7 days), how many days did you or others in your household consume any Fruits","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_g,"Over the past one week (7 days), how many days did you or others in your household consume any Milk/Milk Products","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_h,"Over the past one week (7 days), how many days did you or others in your household consume any Fats/Oil","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_i,"Over the past one week (7 days), how many days did you or others in your household consume any Sugar/Sugar Products/Honey","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_8_j,"Over the past one week (7 days), how many days did you or others in your household consume any Spices/Condiments","{0: '0', 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7'}",Household Survey
+hh_k2_9,"Over the past one week (7 days), did any people that you did not list as household members [READ LIST FROM HH ROSTER] eat any meals in your household?","{1: 'Yes', 2: 'No'}",Household Survey
+ag_date_of_interview,Date of agricultural portion of interview,,Agriculture Survey
+ag_fields,Did you or anyone in this household own or cultivate any FIELDs in the Long Rainy Season?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag_year,What year was the last completed Short Rainy Season / Minor Cropping Season?,,Agriculture Management Intensity Survey
+ag12b_09a,Are you or any member of your household a member of a microfinance or savings group?,"{1: 'Yes', 2: 'No'}",Agriculture Management Intensity Survey
+ag12a_10,Please indicate the micro finance or credit group that you received assistance from,"{2: 'Susu', 3: 'Market Women/Middle Men', 4: 'Masloc', 5: 'Rural And Community Banks', 6: 'Savings And Loans Companies', 7: 'Credit Unions', 8: 'Financial Ngos', 9: 'Saaco', 10: 'Vsla'}",Agriculture Management Intensity Survey
+ag12a_10_other,Please indicate the micro finance or credit group that you received assistance from (other),,Agriculture Management Intensity Survey
+farm_data_collection_date,Date of Sampling and Weighing Soil Samples,,Farm Field Soil Sampling and Processing
+farmlab_date,Date of weighing dried samples,,Farm Field Soil Sampling and Processing
+farmlab_selected_first_field,Selected first field for soil sampling,"{'M2': 'M2', 'None': 'None', 'M6': 'M6', 'M1': 'M1', 'M8': 'M8', 'M5': 'M5', 'M7': 'M7', 'M3': 'M3', 'M4': 'M4'}",Farm Field Soil Sampling and Processing
+farmlab_selected_second_field,Selected second field for soil sampling,"{'M2': 'M2', 'None': 'None', 'M6': 'M6', 'M1': 'M1', 'M8': 'M8', 'M5': 'M5', 'M7': 'M7', 'M3': 'M3', 'M4': 'M4'}",Farm Field Soil Sampling and Processing
+yield_data_collection_date,Date of yields data sampling,,Yields Sampling
+yield_number_of_fields,Number of fields selected for yields sampling,"{0: 0, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7, 8: 8}",Yields Sampling
+yield_selected_first_field,Selected first field for yields sampling,"{'M2': 'M2', 'None': 'None', 'M6': 'M6', 'M1': 'M1', 'M8': 'M8', 'M5': 'M5', 'M7': 'M7', 'M3': 'M3', 'M4': 'M4'}",Yields Sampling
+yield_selected_second_field,Selected second field for yields sampling,"{'M2': 'M2', 'None': 'None', 'M6': 'M6', 'M1': 'M1', 'M8': 'M8', 'M5': 'M5', 'M7': 'M7', 'M3': 'M3', 'M4': 'M4'}",Yields Sampling
+yieldlab_data_collection_date,Date of weighing dried yields samples,,Yields Sampling
+yieldlab_number_of_fields,Number of fields with dried yields samples,"{1: 1, 2: 2}",Yields Sampling

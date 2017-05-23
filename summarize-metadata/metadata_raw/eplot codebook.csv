@@ -1,0 +1,66 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"country","Country","{'TZA': 'Tanzania', 'GHA': 'Ghana', 'KEN': 'Kenya', 'UGA': 'Uganda', 'RWA': 'Rwanda'}",
+"landscape_no","Eplot Number",,
+"landscape_no","Landscape Number",,
+"eplot_no","Eplot Number",,
+"eplot_no","Landscape Number",,
+"round","The round of data collection",,
+"field_date","Date",,"E-Plot Biomass Measurements"
+"field_radius","Sub-plot radius",,"E-Plot Biomass Measurements"
+"gpsne_accuracy","Accuracy",,"E-Plot Biomass Measurements"
+"gpsne_lat","Latitude - Enter the GPS location of the NE corner",,"E-Plot Biomass Measurements"
+"gpsne_lat","North or South? - Enter the GPS location of the NE corner","{'s': 'South', 'n': 'North'}","E-Plot Biomass Measurements"
+"gpsne_long","East or West? - Enter the GPS location of the NE corner","{'e': 'East', 'w': 'West'}","E-Plot Biomass Measurements"
+"gpsne_long","Longitude - Enter the GPS location of the NE corner",,"E-Plot Biomass Measurements"
+"gpsnw_accuracy","Accuracy",,"E-Plot Biomass Measurements"
+"gpsnw_lat","Latitude - Enter the GPS location of the NW corner",,"E-Plot Biomass Measurements"
+"gpsnw_lat","North or South? - Enter the GPS location of the NW corner","{'s': 'South', 'n': 'North'}","E-Plot Biomass Measurements"
+"gpsnw_long","East or West? - Enter the GPS location of the NW corner","{'e': 'East', 'w': 'West'}","E-Plot Biomass Measurements"
+"gpsnw_long","Longitude - Enter the GPS location of the NW corner",,"E-Plot Biomass Measurements"
+"gpsse_accuracy","Accuracy - Enter the GPS location of the SE corner",,"E-Plot Biomass Measurements"
+"gpsse_start","GPS start time - Enter the GPS location of the SE corner",,"E-Plot Biomass Measurements"
+"gpsse_end","GPS end time - Enter the GPS location of the SE corner",,"E-Plot Biomass Measurements"
+"gpsse_lat","Latitude - Enter the GPS location of the SE corner",,"E-Plot Biomass Measurements"
+"gpsse_lat","North or South? - Enter the GPS location of the SE corner","{'s': 'South', 'n': 'North'}","E-Plot Biomass Measurements"
+"gpsse_long","East or West? - Enter the GPS location of the SE corner","{'e': 'East', 'w': 'West'}","E-Plot Biomass Measurements"
+"gpsse_long","Longitude - Enter the GPS location of the SE corner",,"E-Plot Biomass Measurements"
+"gpsse_measurement_counts","Number of measurement counts on average",,"E-Plot Biomass Measurements"
+"gpssw_accuracy","Accuracy",,"E-Plot Biomass Measurements"
+"gpssw_lat","Latitude - Enter the GPS location of the SW corner",,"E-Plot Biomass Measurements"
+"gpssw_lat","North or South? - Enter the GPS location of the SW corner","{'s': 'South', 'n': 'North'}","E-Plot Biomass Measurements"
+"gpssw_long","East or West? - Enter the GPS location of the SW corner","{'e': 'East', 'w': 'West'}","E-Plot Biomass Measurements"
+"gpssw_long","Longitude - Enter the GPS location of the SW corner",,"E-Plot Biomass Measurements"
+"field_observations","Notes about the E-plot",,"E-Plot Biomass Measurements"
+"soil_sample_date","Date of Sampling and Weighing Samples",,"E-Plot Soil Sampling and Processing"
+"soil_se_top_restriction_depth","Depth to sampling restriction, if any - Corner 1.  SE -- Topsoil (0-20)",,"E-Plot Soil Sampling and Processing"
+"soil_se_subsoil_restriction_depth","Depth to sampling restriction, if any - Corner 1.  SE -- Subsoil (20-50)",,"E-Plot Soil Sampling and Processing"
+"soil_se_50_80_restriction_depth","Depth to sampling restriction, if any - Corner 1.  SE -- 50-80",,"E-Plot Soil Sampling and Processing"
+"soil_ne_sub_restriction_depth","Depth to sampling restriction, if any",,"E-Plot Soil Sampling and Processing"
+"soil_ne_top_restriction_depth","Depth to sampling restriction, if any",,"E-Plot Soil Sampling and Processing"
+"soil_nw_sub_restriction_depth","Depth to sampling restriction, if any",,"E-Plot Soil Sampling and Processing"
+"soil_nw_top_restriction_depth","Depth to sampling restriction, if any",,"E-Plot Soil Sampling and Processing"
+"soil_sw_sub_restriction_depth","Depth to sampling restriction, if any",,"E-Plot Soil Sampling and Processing"
+"soil_sw_top_restriction_depth","Depth to sampling restriction, if any",,"E-Plot Soil Sampling and Processing"
+"soil_se_50_80_texture","Hand Texture","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}","E-Plot Soil Sampling and Processing"
+"soil_se_80_100_texture","Hand Texture","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}","E-Plot Soil Sampling and Processing"
+"soil_composite_top_texture","Hand Texture","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}","E-Plot Soil Sampling and Processing"
+"soil_composite_subsoil_texture","Hand Texture","{'clay_loam': 'Clay Loam', 'sandy_clay_loam': 'Sandy Clay Loam', 'clay': 'Clay', 'sandy_loam': 'Sandy Loam', 'sandy_clay': 'Sandy Clay', 'silty_clay_loam': 'Silty Clay Loam', 'loamy_sand': 'Loamy Sand', 'silt_loam': 'Silt Loam', 'sand': 'Sand', 'loam': 'Loam', 'silty_clay': 'Silty Clay'}","E-Plot Soil Sampling and Processing"
+"soil_se_top_texture",,,
+"soil_se_subsoil_texture",,,
+"soil_ne_top_texture",,,
+"soil_ne_sub_texture",,,
+"soil_nw_top_texture",,,
+"soil_nw_sub_texture",,,
+"soil_sw_top_texture",,,
+"soil_sw_sub_texture",,,
+"soil_se_80_100_restriction_depth","Depth to sampling restriction, if any - Corner 1.  SE -- 80-100",,"E-Plot Soil Sampling and Processing"
+"soil_se_top_barcode","Scan the barcode for the soil sample here - Corner 1.  SE -- Topsoil (0-20)",,"E-Plot Soil Sampling and Processing"
+"soil_se_top_barcode","Type the number on the barcode if the scanner is not working - Corner 1.  SE -- Topsoil (0-20)",,"E-Plot Soil Sampling and Processing"
+"soil_se_subsoil_barcode","Scan the barcode for the soil sample here - Corner 1.  SE -- Subsoil (20-50)",,"E-Plot Soil Sampling and Processing"
+"soil_se_subsoil_barcode","Type the number on the barcode if the scanner is not working - Corner 1.  SE -- Subsoil (20-50)",,"E-Plot Soil Sampling and Processing"
+"soil_se_50_80_barcode","Scan the barcode for the soil sample here - Corner 1.  SE -- 50-80",,"E-Plot Soil Sampling and Processing"
+"soil_se_50_80_barcode","Type the number on the barcode if the scanner is not working - Corner 1.  SE -- 50-80",,"E-Plot Soil Sampling and Processing"
+"soil_se_80_100_barcode","Scan the barcode for the soil sample here - Corner 1.  SE -- 80-100",,"E-Plot Soil Sampling and Processing"
+"soil_se_80_100_barcode","Type the number on the barcode if the scanner is not working - Corner 1.  SE -- 80-100",,"E-Plot Soil Sampling and Processing"
+"lab_data_entry_date","Date of Weighing dried samples",,"E-Plot Soil Sampling and Processing"

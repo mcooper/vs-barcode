@@ -1,0 +1,15 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (eplot_subplot),,
+country,Country,,
+landscape_no,Landscape Number,,
+eplot_no,Eplot Number,,
+round,The round of data collection,,
+subplot,Subplot Number,,E-Plot Biomass Measurements
+rank,Herbaceous species preponderance rank,,E-Plot Biomass Measurements
+field_date,Date of data collection,,E-Plot Biomass Measurements
+latitude,Latitude of the southeast corner of the Eplot,,E-Plot Biomass Measurements
+longitude,Longitude of the southeast corner of the Eplot,,E-Plot Biomass Measurements
+genus,Genus,,E-Plot Biomass Measurements
+species,Species,,E-Plot Biomass Measurements
+subspecies,Subspecies,,E-Plot Biomass Measurements

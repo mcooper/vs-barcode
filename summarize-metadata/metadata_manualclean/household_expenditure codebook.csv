@@ -1,0 +1,14 @@
+Variable,Definition,Values,Protocol
+id,Unique Id for the record,,
+parent_id,ID of the parent table (household),,
+country,Country,,
+landscape_no,Landscape Number,,
+hh_refno,Household Reference Number,,
+round,The round of data collection,,
+latitude,Latitude of the landscape centerpoint,,
+longitude,Longitude of the landscape centerpoint,,
+hh_interview_date,Interview Date,,
+hh_item,The item purchased or the expense,,Household Survey
+hh_period,Period of which the purchase or expense was made,,Household Survey
+hh_purchased,Whether the item was purchased or expense was made,"{1: 'Yes', 2: 'No'}",Household Survey
+hh_paid,"The amount paid, in local currency",,Household Survey

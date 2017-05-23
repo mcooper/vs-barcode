@@ -1,0 +1,48 @@
+"Variable","Definition","Values","Protocol"
+"id","Unique Id for the record",,
+"parent_id","ID of the parent table (household)",,
+"country","Country",,
+"landscape_no","Landscape Number",,
+"hh_refno",,,
+"round","The round of data collection",,
+"latitude","Latitude of the landscape centerpoint",,
+"longitude","Longitude of the landscape centerpoint",,
+"source",,,
+"hh_j22","What type of container is used to collect water from Neighbouring household?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Other (specified source)?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Private outside standpipe/tap?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Protected well with pump?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Protected well without pump?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from PUBLIC STANDPIPE/TAP?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Rainwater?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from River, lake, spring, pond?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Subsidized water vending station?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Unprotected well with pump?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Unproteted well without pump?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Water truck/Tanker service?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j22","What type of container is used to collect water from Water vendor?","{1: 'Overhead Tank', 2: 'Underground Tank', 3: 'Drums/Tanks (Metal Or Plastic)', 4: 'Buckets/Jerry Can', '4a': 'Pot'}","Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Neighbouring household?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Other (specified source)?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Private outside standpipe/tap?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Protected well with pump?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Protected well without pump?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from PUBLIC STANDPIPE/TAP?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from River, lake, spring, pond?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Subsidized water vending station?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Unprotected well with pump?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Unproteted well without pump?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Water truck/Tanker service?",,"Household Survey"
+"hh_j23_1","What is the average number of containers fetched from Water vendor?",,"Household Survey"
+"hh_j23_2","at what Frequency?","{1: 'Day', 2: 'Week', 3: 'Month'}","Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Neighbouring household?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Other (specified source)?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Private outside standpipe/tap?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Protected well with pump?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Protected well without pump?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from PUBLIC STANDPIPE/TAP?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from River, lake, spring, pond?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Subsidized water vending station?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Unprotected well with pump?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Unproteted well without pump?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Water truck/Tanker service?",,"Household Survey"
+"hh_j24","What is the average price for a 20 liter jerry can from Water vendor?",,"Household Survey"
