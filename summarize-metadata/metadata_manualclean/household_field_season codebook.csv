@@ -57,25 +57,24 @@ ag3a_59_other,What was the main type of pesticide/herbicide that you applied? (o
 ag3a_60_1,What quantity of this pesticide/herbicide did you use?,,Agriculture Management Intensity Survey
 ag3a_60_2,What quantity of this pesticide/herbicide did you use? (unit),"{1: 'Kg', 2: 'Litre', 3: 'Millilitre'}",Agriculture Management Intensity Survey
 ag3a_61,What was the total value of this pesticides/ herbicides purchased?,,Agriculture Management Intensity Survey
-ag3a_72_1,"Woman Days - how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_2,"Man Days - how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_21,"Child Days - how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_3,Total Wages paid for Land Preparation and Planting,,Agriculture Management Intensity Survey
-ag3a_72_4,"Woman Days - how many days did your household have hired labor for this field for WEEDING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_5,"Man Days - how many days did your household have hired labor for this field for WEEDING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_51,"Child Days - how many days did your household have hired labor for this field for WEEDING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_6,Total Wages paid for weeding,,Agriculture Management Intensity Survey
-ag3a_72_62,"Man Days - how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_61,"Woman Days - how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_63,"Child Days - how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_64,"Total Wages paid for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES",,Agriculture Management Intensity Survey
-ag3a_72_7,"Woman Days - how many days did your household have hired labor for this field for HARVESTING?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_8,"Man Days - how many days did your household have hired labor for this field for HARVESTING?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_81,"Child Days - how many days did your household have hired labor for this field for HARVESTING?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
-ag3a_72_9,Total Wages paid for harvesting,,Agriculture Management Intensity Survey
+ag3a_72_1a,"Woman Days - how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_2a,"Man Days - how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_3a,"Child Days - how many days did your household have hired labor for this field for LAND PREPARATION AND PLANTING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_4a,Total Wages paid for Land Preparation and Planting,,Agriculture Management Intensity Survey
+ag3a_72_1b,"Woman Days - how many days did your household have hired labor for this field for WEEDING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_2b,"Man Days - how many days did your household have hired labor for this field for WEEDING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_3b,"Child Days - how many days did your household have hired labor for this field for WEEDING? INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_4b,Total Wages paid for weeding,,Agriculture Management Intensity Survey
+ag3a_72_1c,"Man Days - how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_2c,"Woman Days - how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_3c,"Child Days - how many days did your household have hired labor for this field for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_4c,"Total Wages paid for RIDGING, FERTILIZING, OTHER-NON-HARVEST ACTIVITIES",,Agriculture Management Intensity Survey
+ag3a_72_1d,"Woman Days - how many days did your household have hired labor for this field for HARVESTING?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_2d,"Man Days - how many days did your household have hired labor for this field for HARVESTING?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_3d,"Child Days - how many days did your household have hired labor for this field for HARVESTING?INCLUDE IN-KIND PAYMENTS",,Agriculture Management Intensity Survey
+ag3a_72_4d,Total Wages paid for harvesting,,Agriculture Management Intensity Survey
 ag3a_39_1,Select all types of organic fertilizer that you used,"{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}",Agriculture Management Intensity Survey
 ag3a_39_2,Select all types of organic fertilizer that you used,"{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}",Agriculture Management Intensity Survey
-ag3a_39_3,Select all types of organic fertilizer that you used,"{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}",Agriculture Management Intensity Survey
 ag3a_39_4,Select all types of organic fertilizer that you used,"{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}",Agriculture Management Intensity Survey
 ag3a_39_5,Select all types of organic fertilizer that you used,"{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}",Agriculture Management Intensity Survey
 ag3a_39_6,Select all types of organic fertilizer that you used,"{1: 'Crop Residue', 2: 'Animal Manure', 4: 'Natural Fallow', 5: 'Leguminous Tree Fallow', 6: 'Leguminous Cover Crop', 7: 'Biomass Transfer', 8: 'Compost'}",Agriculture Management Intensity Survey
