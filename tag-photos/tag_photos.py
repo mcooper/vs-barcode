@@ -20,7 +20,7 @@ conn = pg.connect(host=d['host'], database='vitalsigns', user=d['user'], passwor
 cur = conn.cursor()
 
 #Get eplots
-cur.execute('SELECT country, landscape_no, eplot_no, photo_e, photo_n, photo_s, photo_w FROM eplot')
+cur.execute('SELECT country, landscape_no, eplot_no, field_photo_e, field_photo_n, field_photo_s, field_photo_w FROM eplot')
 eplot = []
 for i in cur:
     code = i[0] + '-' + i[1] + '-' + i[2]
@@ -34,7 +34,7 @@ for i in cur:
         eplot.append([code+'-w', i[6]])
 
 #Get RRAs
-cur.execute('SELECT country, rapid_road_asses_no, photo_e, photo_n, photo_s, photo_w, panorama FROM rra')
+cur.execute('SELECT country, rra_no, rra_photo_e, rra_photo_n, rra_photo_s, rra_photo_w, rra_panorama FROM rra')
 rra = []
 for i in cur:
     code = i[0] + '-' + i[1].upper()
