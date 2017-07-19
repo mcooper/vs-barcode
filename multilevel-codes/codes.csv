@@ -1,0 +1,468 @@
+district,district_name,country,region,region_name
+04,A M A,GHA,03,Greater Accra
+03,Abura / Asebu / Kwamankese,GHA,02,Central Region
+07,Adaklu Anyigbe,GHA,04,Volta
+06,Adansi North,GHA,06,Ashanti
+04,Adansi South,GHA,06,Ashanti
+05,Adenta,GHA,03,Greater Accra
+19,Afigya Kwabre,GHA,06,Ashanti
+10,Agona East,GHA,02,Central Region
+11,Agona West,GHA,02,Central Region
+17,Ahafo Ano North,GHA,06,Ashanti
+16,Ahafo Ano South,GHA,06,Ashanti
+04,Ahanta West,GHA,01,Western Region
+05,Ajumako / Enyan / Essiam,GHA,02,Central Region
+05,Akatsi,GHA,04,Volta
+05,Akwapem South,GHA,05,Eastern
+06,Akwapen North,GHA,05,Eastern
+15,Akyem Mansa,GHA,05,Eastern
+03,Amansie Central,GHA,06,Ashanti
+02,Amansie West,GHA,06,Ashanti
+12,Aowin / Suaman,GHA,01,Western Region
+10,Asante Akim North,GHA,06,Ashanti
+09,Asante Akim South,GHA,06,Ashanti
+07,Ashaiman,GHA,03,Greater Accra
+12,Asikuma / Odoben  / Brakwa,GHA,02,Central Region
+14,Assin North,GHA,02,Central Region
+13,Assin South,GHA,02,Central Region
+02,Asunafo North,GHA,07,Brong Ahafo
+01,Asunafo South,GHA,07,Brong Ahafo
+10,Asuogyaman,GHA,05,Eastern
+03,Asutifi,GHA,07,Brong Ahafo
+18,Atebubu ,GHA,07,Brong Ahafo
+17,Atiwa,GHA,05,Eastern
+13,Atwima Kwanwoma,GHA,06,Ashanti
+01,Atwima Mponua,GHA,06,Ashanti
+15,Atwima Nwabiagya,GHA,06,Ashanti
+09,Bawku Municipal,GHA,09,Upper East
+07,Bawku West,GHA,09,Upper East
+07,Bekwai Municipal,GHA,06,Ashanti
+10,Berekum,GHA,07,Brong Ahafo
+17,Bia,GHA,01,Western Region
+12,Biakoye,GHA,04,Volta
+02,Birim Municipal,GHA,05,Eastern
+16,Birim North,GHA,05,Eastern
+01,Birim South,GHA,05,Eastern
+01,Bole,GHA,08,Northern
+04,Bolgatanga Municipal,GHA,09,Upper East
+06,Bongo,GHA,09,Upper East
+08,Bosome Freho,GHA,06,Ashanti
+12,Bosumtwi ,GHA,06,Ashanti
+01,Builsa,GHA,09,Upper East
+18,Bunkpurugu Yonyo,GHA,08,Northern
+02,Cape Coast,GHA,02,Central Region
+17,Chereponi,GHA,08,Northern
+10,Dangbe East,GHA,03,Greater Accra
+09,Dangbe West,GHA,03,Greater Accra
+05,Dormaa East,GHA,07,Brong Ahafo
+04,Dormaa Municipal,GHA,07,Brong Ahafo
+13,East Akim,GHA,05,Eastern
+05,East Gonja,GHA,08,Northern
+07,Effutu,GHA,02,Central Region
+11,Ejisu Juaben,GHA,06,Ashanti
+26,Ejura Sekye Dumasi,GHA,06,Ashanti
+02,Ellembelle,GHA,01,Western Region
+09,Ewutu Senya ,GHA,02,Central Region
+12,Fanteakwa,GHA,05,Eastern
+03,Ga East,GHA,03,Greater Accra
+02,Ga West,GHA,03,Greater Accra
+08,Garu Tempane,GHA,09,Upper East
+08,Gomoa East,GHA,02,Central Region
+06,Gomoa West,GHA,02,Central Region
+04,Gonja Central,GHA,08,Northern
+15,Gushiegu ,GHA,08,Northern
+08,Ho,GHA,04,Volta
+11,Hohoe,GHA,04,Volta
+12,Jaman North,GHA,07,Brong Ahafo
+11,Jaman South,GHA,07,Brong Ahafo
+13,Jasikan,GHA,04,Volta
+06,Jirapa,GHA,10,Upper West
+01,Jomoro,GHA,01,Western Region
+16,Juabeso,GHA,01,Western Region
+14,K M A,GHA,06,Ashanti
+14,Kadjebi,GHA,04,Volta
+14,Karaga,GHA,08,Northern
+03,Kasena Nankana East,GHA,09,Upper East
+02,Kasena Nankana West,GHA,09,Upper East
+02,Keta Municipal,GHA,04,Volta
+04,Ketu North,GHA,04,Volta
+03,Ketu South,GHA,04,Volta
+22,Kintampo North,GHA,07,Brong Ahafo
+21,Kintampo South,GHA,07,Brong Ahafo
+01,Komenda / Edina / Eguafo / Abirem,GHA,02,Central Region
+06,Kpandai,GHA,08,Northern
+15,Krachi East,GHA,04,Volta
+16,Krachi West,GHA,04,Volta
+20,Kwabre  East,GHA,06,Ashanti
+14,Kwaebibirem,GHA,05,Eastern
+20,Kwahu East,GHA,05,Eastern
+21,Kwahu North (Afram Plains),GHA,05,Eastern
+19,Kwahu South,GHA,05,Eastern
+18,Kwahu West,GHA,05,Eastern
+08,Lambussie ,GHA,10,Upper West
+09,Lawra,GHA,10,Upper West
+06,Ledzokuku / Krowor,GHA,03,Greater Accra
+09,Lower Manya,GHA,05,Eastern
+22,Mampong Municipal,GHA,06,Ashanti
+20,Mamprusi  West,GHA,08,Northern
+19,Mamprusi East,GHA,08,Northern
+04,Mfantsiman,GHA,02,Central Region
+07,Mpohor-Wassa East,GHA,01,Western Region
+05,Nadowli,GHA,10,Upper West
+08,Nanumba North,GHA,08,Northern
+07,Nanumba South,GHA,08,Northern
+07,New Juaben Municipal,GHA,05,Eastern
+17,Nkoranza North,GHA,07,Brong Ahafo
+16,Nkoranza South,GHA,07,Brong Ahafo
+18,Nkwanta North,GHA,04,Volta
+17,Nkwanta South,GHA,04,Volta
+10,North Dayi,GHA,04,Volta
+06,North Tongu,GHA,04,Volta
+03,Nzema East,GHA,01,Western Region
+05,Obuasi Municipal,GHA,06,Ashanti
+18,Offinso Municipal,GHA,06,Ashanti
+27,Offinso North,GHA,06,Ashanti
+09,Prestea / Huni Valley,GHA,01,Western Region
+20,Pru,GHA,07,Brong Ahafo
+16,Saboba,GHA,08,Northern
+13,Savelugu Nanton,GHA,08,Northern
+02,Sawla / Tuna / Kalba,GHA,08,Northern
+13,Sefwi-Akontombra,GHA,01,Western Region
+15,Sefwi-Bibiani-Ahwiaso-Bekwai,GHA,01,Western Region
+14,Sefwi-Wiawso,GHA,01,Western Region
+05,Sekondi-Takoradi,GHA,01,Western Region
+24,Sekyere Afram Plains,GHA,06,Ashanti
+25,Sekyere Central ,GHA,06,Ashanti
+23,Sekyere East,GHA,06,Ashanti
+21,Sekyere South,GHA,06,Ashanti
+19,Sene,GHA,07,Brong Ahafo
+06,Shama,GHA,01,Western Region
+04,Sissala East,GHA,10,Upper West
+07,Sissala West,GHA,10,Upper West
+09,South Dayi,GHA,04,Volta
+01,South Tongu,GHA,04,Volta
+04,Suhum / Kraboa Coaltar,GHA,05,Eastern
+08,Sunyani Municipal,GHA,07,Brong Ahafo
+09,Sunyani West,GHA,07,Brong Ahafo
+13,Tain,GHA,07,Brong Ahafo
+05,Talensi Nabdam,GHA,09,Upper East
+11,Tamale Metro,GHA,08,Northern
+07,Tano North,GHA,07,Brong Ahafo
+06,Tano South,GHA,07,Brong Ahafo
+08,Tarkwa Nsuaem,GHA,01,Western Region
+15,Techiman,GHA,07,Brong Ahafo
+08,Tema,GHA,03,Greater Accra
+12,Tolon Kumbugu,GHA,08,Northern
+15,Twifo / Heman / Lower Denkyira,GHA,02,Central Region
+16,Upper Denkyira East,GHA,02,Central Region
+17,Upper Denkyira West,GHA,02,Central Region
+11,Upper Manya,GHA,05,Eastern
+03,Wa East,GHA,10,Upper West
+02,Wa Municipal,GHA,10,Upper West
+01,Wa West,GHA,10,Upper West
+10,Wassa Amenfi East,GHA,01,Western Region
+11,Wassa Amenfi West,GHA,01,Western Region
+01,Weija (Ga South),GHA,03,Greater Accra
+14,Wenchi,GHA,07,Brong Ahafo
+03,West Akim,GHA,05,Eastern
+03,West Gonja,GHA,08,Northern
+10,Yendi,GHA,08,Northern
+08,Yilo Krobo,GHA,05,Eastern
+09,Zabzugu Tatali,GHA,08,Northern
+57,Bugesera,RWA,05,Iburasirazuba
+44,Burera,RWA,04,Amajyaruguru
+42,Gakenke,RWA,04,Amajyaruguru
+12,Gasabo,RWA,01,Umujyi Wa Kigali
+53,Gatsibo,RWA,05,Iburasirazuba
+45,Gicumbi,RWA,04,Amajyaruguru
+22,Gisagara,RWA,02,Amajyepfo
+24,Huye,RWA,02,Amajyepfo
+28,Kamonyi,RWA,02,Amajyepfo
+31,Karongi,RWA,03,Iburengerazuba
+54,Kayonza,RWA,05,Iburasirazuba
+13,Kicukiro,RWA,01,Umujyi Wa Kigali
+55,Kirehe,RWA,05,Iburasirazuba
+27,Muhanga,RWA,02,Amajyepfo
+43,Musanze,RWA,04,Amajyaruguru
+56,Ngoma,RWA,05,Iburasirazuba
+35,Ngororero,RWA,03,Iburengerazuba
+34,Nyabihu,RWA,03,Iburengerazuba
+52,Nyagatare,RWA,05,Iburasirazuba
+25,Nyamagabe,RWA,02,Amajyepfo
+37,Nyamasheke,RWA,03,Iburengerazuba
+21,Nyanza,RWA,02,Amajyepfo
+11,Nyarugenge,RWA,01,Umujyi Wa Kigali
+23,Nyaruguru,RWA,02,Amajyepfo
+33,Rubavu,RWA,03,Iburengerazuba
+26,Ruhango,RWA,02,Amajyepfo
+41,Rulindo,RWA,04,Amajyaruguru
+36,Rusizi,RWA,03,Iburengerazuba
+32,Rutsiro,RWA,03,Iburengerazuba
+51,Rwamagana,RWA,05,Iburasirazuba
+01,Bagamoyo,TZA,06,Pwani
+04,Bahi,TZA,18,Dodoma
+05,Chamwino,TZA,18,Dodoma
+01,Chunya,TZA,12,Mbeya
+06,Dodoma Rural,TZA,18,Dodoma
+07,Dodoma Urban,TZA,18,Dodoma
+07,Gairo,TZA,05,Morogoro
+01,Igunga,TZA,19,Tabora
+05,Ileje,TZA,12,Mbeya
+01,Iringa Rural,TZA,11,Iringa
+03,Iringa Urban,TZA,11,Iringa
+01,Kalambo,TZA,15,Rukwa
+02,Kaliua,TZA,19,Tabora
+02,Kibaha,TZA,06,Pwani
+07,Kibaha Urban,TZA,06,Pwani
+04,Kilolo,TZA,11,Iringa
+03,Kilombero,TZA,05,Morogoro
+03,Kisarawe,TZA,06,Pwani
+01,Kondoa,TZA,18,Dodoma
+02,Kongwa,TZA,18,Dodoma
+03,Kyela,TZA,12,Mbeya
+05,Ludewa District Council,TZA,16,Njombe
+06,Mafia,TZA,06,Pwani
+05,Mafinga Township,TZA,11,Iringa
+06,Makambako Town Council,TZA,16,Njombe
+03,Makete District Council,TZA,16,Njombe
+07,Mbarali,TZA,12,Mbeya
+02,Mbeya Rural,TZA,12,Mbeya
+08,Mbeya Urban,TZA,12,Mbeya
+03,Mbinga,TZA,10,Ruvuma
+06,Mbozi,TZA,12,Mbeya
+04,Mkuranga,TZA,06,Pwani
+09,Momba,TZA,12,Mbeya
+02,Morogoro,TZA,05,Morogoro
+05,Morogoro Urban,TZA,05,Morogoro
+02,Mpanda,TZA,17,Katavi
+03,Mpwapwa,TZA,18,Dodoma
+02,Mufindi,TZA,11,Iringa
+01,Mulele,TZA,17,Katavi
+06,Mvomero,TZA,05,Morogoro
+05,Namtumbo,TZA,10,Ruvuma
+04,Njombe District Council,TZA,16,Njombe
+01,Njombe Town Council,TZA,16,Njombe
+03,Nkasi,TZA,15,Rukwa
+06,Nyasa,TZA,10,Ruvuma
+03,Nzega,TZA,19,Tabora
+05,Rufiji,TZA,06,Pwani
+04,Rungwe,TZA,12,Mbeya
+04,Sikonge,TZA,19,Tabora
+02,Songea Rural,TZA,10,Ruvuma
+04,Songea Urban,TZA,10,Ruvuma
+02,Sumbawanga Rural,TZA,15,Rukwa
+04,Sumbawanga Urban,TZA,15,Rukwa
+08,Tabora Rural,TZA,19,Tabora
+07,Tabora Urban,TZA,19,Tabora
+10,Tunduma,TZA,12,Mbeya
+01,Tunduru,TZA,10,Ruvuma
+04,Ulanga,TZA,05,Morogoro
+06,Urambo,TZA,19,Tabora
+05,Uyui,TZA,19,Tabora
+02,Wanging'Ombe District Council,TZA,16,Njombe
+314,Abim,UGA,03,Northern Region
+301,Adjumani,UGA,03,Northern Region
+322,Agago,UGA,03,Northern Region
+323,Alebtong,UGA,03,Northern Region
+315,Amolatar,UGA,03,Northern Region
+324,Amudat,UGA,03,Northern Region
+216,Amuria,UGA,02,Eastern Region
+316,Amuru,UGA,03,Northern Region
+302,Apac,UGA,03,Northern Region
+303,Arua,UGA,03,Northern Region
+217,Budaka,UGA,02,Eastern Region
+218,Bududa,UGA,02,Eastern Region
+201,Bugiri,UGA,02,Eastern Region
+420,Buhweju ,UGA,04,Western Region
+117,Buikwe ,UGA,01,Central Region
+219,Bukedea,UGA,02,Eastern Region
+118,Bukomasimbi ,UGA,01,Central Region
+220,Bukwo,UGA,02,Eastern Region
+225,Bulambuli,UGA,02,Eastern Region
+416,Buliisa ,UGA,04,Western Region
+401,Bundibugyo ,UGA,04,Western Region
+402,Bushenyi ,UGA,04,Western Region
+202,Busia,UGA,02,Eastern Region
+221,Butaleja,UGA,02,Eastern Region
+119,Butambala ,UGA,01,Central Region
+120,Buvuma ,UGA,01,Central Region
+226,Buyende,UGA,02,Eastern Region
+317,Dokolo,UGA,03,Northern Region
+121,Gomba ,UGA,01,Central Region
+304,Gulu,UGA,03,Northern Region
+403,Hoima ,UGA,04,Western Region
+417,Ibanda ,UGA,04,Western Region
+203,Iganga,UGA,02,Eastern Region
+418,Isingiro ,UGA,04,Western Region
+204,Jinja,UGA,02,Eastern Region
+318,Kaabong,UGA,03,Northern Region
+404,Kabale ,UGA,04,Western Region
+405,Kabarole ,UGA,04,Western Region
+213,Kaberamaido,UGA,02,Eastern Region
+101,Kalangala ,UGA,01,Central Region
+222,Kaliro,UGA,02,Eastern Region
+122,Kalungu ,UGA,01,Central Region
+102,Kampala ,UGA,01,Central Region
+205,Kamuli,UGA,02,Eastern Region
+413,Kamwenge ,UGA,04,Western Region
+414,Kanungu ,UGA,04,Western Region
+206,Kapchorwa,UGA,02,Eastern Region
+406,Kasese ,UGA,04,Western Region
+207,Katakwi,UGA,02,Eastern Region
+112,Kayunga ,UGA,01,Central Region
+407,Kibaale ,UGA,04,Western Region
+103,Kiboga ,UGA,01,Central Region
+227,Kibuku,UGA,02,Eastern Region
+419,Kiruhura ,UGA,04,Western Region
+421,Kiryandongo ,UGA,04,Western Region
+408,Kisoro ,UGA,04,Western Region
+305,Kitgum,UGA,03,Northern Region
+319,Koboko,UGA,03,Northern Region
+325,Kole,UGA,03,Northern Region
+306,Kotido,UGA,03,Northern Region
+208,Kumi,UGA,02,Eastern Region
+228,Kween,UGA,02,Eastern Region
+123,Kyankwanzi ,UGA,01,Central Region
+422,Kyegegwa ,UGA,04,Western Region
+415,Kyenjojo ,UGA,04,Western Region
+326,Lamwo,UGA,03,Northern Region
+307,Lira,UGA,03,Northern Region
+229,Luuka,UGA,02,Eastern Region
+104,Luwero ,UGA,01,Central Region
+124,Lwengo ,UGA,01,Central Region
+114,Lyantonde ,UGA,01,Central Region
+223,Manafwa,UGA,02,Eastern Region
+320,Maracha,UGA,03,Northern Region
+105,Masaka ,UGA,01,Central Region
+409,Masindi ,UGA,04,Western Region
+214,Mayuge,UGA,02,Eastern Region
+209,Mbale,UGA,02,Eastern Region
+410,Mbarara ,UGA,04,Western Region
+423,Mitooma ,UGA,04,Western Region
+115,Mityana ,UGA,01,Central Region
+308,Moroto,UGA,03,Northern Region
+309,Moyo,UGA,03,Northern Region
+106,Mpigi ,UGA,01,Central Region
+107,Mubende ,UGA,01,Central Region
+108,Mukono ,UGA,01,Central Region
+311,Nakapiripirit,UGA,03,Northern Region
+116,Nakaseke ,UGA,01,Central Region
+109,Nakasongola ,UGA,01,Central Region
+230,Namayingo,UGA,02,Eastern Region
+224,Namutumba,UGA,02,Eastern Region
+327,Napak,UGA,03,Northern Region
+310,Nebbi,UGA,03,Northern Region
+231,Ngora,UGA,02,Eastern Region
+424,Ntoroko ,UGA,04,Western Region
+411,Ntungamo ,UGA,04,Western Region
+328,Nwoya,UGA,03,Northern Region
+329,Otuke,UGA,03,Northern Region
+321,Oyam,UGA,03,Northern Region
+312,Pader,UGA,03,Northern Region
+210,Pallisa,UGA,02,Eastern Region
+110,Rakai ,UGA,01,Central Region
+425,Rubirizi ,UGA,04,Western Region
+412,Rukungiri ,UGA,04,Western Region
+111,Sembabule ,UGA,01,Central Region
+232,Serere,UGA,02,Eastern Region
+426,Sheema ,UGA,04,Western Region
+215,Sironko,UGA,02,Eastern Region
+211,Soroti,UGA,02,Eastern Region
+212,Tororo,UGA,02,Eastern Region
+113,Wakiso ,UGA,01,Central Region
+313,Yumbe,UGA,03,Northern Region
+330,Zombo,UGA,03,Northern Region
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
