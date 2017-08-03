@@ -9,12 +9,12 @@ setwd(tmp)
 system(paste0('aws s3 cp s3://vitalsigns-kenya/Data/0_Boundaries/ ', tmp, 
               ' --recursive --exclude "*" --include "geometries*"'))
 
+system(paste0('aws s3 cp s3://vitalsigns-kenya/Data/0_Boundaries/ ', tmp, 
+              ' --recursive --exclude "*" --include "geometries*"'))
+
 sp <- readOGR('.', 'geometries')
 
-system(paste0('aws s3 cp s3://vitalsigns-kenya/Data/Climate/ ', tmp,
-              ' --recursive --exclude "*" --include "*Temp*"'))
-system(paste0('aws s3 cp s3://vitalsigns-kenya/Data/Climate/ ', tmp,
-              ' --recursive --exclude "*" --include "*Precip*"'))
+setwd('D:/Documents and Settings/mcooper/Documents/VS Kenya Data Processing/')
 
 files <- list.files(pattern='.tif$', recursive = T)
 
@@ -22,19 +22,10 @@ files <- files[!files %in% names(sp@data)]
 
 for (f in files){
   print(f)
-  if(grepl('Mean', f)){
-    func <- mean
-  }
-  if(grepl('Min', f)){
-    func <- min
-  }
-  if(grepl('Max', f)){
-    func <- max
-  }
   
   r <- raster(f)
-  sp@data[ , f] <- raster::extract(r, sp, method='bilinear', fun=func, na.rm=T)
-  write.csv(sp@data, 'climate_extracts.csv')
+  sp@data[ , f] <- raster::extract(r, sp, method='bilinear', fun=mean, na.rm=T)
+  write.csv(sp@data, 'indicators_climate_ltn.csv')
 }
 
 df <- sp@data
@@ -54,10 +45,5 @@ test$country_id[test$type != 'country'] <- NA
 
 test <- test %>% dplyr::select(-type)
 
-test$date[grepl('2050', test$category)] <- 2050
+write.csv(test, 'indicators_climate_ltn.csv', row.names=F)
 
-write.csv(test, 'indicators_climate.csv', row.names=F)
-
-system(paste0('aws s3 cp ', tmp, '\\indicators_climate.csv s3://vitalsigns-kenya/Data/indicators_climate.csv'))
-
-system(paste0('rm ', tmp, ' -rf'))
