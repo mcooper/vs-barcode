@@ -2,11 +2,14 @@
 1 - Dense Forest
 2 - Moderate Forest
 3 - Open Forest
-4 - Open Grassland
-5 - Wooded Grassland
+
 6 - Perennial Cropland
 7 - Annual Cropland
+
+4 - Open Grassland
+5 - Wooded Grassland
 8 - Vegatated Wetland
+
 9 - Open Water
 10 - Otherland
 

@@ -77,7 +77,7 @@ accum$Null <- NULL
 accum$total <- NULL
 accum$name <- NULL
 
-accum %>%
+accum <- accum %>%
   melt(id.vars=c('id', 'type', 'date'))
 
 accum$pa_id[accum$type=='pa'] <- accum$id[accum$type=='pa']
@@ -85,7 +85,33 @@ accum$waterb_id[accum$type=='waterb'] <- accum$id[accum$type=='waterb']
 accum$county_id[accum$type=='county'] <- accum$id[accum$type=='county']
 accum$country_id[accum$type=='country'] <- accum$id[accum$type=='country']
 
+accum$type <- NULL
+accum$id <- NULL
+
+accum$date <- paste0(accum$date, '-01-01T00:00:00Z')
+  
+accum$variable <- paste0('percent_', tolower(accum$variable))  
+
+write.csv(accum, 'landcover_indicator.csv', row.names=F)
 
 
-  
-  
+accum$id <- coalesce(accum$pa_id, accum$waterb_id, accum$county_id, accum$country_id)
+
+csv <- read.csv('remove3.csv') %>%
+  filter(id_1 > 0) %>%
+  select(id, area_ha)
+
+accumt <- merge(accum, csv, all=F)
+
+accumt$sqkm <- accumt$area_ha*0.01*accumt$value
+
+accumpc <- accumt %>% select(date, category=variable, value, pa_id, waterb_id,
+                             county_id, country_id)
+
+accumkm <- accumt %>% select(date, category=variable, value=sqkm, pa_id, waterb_id,
+                             county_id, country_id) %>%
+  mutate(category=gsub('percent', 'sqkm', category))
+
+accumf <- bind_rows(accumpc, accumkm)
+
+write.csv(accumf, 'landcover_indicator.csv', row.names=F, na = 'None')
